@@ -4,9 +4,19 @@
     python -m eval add-data-room path/to/folder --room HTC03
 
 Each PDF must start with its document ID (DOC-01_..., DOC-02_...). Every page is read once:
-pages with a text layer through pdftotext, scanned pages through OCR (tesseract). The result is
-stored as data_room/<room>/chunks.json, one entry per page: {doc_id, page, text, read_by}.
-The PDFs are copied to data_room/<room>/documents/.
+pages with a text layer through pdftotext, scanned pages through OCR (tesseract).
+
+Where the result goes:
+- With MONGO_URI set, the page text is written to MongoDB (eval/doc_store.py), and the PDFs too when
+  EVAL_STORE_PDFS=1. Everything is read back and compared. Only when that passes are no local copies
+  kept (--keep-local keeps them). When it fails, the local copies are written and the failure is reported.
+- Without MONGO_URI, the result is stored as data_room/<room>/chunks.json, one entry per page:
+  {doc_id, page, text, read_by}, and the PDFs are copied to data_room/<room>/documents/.
+
+    python -m eval move-to-mongo [--rooms HTC01 HTC02] [--with-pdfs]
+
+moves rooms that are already in data_room/ to MongoDB the same way, and deletes each local folder after
+its copy is verified.
 """
 from __future__ import annotations
 
@@ -17,7 +27,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-from . import scoring, store
+from . import doc_store, scoring, store
 
 MIN_TEXT = 40          # a page with fewer characters than this is treated as a scan
 
@@ -58,10 +68,11 @@ def read_pdf(pdf: Path) -> list[dict]:
     return out
 
 
-def add(source: str | Path, room: str | None = None, verbose: bool = True) -> dict:
+def add(source: str | Path, room: str | None = None, verbose: bool = True, keep_local: bool = False) -> dict:
     source = Path(source)
     if not source.exists():
         raise FileNotFoundError(source)
+    say = print if verbose else (lambda *a: None)
     with tempfile.TemporaryDirectory() as tmp:
         if source.is_file() and source.suffix.lower() == ".zip":
             with zipfile.ZipFile(source) as z:
@@ -82,22 +93,40 @@ def add(source: str | Path, room: str | None = None, verbose: bool = True) -> di
                 raise ValueError("Could not tell the data room ID from the folder name. Pass --room, for example --room HTC03.")
             room = m.group(1)
         room = room.upper()
-        dest = store.DATA_ROOM / room
-        (dest / "documents").mkdir(parents=True, exist_ok=True)
         chunks, summary = [], []
         for pdf in pdfs:
             doc = re.match(r"(DOC-\d+)", pdf.name, re.I).group(1).upper()
             pages = read_pdf(pdf)
             chunks += [{"doc_id": doc, **p} for p in pages]
-            shutil.copy2(pdf, dest / "documents" / pdf.name)
             row = {"doc_id": doc, "file": pdf.name, "pages": len(pages),
                    "ocr": sum(p["read_by"] == "ocr" for p in pages),
                    "unreadable": [p["page"] for p in pages if p["read_by"] == "unreadable"]}
             summary.append(row)
-            if verbose:
-                print(f"{room} {doc}: {row['pages']} pages, {row['ocr']} by OCR"
-                      + (f", unreadable: {row['unreadable']}" if row["unreadable"] else ""))
-        store._write(dest / "chunks.json", chunks)
+            say(f"{room} {doc}: {row['pages']} pages, {row['ocr']} by OCR"
+                + (f", unreadable: {row['unreadable']}" if row["unreadable"] else ""))
+
+        stored, problems = "local files", []
+        if doc_store.enabled():
+            keep_pdfs = pdfs if doc_store.store_pdfs() else None
+            try:
+                doc_store.save_room(room, chunks, keep_pdfs, {r["doc_id"]: r["file"] for r in summary})
+                check = doc_store.verify_room(room, chunks, keep_pdfs)
+                problems = check["problems"]
+            except doc_store.StoreUnavailable as e:
+                problems = [str(e)]
+            if problems:
+                say("The copy in the document store could not be verified, so the local copies are kept:")
+                for p in problems:
+                    say(f"  {p}")
+            else:
+                stored = doc_store.describe()
+                say(f"Stored and verified in {stored}" + (" with the PDFs." if keep_pdfs else ". The PDFs were not stored (EVAL_STORE_PDFS=1 stores them)."))
+        if stored == "local files" or keep_local:
+            dest = store.DATA_ROOM / room
+            (dest / "documents").mkdir(parents=True, exist_ok=True)
+            for pdf in pdfs:
+                shutil.copy2(pdf, dest / "documents" / pdf.name)
+            store._write(dest / "chunks.json", chunks)
     key = check_answer_key(room)
     if verbose:
         if not shutil.which("tesseract"):
@@ -108,7 +137,56 @@ def add(source: str | Path, room: str | None = None, verbose: bool = True) -> di
                 print(f"  not found: {r['case_id']}  {r['citation'][:110]}")
         else:
             print(f"No answer-key case exists for {room} yet. Add its cases to the sheet and run import-sheet.")
-    return {"room": room, "documents": summary, "answer_key": key}
+    return {"room": room, "documents": summary, "answer_key": key, "stored": stored, "problems": problems}
+
+
+def local_rooms() -> list[str]:
+    """Data rooms that still have a folder with page text under data_room/."""
+    if not store.DATA_ROOM.exists():
+        return []
+    return sorted(p.name for p in store.DATA_ROOM.iterdir() if p.is_dir() and (p / "chunks.json").exists())
+
+
+def move_to_mongo(rooms: list[str] | None = None, with_pdfs: bool = False, keep_local: bool = False,
+                  verbose: bool = True) -> list[dict]:
+    """Writes each local room's page text (and PDFs, when asked) to the document store, reads it back,
+    and deletes the local folder only when the copy is verified. Returns one row per room:
+    {"room", "pages", "documents", "pdfs", "verified", "local_deleted", "problems"}."""
+    if not doc_store.enabled():
+        raise doc_store.StoreUnavailable("MONGO_URI is not set. Put the connection string in .env first.")
+    say = print if verbose else (lambda *a: None)
+    out = []
+    for room in rooms or local_rooms():
+        room = room.upper()
+        folder = store.DATA_ROOM / room
+        rows = store._read(folder / "chunks.json", []) or []
+        if not rows:
+            out.append({"room": room, "pages": 0, "documents": 0, "pdfs": 0, "verified": False, "local_deleted": False,
+                        "problems": [f"No page text found in {folder}."]})
+            say(f"{room}: no page text found in {folder}.")
+            continue
+        pdfs = sorted((folder / "documents").glob("*.pdf")) if with_pdfs and (folder / "documents").exists() else None
+        names = {m.group(1).upper(): p.name for p in sorted((folder / "documents").glob("*.pdf"))
+                 if (m := re.match(r"(DOC-\d+)", p.name, re.I))} if (folder / "documents").exists() else {}
+        try:
+            saved = doc_store.save_room(room, rows, pdfs, names)
+            check = doc_store.verify_room(room, rows, pdfs)
+        except doc_store.StoreUnavailable as e:
+            saved, check = {"pages": 0, "documents": 0, "pdfs": 0}, {"ok": False, "problems": [str(e)]}
+        deleted = False
+        if check["ok"] and not keep_local:
+            shutil.rmtree(folder)
+            deleted = True
+        out.append({"room": room, "pages": saved["pages"], "documents": saved["documents"], "pdfs": saved["pdfs"],
+                    "verified": check["ok"], "local_deleted": deleted, "problems": check["problems"]})
+        if check["ok"]:
+            say(f"{room}: {saved['pages']} pages of {saved['documents']} documents" + (f" and {saved['pdfs']} PDFs" if saved["pdfs"] else "")
+                + " stored and verified. " + ("The local folder was deleted." if deleted else "The local folder was kept."))
+        else:
+            say(f"{room}: not verified, so the local folder was kept.")
+            for p in check["problems"]:
+                say(f"  {p}")
+    return out
 
 
 def check_answer_key(room: str) -> dict:

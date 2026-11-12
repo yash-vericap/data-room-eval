@@ -3,9 +3,15 @@
 Input: the .xlsx download of the sheet (sheets "Ground Truth", "Documents", "Baseline Runs",
 "Baseline Findings"), or a JSON export with the same sheet names and one dict per row.
 
-Output:
-  answer_key/library_<snapshot>.json   the answer key, development and withheld cases together
+Optional tabs "Fact Sheet" and "Context Rules", and the optional Documents columns "Document date" and
+"Authority", are read too. The staging, the checks, the preview and the writing live in eval/library.py;
+this module keeps the workbook reader and the Ground Truth parser.
+
+Output (only after confirmation):
+  answer_key/library_draft.json        the working draft of the answer key
   answer_key/documents.json            the document list of every data room
+  answer_key/facts.json                the fact sheet
+  answer_key/context_rules.json        the context rules
   submissions/baseline/<run>.json      one contract file per baseline run
   reviews/decisions.json               the matches, evidence checks and reasoning scores made by hand
 """
@@ -18,10 +24,12 @@ from pathlib import Path
 from . import contract, store
 
 
-def read_workbook(path: str | Path) -> dict[str, list[dict]]:
-    path = Path(path)
-    if path.suffix.lower() == ".json":
-        return json.loads(path.read_text(encoding="utf-8"))
+def read_workbook(path) -> dict[str, list[dict]]:
+    """{tab: [one dict per row]} from an .xlsx path, an open .xlsx file, or a .json export."""
+    if not hasattr(path, "read"):
+        path = Path(path)
+        if path.suffix.lower() == ".json":
+            return json.loads(path.read_text(encoding="utf-8"))
     from openpyxl import load_workbook
     wb = load_workbook(path, data_only=True, read_only=True)
     out = {}
@@ -87,87 +95,33 @@ def build_cases(rows: list[dict]) -> list[dict]:
             "scenario_tags": _list(r.get("Scenario tags"), sep=";"),
             "snapshot": _s(r.get("Snapshot")) or "Library v1",
             "review_status": _s(r.get("Review status")),
+            "origin": _s(r.get("Last change")) if "found by run" in _s(r.get("Last change")).lower() else "",
         })
     return cases
 
 
-def run_import(path: str | Path, verbose: bool = True) -> dict:
-    wb = read_workbook(path)
-    summary = {}
-
-    cases = build_cases(wb.get("Ground Truth", []))
-    by_snapshot: dict[str, list[dict]] = {}
-    for c in cases:
-        by_snapshot.setdefault(c["snapshot"], []).append(c)
-    for snap, group in by_snapshot.items():
-        name = "library_" + re.sub(r"[^a-z0-9]+", "", snap.lower().replace("library", ""))
-        store._write(store.ANSWER_KEY / f"{name}.json", {"snapshot": snap, "cases": group})
-        summary[name] = len(group)
-
-    docs = [{
-        "data_room": _s(r.get("Data room")), "doc_id": _s(r.get("Document ID")), "title": _s(r.get("Title")),
-        "type": _s(r.get("Document type")), "role": _s(r.get("Role")), "status": _s(r.get("Status")),
-        "format": _s(r.get("Format")),
-    } for r in wb.get("Documents", []) if _s(r.get("Document ID"))]
-    if docs:
-        store._write(store.ANSWER_KEY / "documents.json", docs)
-        summary["documents"] = len(docs)
-
-    run_rows = {_s(r.get("Run ID")): r for r in wb.get("Baseline Runs", []) if _s(r.get("Run ID"))}
-    findings: dict[str, dict[str, dict]] = {}
-    reviews = store.load_reviews()
-    for r in wb.get("Baseline Findings", []):
-        rid, fid = _s(r.get("Run ID")), _s(r.get("Finding ID"))
-        if not rid or not fid:
-            continue
-        run_f = findings.setdefault(rid, {})
-        if fid not in run_f:                     # first row of a finding carries its content
-            run_f[fid] = {
-                "finding_id": fid, "classification": r.get("Classification"), "severity": r.get("Severity"),
-                "summary": _s(r.get("Summary")), "claims_compared": _s(r.get("Claims compared")),
-                "citations": [c["raw"] for c in contract.parse_citations(_s(r.get("Citations")))],
-                "explanation": _s(r.get("Explanation")), "confidence": r.get("Confidence"),
-            }
-        status = _s(r.get("Match status"))
-        if status:                               # a hand-made decision exists for this row
-            key = store.review_key(rid, fid)
-            case = _s(r.get("Matched case ID"))
-            rv = reviews.get(key) if reviews.get(key, {}).get("decided_by") == "sheet import" and key in _seen else None
-            if rv is None:
-                reasoning = r.get("Reasoning score")
-                rv = {"status": status, "case_ids": [], "evidence": _s(r.get("Evidence check")) or None,
-                      "reasoning": int(reasoning) if isinstance(reasoning, (int, float)) else None,
-                      "note": _s(r.get("Reviewer note")), "decided_by": "sheet import", "decided_at": None}
-                reviews[key] = rv
-                _seen.add(key)
-            if case and case not in rv["case_ids"]:
-                rv["case_ids"].append(case)
-    for rid, run_f in findings.items():
-        meta = run_rows.get(rid, {})
-        model = _s(meta.get("Model or version")) or rid
-        payload = {
-            "run": {
-                "run_id": rid, "data_room": _s(meta.get("Data room")) or next(iter(run_f)).split("-")[0],
-                "source": _s(meta.get("Source")) or "Baseline model", "system": _system_name(model), "model": model,
-                "version": _s(meta.get("Prompt version")), "run_number": meta.get("Run number"),
-                "started_at": _s(meta.get("Run date")) or None, "duration_minutes": meta.get("Time (minutes)"),
-                "input_tokens": meta.get("Input tokens"), "output_tokens": meta.get("Output tokens"),
-                "cost_usd": meta.get("Cost (USD)"), "access_route": _s(meta.get("Access route")) or None,
-                "snapshot": _s(meta.get("Snapshot")) or None, "format_repairs": meta.get("Format repairs"),
-                "notes": _s(meta.get("Notes")),
-            },
-            "findings": list(run_f.values()),
-        }
-        folder = "baseline" if payload["run"]["source"] == "Baseline model" else "system"
-        store.save_submission(payload, folder=folder, allow_problems=True)
-    store._write(store.REVIEWS, reviews)
-    summary["runs"] = len(findings)
-    summary["findings"] = sum(len(v) for v in findings.values())
-    summary["manual decisions"] = len(_seen)
-    if verbose:
-        for k, v in summary.items():
-            print(f"{k}: {v}")
-    return summary
-
-
-_seen: set[str] = set()
+def run_import(path: str | Path, verbose: bool = True, write: bool = False, note: str = "") -> dict:
+    """Shows what the sheet export would change and, with write=True, writes it. The parsing, the
+    checks and the writing are the same code the Upload evaluation sheet screen uses (eval/library.py)."""
+    from . import library
+    staged = library.stage(read_workbook(path))
+    problems, pv = library.validate(staged), library.preview(staged)
+    say = print if verbose else (lambda *a: None)
+    for t in pv["tabs"]:
+        say(f"{t['tab']}: {t['new']} new, {t['changed']} changed, {t['removed']} removed")
+    for c in pv["changes"].get("Ground Truth", {}).get("changed", []):
+        say(f"  {c['id']}: " + ", ".join(c["fields"]))
+    for w in problems["warnings"]:
+        say(f"warning: {w}")
+    for e in problems["errors"]:
+        say(f"error: {e}")
+    out = {"preview": pv, "errors": problems["errors"], "warnings": problems["warnings"], "written": False}
+    if problems["errors"]:
+        say("Nothing was written: fix the errors in the sheet first.")
+    elif not write:
+        say("Nothing was written. Run again with --yes to write these changes.")
+    else:
+        res = library.apply(staged, Path(str(path)).name, note)
+        out["written"] = True
+        say(f"Written. {res['logged']} change-log entries. Cases went to the working draft; freeze it to score against it.")
+    return out

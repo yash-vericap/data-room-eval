@@ -6,7 +6,27 @@ services:
       - "8501:8501"   # the app
       - "8000:8000"   # POST /runs for the discrepancy checker
     env_file: .env
+    environment:
+      # inside the compose network the database is reached by its service name, not localhost
+      MONGO_URI: mongodb://admin:secret@mongodb:27017/?authSource=admin
+    depends_on:
+      - mongodb
     volumes:
       - eval-data:/data
+
+  # Optional: page text (and PDFs) of the data rooms. Change the password before using this anywhere shared.
+  mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    volumes:
+      - mongo_data:/data/db
+
 volumes:
   eval-data:
+  mongo_data:

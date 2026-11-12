@@ -50,15 +50,54 @@ def _write(path: Path, obj) -> None:
 
 # ---- answer key -------------------------------------------------------------------------------
 
+DRAFT = "draft"
+
+
+def _path(name: str) -> Path:
+    return ANSWER_KEY / f"{name}.json"
+
+
 def snapshots() -> list[str]:
-    return sorted(p.stem for p in ANSWER_KEY.glob("library_*.json"))
+    """The frozen answer keys (library_v1, library_v2, ...), oldest first. The working draft is not one of them."""
+    names = [p.stem for p in ANSWER_KEY.glob("library_*.json") if re.fullmatch(r"library_v\d+", p.stem)]
+    return sorted(names, key=lambda n: int(n.split("_v")[1]))
+
+
+def has_draft() -> bool:
+    return _path("library_draft").exists()
+
+
+def resolve_snapshot(snapshot: str | None = None) -> str:
+    """The answer key a name stands for: 'draft' when asked for and present, otherwise a frozen snapshot
+    (the newest when none is named). With no frozen snapshot at all, the draft is used."""
+    names = snapshots()
+    if snapshot == DRAFT:
+        if has_draft():
+            return DRAFT
+        snapshot = None
+    if snapshot in names:
+        return snapshot
+    if names:
+        return names[-1]
+    if has_draft():
+        return DRAFT
+    raise FileNotFoundError(f"No answer key found in {ANSWER_KEY}. Run: python -m eval import-sheet <file>")
+
+
+def load_library(snapshot: str | None = None) -> dict:
+    name = resolve_snapshot(snapshot)
+    return _read(_path("library_draft" if name == DRAFT else name))
 
 
 def load_cases(snapshot: str | None = None) -> list[dict]:
-    names = snapshots()
-    if not names:
-        raise FileNotFoundError(f"No answer key found in {ANSWER_KEY}. Run: python -m eval import-sheet <file>")
-    return _read(ANSWER_KEY / f"{snapshot or names[-1]}.json")["cases"]
+    """The cases of one answer key: a frozen snapshot by name, 'draft' for the working draft, or the
+    newest frozen snapshot when nothing is named."""
+    return load_library(snapshot)["cases"]
+
+
+def snapshot_label(snapshot: str | None = None) -> str:
+    name = resolve_snapshot(snapshot)
+    return "Working draft" if name == DRAFT else "Library " + name.split("_")[1]
 
 
 def load_documents() -> dict[tuple[str, str], dict]:
@@ -128,9 +167,38 @@ def delete_review(run_id: str, finding_id: str) -> None:
 
 # ---- document text, for the "quote is real" check ----------------------------------------------
 
+_CHUNKS_PROBLEM: str | None = None
+
+
+def chunks_problem() -> str | None:
+    """Why page text could not be read from the document store on the last try, or None."""
+    return _CHUNKS_PROBLEM
+
+
 def load_chunks(data_room: str) -> dict[str, dict[int | None, str]]:
-    """{doc_id: {page: text}}. Reads data_room/<room>/chunks.json ([{doc_id, page, text}]) and any
-    DOC-xx.txt files (pages separated by a form feed). Empty when no text has been stored yet."""
+    """{doc_id: {page: text}} for one data room.
+
+    With MONGO_URI set, the text comes from the document store (eval/doc_store.py). A room that is not
+    in the store yet is read from the local folder. Without MONGO_URI everything is read locally. When
+    the store cannot be reached the answer is empty, so quote checks show "Not checked" and the rest of
+    the scoring still works; chunks_problem() says why."""
+    global _CHUNKS_PROBLEM
+    from . import doc_store
+    if doc_store.enabled():
+        try:
+            out = doc_store.load_chunks(data_room)
+            _CHUNKS_PROBLEM = None
+            if out:
+                return out
+        except doc_store.StoreUnavailable as e:
+            _CHUNKS_PROBLEM = str(e)
+            return {}
+    return load_local_chunks(data_room)
+
+
+def load_local_chunks(data_room: str) -> dict[str, dict[int | None, str]]:
+    """Reads data_room/<room>/chunks.json ([{doc_id, page, text}]) and any DOC-xx.txt files (pages
+    separated by a form feed). Empty when no text is stored locally."""
     out: dict[str, dict] = {}
     folder = DATA_ROOM / data_room
     for row in _read(folder / "chunks.json", []) or []:

@@ -22,6 +22,58 @@ python -m eval score
 The second command opens the app. The third scores every stored run in the terminal and writes
 `reports/report.md` and `reports/scores.csv`.
 
+## Checking a Vericap run (the first screen)
+
+`streamlit run app.py` opens on **Vericap run check**. It takes one run of our own system and answers five
+questions: how much of the ground truth it found, what it missed, what it found only partly, what it
+reported that the ground truth does not have, and how it ranks against the baselines.
+
+The flow:
+
+1. Pick the data room and, if you like, type a name for the run.
+2. Paste the JSON, upload the file, or open an earlier check.
+3. Press **Read the run**. The run does not have to follow the output contract. The tool finds the list
+   of findings wherever it sits in the JSON, reads each field under any of its common names, and says
+   what it could not read ("3 findings name no document"). Open "Every finding as read" to check it.
+4. Press **Run the check**. It makes one model call per ground-truth case, then one per finding that
+   maps to no case, then applies the rule gate.
+
+What each status means:
+
+| Status | Meaning |
+|---|---|
+| Found | A finding states the same problem with its essential facts. |
+| Partially found | A finding is about the problem but leaves out or gets wrong an essential part. |
+| Missed | No finding is about the problem. |
+| Not flagged, Labelled correctly | A known non-issue was left alone, or mentioned as explained. |
+| Wrongly flagged | A known non-issue was reported as a problem. |
+| Real issue, not in ground truth | The documents show the issue. The ground truth does not have it. |
+| Known change | The difference is a recorded change, or two forecasts that moved. |
+| Not a discrepancy | The passages exist but agree, or differ on basis, phase or unit. |
+| Not in documents | The figures or quotes are not in the pages. Invented or misread. |
+| Needs review | The model could not decide, or its verdict failed a safeguard. |
+
+The numbers:
+
+- **Accuracy** is points over possible points. A found case earns its weight (Critical 8, High 4,
+  Medium 2, Low 1). A partially found case earns half.
+- **Backed by documents** is the share of findings tied to a found or partially found case, plus
+  findings judged a real issue.
+- **Against the baselines** ranks the run with the same fixed rules used for every run, with no manual
+  decisions for our run. It can differ from the accuracy at the top, which comes from the model's verdicts.
+
+Other things to know:
+
+- **Manual verdicts.** Select a case in the coverage map and change its verdict with a reason. A manual
+  verdict always wins. "Go back to the model's verdict" removes it.
+- **Resuming.** Every verdict is saved the moment it exists. If the provider's limit stops the check,
+  press the button again later and it carries on. The same run with the same model reopens the same check.
+- **Downloads.** The report as Markdown and the full results as JSON.
+- **Keep this run with the other runs** stores it in `submissions/system/` so the other screens show it.
+- **Show baseline runs on the other screens** in the sidebar is off by default, so the other screens show
+  only our runs until you tick it.
+- **What was sent to the model** lists every document page that left the machine, and to which model.
+
 ## Sending a run to the tool
 
 A run is one JSON file in the output contract (see `examples/example_run.json`, or the
@@ -52,28 +104,233 @@ The HTTP reply holds the overall scores and the case-by-case results for the dev
 Withheld cases never leave the tool. Set the environment variable `EVAL_API_KEY` to require the
 same value in an `X-API-Key` header.
 
-## Keeping the answer key and baselines current
+## Keeping the answer key up to date
 
-The answer key and the baseline runs come from the evaluation sheet. After the sheet changes,
-download it as .xlsx and run:
+The Google Sheet stays the place where cases, facts, documents, rules and baseline runs are written.
+The tool loads its export and shows what will change before anything is written.
+
+**Uploading the sheet.** On the **Upload evaluation sheet** screen, upload the .xlsx export. The tool
+shows, per tab, how many rows are new, changed and removed, with before and after for every changed case
+and fact. Blocking errors (a duplicate ID, a label outside the lists, a citation to an unknown document, a
+quote in a new or changed row that is not in the document) switch off **Confirm**. Warnings do not. From
+the terminal:
 
 ```bash
 python -m eval import-sheet path/to/sheet.xlsx
 ```
 
-This rewrites `answer_key/`, `submissions/baseline/` and the sheet's manual decisions in
-`reviews/decisions.json`. The import reads the sheets "Ground Truth", "Documents", "Baseline Runs"
-and "Baseline Findings".
+```bash
+python -m eval import-sheet path/to/sheet.xlsx --yes
+```
+
+The first prints the preview. The second writes.
+
+**Tabs and columns.** The existing tabs are Ground Truth, Documents, Baseline Runs, Baseline Findings and
+Severity Weights. Two tabs are new and optional: **Fact Sheet** and **Context Rules**. Documents has two
+new optional columns: **Document date** and **Authority**. A tab that is missing leaves what is stored
+untouched. **Download the sheet template** gives an empty workbook with every tab and column.
+
+**Working draft and freezing.** Uploads and accepted candidates go to a working draft
+(`answer_key/library_draft.json`). Frozen snapshots (`library_v1.json`, `library_v2.json`) never change.
+Every screen scores against the snapshot chosen under **Answer key** in the sidebar; the newest frozen
+snapshot is the default. **Freeze as Library vN** (or `python -m eval freeze`) turns the draft into the
+next snapshot, with a copy of the facts and rules so an old score can be reproduced. From then on every
+stored run, baselines included, is scored against it.
+
+**Change log.** Every change to the answer key is written to `answer_key/changelog.json` with its reason
+and where it came from (the file name or the check). The Upload evaluation sheet screen shows it.
+
+**Candidate review.** When a check finds a real issue the ground truth does not have, it is a candidate.
+The screen shows the claim, the evidence from each document side by side with the quote check, an
+admission checklist, the three closest existing cases, and the model's case for and against. You then
+accept it as a case, accept it as a non-issue case, reject it, or decide later. A reason is required.
+Nothing enters the ground truth without that decision.
+
+- An accepted case goes to the pending rows (`answer_key/pending.json`) and into the working draft at
+  once. **Download pending rows** gives the rows in the exact Ground Truth columns to paste into the
+  sheet. An upload that contains the case ID clears the row.
+- A rejected finding is stored in `answer_key/rejected_candidates.json`. The same finding in a later
+  check is rejected automatically (rule C13).
+- "The ground truth is wrong here" on a case stores a correction request. The case changes only when
+  the corrected sheet is uploaded.
+
+**A run's own additions are reported apart.** Cases that came from a run keep their origin. The check
+shows the accuracy with them and without them, so a run never looks better only because its own findings
+were added to the answer key. No existing case is ever edited to turn a miss into a hit.
+
+## The rule bundle
+
+Some differences in a data room are known, not discrepancies. The rules say which. They are used three
+ways: the model is shown them with every call, a rule pre-check reads the fact sheet before the model is
+asked, and a rule gate decides afterwards what a reviewer needs to see.
+
+There are three types. **Reject**: a finding outside the ground truth that the rule excuses is rejected.
+**Flag**: the rule makes something a real issue, and such a finding is never rejected automatically.
+**Guide**: helps the model read the documents and decides nothing alone.
+
+| ID | Type | Rule |
+|---|---|---|
+| C1 | Reject | Documented change. A value changed through a dated document that records the change. Old and new are not a discrepancy. |
+| C2 | Flag | Stale value after a change. A later or current document still carries the old value. |
+| C3 | Flag | Unexplained change. Two current values and no document recording a change. |
+| C4 | Reject | Two forecasts. Estimates or targets that differ in documents of different dates. |
+| C5 | Reject | Forecast against actual. A forecast that differs from a later actual value. |
+| C6 | Flag | Two actuals. Two values stated as actual for the same event. |
+| C7 | Flag | Unexplained delay that matters. A late actual date that moves the credit year, a maturity or an installment, with no explanation. |
+| C8 | Reject | Signed against draft. The signed version governs. |
+| C9 | Reject | Different basis. Units, scope, gross against net, or phase. |
+| C10 | Guide | Authority. The more authoritative document is taken as correct when naming the stale one. |
+| C11 | Reject | Same event. "Launched" is not "placed in service" unless the fact sheet says so. |
+| C12 | Reject | Immaterial difference. Rounding, formatting, typing errors, or money within the larger of $1,000 and 0.5%. |
+| C13 | Reject | Decided before. The evaluator already rejected this finding in an earlier check. |
+| C14 | Reject | Evidence not found. No quote is in the documents and the judge found the claim is not in the pages. |
+| C15 | Reject | Out of scope. Advice and general risks, not a conflict or missing evidence. |
+
+C1 to C9, C11, C12 and C14 are critical. A critical rule cannot be switched off in the sheet without a
+reason in its Notes.
+
+**The rule gate.** Every finding that maps to no case goes through these checks in order:
+
+1. A Flag rule applies: never rejected. A candidate if the judge found a real issue, otherwise Needs review.
+2. It repeats a candidate rejected before: rejected (C13).
+3. None of its quotes is in the documents and the judge says not in documents: rejected (C14).
+4. The pre-check and the judge agree on a Reject rule: rejected under that rule.
+5. They disagree: Needs review, with both shown.
+6. A real issue below `EVAL_MIN_CANDIDATE_SEVERITY` (default Medium): rejected as not a major red flag (C12).
+7. Otherwise a real issue is a candidate, "cannot decide" is Needs review, and the rest is rejected.
+
+Every rejection names its rule and reason, and **Restore** on the screen moves it to Needs review.
+
+**Example 1, the price.** A credit purchase closed at $25. Later the rate moved and the price was reset
+to $20, recorded in a repricing letter. In the fact sheet, R-a is $25 (Signed) and R-b is $20 (Signed,
+supersedes R-a, change reason "rate reset", change source the letter).
+
+- A finding that compares the original agreement with the repricing letter is a known change (C1).
+- A finding that a deck dated after the reset still shows $25 is a real discrepancy (C2).
+- If the repricing letter is not in the data room, R-b has no change source, and the two prices are an
+  unexplained change (C3).
+
+**Example 2, the dates.** A legal document gives a placed in service date of 3 November 2024. Another
+gives 4 June 2025 with no reason for the delay.
+
+- Both are estimates or targets, in documents of different dates: two forecasts that moved (C4).
+- Both are stated as actual dates for the same event: a contradiction (C6).
+- The first is a forecast and the second is actual: not a contradiction (C5). But the event moved into
+  another year, which can move the credit year, so with no explanation it is missing evidence (C7).
+- The second document says "launched" and the fact sheet does not map that to placed in service: the
+  dates are not compared (C11).
+
+**Rules as test cases.** A case is a test case for a rule when its Scenario tags name the rule ID (for
+example `C1`). The **Rules and facts** screen shows, per rule and data room, how many test cases exist
+and where one is missing. Flagging a known change then counts against the run as Wrongly flagged.
+
+**Changing rules and facts.** Edit the Context Rules and Fact Sheet tabs in the sheet and upload it.
+Until a Context Rules tab is uploaded, the default rules above are used. The Fact Sheet columns are Fact
+ID, Data room, Subject, Scope, Value, Unit or basis, Value status (Actual, Signed, Approved, Estimate,
+Target, Projected, Draft, Superseded), As of, Source, Supersedes, Change reason, Change source and Notes.
+
+## Data security and storage
+
+**What leaves the machine.** A hosted model receives the page text sent to it over the internet. No
+setting changes that. What the tool guarantees:
+
+- The model gets no tools. No request carries tools, functions, MCP servers, web search, files or URLs.
+  Every request body is checked just before it is sent.
+- Requests go to one endpoint. The host is checked against `EVAL_ALLOWED_HOSTS`, which defaults to the
+  configured provider's host. Anything else is refused.
+- One task, one call. Each call holds the system prompt and one message with one case or one finding,
+  its pages and its context. No history, nothing carried between calls, temperature 0.
+- No made-up answers. Fixed answer formats, "cannot decide" always allowed, every case verdict must
+  quote a passage that is checked against what was shown, and finding IDs and rule IDs are checked
+  against the real lists. The model can never add a case or change a label.
+- An audit. Each check stores which document pages were sent, to which provider and model.
+- Page text, prompts and answers are never printed to the console or logs.
+
+**The data policy.** `EVAL_DATA_POLICY` is `strict` by default. Strict allows a model on this machine or
+a private network, and providers you name in `EVAL_TRUSTED_PROVIDERS`. A free tier, whose terms may keep
+or train on inputs, is refused unless you allow it on purpose. `open` allows every preset and shows a
+warning on every screen. To keep using GitHub Models, add one of these to `.env`:
+
+```bash
+EVAL_TRUSTED_PROVIDERS=github
+```
+
+```bash
+EVAL_DATA_POLICY=open
+```
+
+**Using a local model.** For documents that must never leave your machines, run a model locally, for
+example with Ollama, and set:
+
+```bash
+EVAL_JUDGE_PROVIDER=local
+EVAL_JUDGE_MODEL=the-model-name-your-server-runs
+```
+
+The default address is `http://localhost:11434/v1`; set `EVAL_JUDGE_BASE_URL` for another one.
+
+**Document storage in MongoDB.** The data room does not have to live in the repository. With `MONGO_URI`
+set, the page text is kept in MongoDB, and the PDFs too if you ask. Without it, everything is read from
+`data_room/` as before.
+
+Set it up one of two ways:
+
+- **The local container.** `docker-compose.yml` has a `mongodb` service with its own volume. Start it and
+  point the tool at it:
+
+  ```bash
+  docker compose up -d mongodb
+  ```
+
+  ```bash
+  MONGO_URI=mongodb://admin:secret@localhost:27017/?authSource=admin
+  ```
+
+  Change the password in `docker-compose.yml` before using it anywhere shared.
+- **MongoDB Atlas.** A free cluster (M0, 512 MB) is enough: the two current data rooms are about 12 MB of
+  PDFs and under 1 MB of text. Atlas keeps the text on MongoDB's cloud. Use the `mongodb+srv://` address,
+  and under the strict policy add the cluster's host to `EVAL_ALLOWED_HOSTS`, next to the model's host.
+
+`MONGO_DB` names the database (default `dataroom_eval`). A host that is not on this machine must use TLS.
+
+Move the rooms that are already in `data_room/`:
+
+```bash
+python -m eval move-to-mongo --with-pdfs
+```
+
+Each room is written, read back and compared page by page (and PDF by PDF). Only when that passes is its
+local folder deleted. Leave out `--with-pdfs` to store the text only, name rooms with `--rooms HTC01`, and
+add `--keep-local` to keep the folder. A failed check keeps the folder and says what failed.
+
+A new data room goes straight to MongoDB:
+
+```bash
+python -m eval add-data-room path/to/HTC03.zip
+```
+
+Set `EVAL_STORE_PDFS=1` to store its PDFs as well. `--keep-local` also writes the local copies.
+
+When MongoDB cannot be reached, every screen says so. Scoring that does not need page text still works,
+and quote checks show "Not checked" until it is back. The sidebar shows where the document text comes from.
 
 ## Folders
 
-- `answer_key/` the answer key (`library_v1.json`, development and withheld cases together) and the
-  document list. Stays with the evaluator.
+- `answer_key/` stays with the evaluator. It holds:
+  - `library_v1.json`, `library_v2.json`, ... the frozen answer keys (development and withheld cases together);
+  - `library_draft.json` the working draft;
+  - `documents.json` the document list, with document date and authority when the sheet gives them;
+  - `facts.json` the fact sheet and `context_rules.json` the rules, once uploaded;
+  - `pending.json` accepted candidates and correction requests not yet in the sheet;
+  - `rejected_candidates.json` findings the evaluator rejected;
+  - `changelog.json` every change to the answer key.
+- `reality_checks/` one file per Vericap run check, with every verdict and what was sent to the model.
 - `submissions/system/` runs of our system. `submissions/baseline/` runs of the baseline models.
 - `reviews/decisions.json` every manual decision: the case a finding belongs to, the evidence check,
   the reasoning score and the reason.
-- `data_room/<room>/` the PDFs and their text per page (`chunks.json`), used for the quote check
-  and shown to the judge.
+- `data_room/` is no longer kept in the repository once MongoDB is set up: the page text and PDFs live
+  there (see "Data security and storage"). Without `MONGO_URI`, `data_room/<room>/` holds the PDFs and
+  their text per page (`chunks.json`).
 - `judge/verdicts.json` every judge verdict.
 - `reports/` the written report and the score table.
 - `eval/` the scripts. `app.py` the Streamlit app. `tests/` the checks on the scoring.
@@ -124,10 +381,14 @@ Critical case found before is now missed.
 
 ## The LLM judge (approach B)
 
-The judge runs on GitHub Models: free GPT models with a GitHub account. Put the token in `.env`
-(copy `.env.example`) as `GITHUB_MODELS_TOKEN`. The default model is `openai/gpt-4.1-mini`; model
-names change, so set `EVAL_JUDGE_MODEL` to one GitHub Models lists today if the default is gone.
-No other provider is built in.
+The judge and the run check use the same model. Two set-ups are built in:
+
+- **A local model** (`EVAL_JUDGE_PROVIDER=local`), allowed under the strict data policy. See "Data
+  security and storage".
+- **GitHub Models**, free GPT models with a GitHub account. Put the token in `.env` as
+  `GITHUB_MODELS_TOKEN`. It is a free tier, so it must be allowed on purpose with
+  `EVAL_TRUSTED_PROVIDERS=github`. The default model is `openai/gpt-4.1-mini`; set `EVAL_JUDGE_MODEL`
+  to one GitHub Models lists today if the default is gone.
 
 ```bash
 python -m eval judge
@@ -204,14 +465,14 @@ python -m eval add-data-room path/to/HTC03_Project_Name.zip
    document, how many pages needed OCR and which could not be read.
 3. In the sheet, add the documents to "Documents" and the cases to "Ground Truth", with the data
    room ID in the "Data room" column and case IDs that start with it (`HTC03-001`).
-4. Download the sheet as .xlsx and run `python -m eval import-sheet path/to/sheet.xlsx`.
+4. Download the sheet as .xlsx and upload it on the Upload evaluation sheet screen, or run `python -m eval import-sheet path/to/sheet.xlsx --yes`.
 5. Run `python -m eval add-data-room` once more, or open "Method check": it lists every answer-key
    quote that is not found in the documents, which catches slips in the key before any run is scored.
 6. Send runs with `"data_room": "HTC03"`.
 
-Adding cases to an existing data room is steps 3 and 4 only. Freeze a new snapshot by changing the
-"Snapshot" column (for example "Library v2"); the tool then writes `answer_key/library_v2.json`
-and scores against the newest one.
+Adding cases to an existing data room is steps 3 and 4 only. The cases go to the working draft; freeze it
+on the Upload evaluation sheet screen (or `python -m eval freeze`) to write the next `library_vN.json`
+and score every run against it.
 
 ## Putting it on a server
 

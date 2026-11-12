@@ -73,7 +73,7 @@ def credentials_present() -> bool:
 
 def judge_label() -> str:
     cfg = settings()
-    return cfg["problem"] or f"{cfg['model']} via {cfg['provider']}" + (" (free tier)" if cfg["free"] else "")
+    return cfg["problem"] or f"{cfg['model']} via {cfg['provider']}" + (" (free tier)" if cfg["free"] else " (local)")
 
 
 def _client():
