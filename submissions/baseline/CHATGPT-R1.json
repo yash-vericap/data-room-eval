@@ -1,0 +1,253 @@
+{
+ "run": {
+  "run_id": "CHATGPT-R1",
+  "data_room": "HTC01",
+  "source": "Baseline model",
+  "system": "OpenAI ChatGPT",
+  "model": "OpenAI ChatGPT",
+  "version": "BP-v2",
+  "run_number": 2,
+  "started_at": "2026-05-07",
+  "duration_minutes": 15.0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "API",
+  "snapshot": null,
+  "format_repairs": 0,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "CHATGPT-R1-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "DOC-05 states a $5,120,000 federal credit, but 20% of its $24,600,000 QRE is $4,920,000, which DOC-06 and DOC-16 also state.",
+   "claims_compared": "DOC-05 says QRE of $24,600,000 at 20% produces a $5,120,000 federal credit; DOC-06 says total QRE of $24,600,000 produces a $4,920,000 federal credit; DOC-16 says about $4.9M in federal credits.",
+   "citations": [
+    "DOC-05 p.2, 2.1-2.3: 'Qualified rehabilitation expenses: 24,600 ($ in thousands)2.2 Federal historic tax credit rate: 20%2.3 Federal historic tax credit: $5,120,000'",
+    "DOC-06 p.3, 4-5: 'Total qualified rehabilitation expenditures: 24,600,000 ... Federal rehabilitation credit: 4,920,000'",
+    "DOC-16 p.1, 4: 'The cost certification shows approximately $24.6 million of qualified rehabilitation expenses, generating $4.9M in federal credits.'"
+   ],
+   "explanation": "20% x $24.6M = $4.92M, so $5.12M is arithmetically wrong and overstates the federal credit by $200,000; the CPA cost certification and investor memo align with $4.92M, so DOC-05 is unreliable.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "DOC-05 states federal equity pricing of $0.82 and equity of $4,505.6k, but that equity equals $0.88 x $5.12M, while DOC-11 sets the capital contribution at $4,329.6k at $0.88 x $4.92M.",
+   "claims_compared": "DOC-05 says federal equity price is 0.82 and federal investor equity is 4,505.6 ($000); DOC-11 says the Investor Member contributes $4,329,600 calculated on projected federal credits of $4,920,000 at 0.88 per credit dollar.",
+   "citations": [
+    "DOC-05 p.2, 2.4-2.5: 'Federal equity price per credit dollar: 0.82.5 Federal investor equity: 4,505.6 ($ in thousands)'",
+    "DOC-11 p.13, 4.1 and 4.1(a): 'The Investor Member shall contribute a total of $4,329,600 to the capital of the Company ... The capital contribution has been calculated on projected federal credits of $4,920,000 at 0.88 per credit dollar.'"
+   ],
+   "explanation": "At $0.82 x $5.12M equity would be $4,198.4k; $4,505.6k is $0.88 x $5.12M; DOC-11 signed agreement's $4,329.6k is $0.88 x $4.92M, so DOC-05 mixes the price and credit amount.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-R1-F03",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The signed Virginia credit purchase agreement prices credits at $0.82, while DOC-05, DOC-16 and DOC-13 use $0.85.",
+   "claims_compared": "DOC-12 signed says Buyer shall pay $0.82 per $1.00 of credit; DOC-05 says Virginia credit price is 0.85 and proceeds are 5,227.5 ($000); DOC-16 says Virginia credits sold at $0.85 per credit; DOC-13 unsigned draft says 0.85.",
+   "citations": [
+    "DOC-12 p.3, 2.1: 'Buyer shall pay $0.82 per $1.00 of credit for all Credits transferred at Closing.'",
+    "DOC-05 p.2, 2.6-2.7: 'Virginia credit price per credit dollar: 0.85 ... Virginia credit proceeds: 5,227.5 ($ in thousands)'",
+    "DOC-16 p.1, 3: 'Virginia credits sold at $0.85 per credit.'",
+    "DOC-13 p.3, 2.1: 'Buyer shall pay $0.85 per $1.00 of credit for all Credits transferred at Closing.'"
+   ],
+   "explanation": "The signed DOC-12 governs over the unsigned draft, model and memo; at $6.15M of credits, $0.82 yields $5.043M, not $5.2275M, and no signed amendment to $0.85 is in the data room.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "CHATGPT-R1-F04",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "DOC-15 says the building was placed in service on March 28 with the Phase 1 TCO, while DOC-06 and DOC-09 say July 15, 2025.",
+   "claims_compared": "DOC-15 says placed in service March 28 with Phase 1 TCO and work continues on floors 4 and 5; DOC-06 says placed in service July 15, 2025; DOC-09 lists placed in service 7/15/2025.",
+   "citations": [
+    "DOC-15 p.8: 'Building placed in service March 28 with the Phase 1 TCO. Residents have started moving in on floors 1 to 3. Work continues on floors 4 and 5.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025, being the date the completed rehabilitation was ready and available for its intended use.'",
+    "DOC-09 p.2, 14: 'Placed in service 7/15/2025'"
+   ],
+   "explanation": "The placed-in-service date fixes the tax year and starts the compliance period; the date cannot be both March 28 and July 15, and the update itself indicates partial occupancy while upper floors remained incomplete.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F05",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "DOC-16 says federal credits will be claimed on the 2024 return, but DOC-06 and DOC-09 place the building in service in 2025.",
+   "claims_compared": "DOC-16 says federal credits will be claimed on the 2024 return; DOC-06 and DOC-09 say placed in service July 15, 2025.",
+   "citations": [
+    "DOC-16 p.2, 5: 'Federal credits will be claimed on the 2024 return.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025'",
+    "DOC-09 p.2, 14: 'Placed in service 7/15/2025'"
+   ],
+   "explanation": "A credit for a building placed in service in 2025 cannot be claimed on the 2024 return; the investor memo conflicts with the cost certification and schedule.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F06",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "DOC-06 names Riverside Heritage Development LLC as taxpayer, but DOC-01 and DOC-11 identify Ashby Mill Owner LLC as owner and credit claimant.",
+   "claims_compared": "DOC-06 says taxpayer is Riverside Heritage Development LLC; DOC-01 says owner of record is Ashby Mill Owner LLC; DOC-11 says Ashby Mill Owner LLC intends to claim the federal historic tax credit.",
+   "citations": [
+    "DOC-06 p.1, 1: 'Taxpayer: Riverside Heritage Development LLC'",
+    "DOC-01 p.1, 1: 'Owner of record: Ashby Mill Owner LLC, a Virginia limited liability company.'",
+    "DOC-11 p.1, Preamble: 'This Operating Agreement of Ashby Mill Owner LLC ... intends to rehabilitate it and claim the federal historic rehabilitation tax credit.'"
+   ],
+   "explanation": "The federal historic tax credit is claimed by the owner of the building; naming the developer as taxpayer is inconsistent and could affect who may claim the credit.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "CHATGPT-R1-F07",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "DOC-14 quotes vinyl standard-profile windows with simulated grilles, while DOC-02 and DOC-07 require wood windows replicating original profiles and muntin patterns.",
+   "claims_compared": "DOC-14 says vinyl double-hung standard profile with simulated grilles; DOC-02 Condition 2 says replacement windows must replicate original wood profiles in material, dimensions and muntin pattern; DOC-07 says wood windows with true divided lites.",
+   "citations": [
+    "DOC-14 p.1: 'Item 1 - Vinyl double-hung, standard profile412' and 'Units are white vinyl with a standard sash profile and simulated grilles between the glass.'",
+    "DOC-02 p.3, Condition 2: 'Replacement windows must replicate the original wood profiles in material, dimensions and muntin pattern.'",
+    "DOC-07 p.6, 1: 'Wood windows replicating original profiles, with true divided lites matching the historic muntin pattern and profile.'"
+   ],
+   "explanation": "Vinyl standard-profile windows do not meet the approved Part 2 condition, and proceeding with them could jeopardize Part 3 certification.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F08",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "Condition 2 requires NPS approval of window shop drawings before installation, but the data room shows submission and later installation without an NPS approval letter.",
+   "claims_compared": "DOC-02 requires shop drawings to be submitted to and approved by NPS before installation; DOC-15 says shop drawings were sent to SHPO for NPS review in February; DOC-09 says windows floors 1 to 3 were installed 9/20/2024.",
+   "citations": [
+    "DOC-02 p.3, Condition 2: 'Shop drawings for replacement windows must be submitted to and approved by NPS before installation.'",
+    "DOC-15 p.2: 'Window shop drawings were sent to the SHPO for NPS review in February.'",
+    "DOC-09 p.1, 8: 'Windows floors 1 to 3 9/20/2024'"
+   ],
+   "explanation": "No NPS approval letter is in the data room; the update and schedule show submission and installation but do not verify the required pre-installation NPS approval.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "CHATGPT-R1-F09",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "DOC-04's hard cost subtotal of $22,540,000 does not equal the sum of its listed lines 3 through 21, which totals $22,140,000.",
+   "claims_compared": "DOC-04 line 22 says hard cost subtotal is $22,540,000; the listed line items 3 through 21 sum to $22,140,000.",
+   "citations": [
+    "DOC-04 p.2, 22: 'Hard cost subtotal $22,540,000'",
+    "DOC-04 p.2, 3-21: 'General conditions Yes $1,320,000 ... 21 Bonds and permits (contractor) Yes $190,000' (nineteen lines quoted in full in the reply)"
+   ],
+   "explanation": "The subtotal overstates hard costs by $400,000 and consequently overstates total qualified costs by $400,000; corrected total qualified costs would be $24,910,000, not $25,310,000.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F10",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The operating agreement caps the development fee at $2,500,000 without investor consent, but DOC-04 shows a $2,750,000 developer fee.",
+   "claims_compared": "DOC-11 says total development fee shall not exceed $2,500,000 without prior written consent; DOC-04 shows developer fee of $2,750,000.",
+   "citations": [
+    "DOC-11 p.18, Section 6.3: 'The total development fee shall not exceed $2,500,000 without the prior written consent of the Investor Member.'",
+    "DOC-04 p.2, 40: 'Developer fee (not included above) $2,750,000'"
+   ],
+   "explanation": "The budgeted fee exceeds the operating agreement cap by $250,000, and no investor consent to the higher fee is in the data room.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-R1-F11",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "DOC-11 states the recapture guaranty cap is $1,500,000 in one section and $1,000,000 in the guaranty provision.",
+   "claims_compared": "DOC-11 Section 7.4 says maximum recapture guaranty is $1,500,000; DOC-11 p.42 says total liability for recapture shall not exceed $1,000,000.",
+   "citations": [
+    "DOC-11 p.21, Section 7.4: 'The Guarantor shall indemnify the Investor Member for any recapture of federal credits ... up to a maximum of $1,500,000.'",
+    "DOC-11 p.42, 2: 'The total liability of the Guarantor for recapture under this Guaranty shall not exceed $1,000,000.'"
+   ],
+   "explanation": "The same guaranty cannot have both a $1.5M and a $1.0M cap; the conflict affects a material credit protection term.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-R1-F12",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "DOC-16 says no sale or transfer of any part of the property is planned during the credit period, but DOC-15 plans a sale of commercial unit C-1 in June 2026.",
+   "claims_compared": "DOC-16 says no sale or transfer planned during the credit period; DOC-15 says plan to sell commercial unit C-1 targeting June 30, 2026; DOC-11 restricts sales or transfers during the compliance period without investor consent.",
+   "citations": [
+    "DOC-16 p.2, 7: 'No sale or transfer of any part of the property is planned during the credit period.'",
+    "DOC-15 p.12: 'We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026.'",
+    "DOC-11 p.24, Section 8.2: 'No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent.'"
+   ],
+   "explanation": "A planned sale during the five-year compliance period contradicts the investor memo and requires investor consent; it could also raise recapture issues.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "CHATGPT-R1-F13",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The appraisal says 86 units of rental housing, while DOC-03 and DOC-07 say 84 apartments plus 2 commercial suites.",
+   "claims_compared": "DOC-10 says 86 units of rental housing with commercial space; DOC-03 says 84 apartments and 2 commercial suites; DOC-07 says 84 apartments and 2 commercial suites.",
+   "citations": [
+    "DOC-10 p.2, 1: 'Proposed improvements: 86 units of rental housing in a converted five-story mill, with commercial space on the ground floor.'",
+    "DOC-03 p.1, 2: 'The subject will contain 84 apartments and 2 commercial suites.'",
+    "DOC-07 p.1, 1: 'The project converts the former Ashby Mill into 84 apartments and 2 ground-floor commercial suites'"
+   ],
+   "explanation": "If 86 is residential units, it conflicts with 84 apartments; if 86 includes commercial suites, the appraisal wording is imprecise, but it is not credit-critical.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "CHATGPT-R1-F14",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The GC agreement is dated June 5, 2023 but includes drawings dated July 20, 2023 and the Part 2 approval dated August 22, 2023.",
+   "claims_compared": "DOC-08 says agreement entered June 5, 2023 and includes drawings dated July 20, 2023 and approved Part 2 application; DOC-02 approval is dated August 22, 2023.",
+   "citations": [
+    "DOC-08 p.1, 3-4: 'The Contract Documents include the drawings and specifications issued by Hollins and Reade Architects dated July 20, 2023, and the approved Part 2 application. ... This Agreement is entered into as of June 5, 2023.'",
+    "DOC-02 p.1: 'August 22, 2023'"
+   ],
+   "explanation": "A June 5 agreement cannot include July 20 drawings or an August 22 approval; the document is internally inconsistent or missing an amendment.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "CHATGPT-R1-F15",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "DOC-08's Notice to Proceed dated June 5, 2023 requires work to begin then, while DOC-09 says construction start was October 2, 2023.",
+   "claims_compared": "DOC-08 says Notice to Proceed dated June 5, 2023 and Contractor shall begin work on that date; DOC-09 says construction start 10/2/2023.",
+   "citations": [
+    "DOC-08 p.1, 1: 'Notice to Proceed dated June 5, 2023. The Contractor shall begin the work on the date stated in the Notice to Proceed.'",
+    "DOC-09 p.1, 3: 'Construction start 10/2/2023'"
+   ],
+   "explanation": "If work began June 5, construction predated the August 22 Part 2 approval and September 15 loan closing; the schedule instead says October 2, so the timing cannot both be true.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "CHATGPT-R1-F16",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "DOC-16 says Virginia DHR has issued final certification for the state credits, but no DHR certification is in the data room and DOC-12 still conditions closing on its delivery.",
+   "claims_compared": "DOC-16 says DHR has issued final certification; DOC-12 says closing occurs after DHR Certification and gives an outside date of April 30, 2026; no DHR certification document is in the data room.",
+   "citations": [
+    "DOC-16 p.2, 6: 'Virginia DHR has issued final certification for the state credits.'",
+    "DOC-12 p.6, Section 5.3: 'If the DHR certification is not delivered by April 30, 2026, Buyer may terminate this Agreement and receive a refund of the deposit.'"
+   ],
+   "explanation": "The state-credit existence and sale closing depend on DHR certification, but the claim rests only on the investor memo with no supporting DHR document.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "CHATGPT-R1-F17",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "DOC-15 says NPS approved Part 3 in October, but no Part 3 approval letter is in the data room and DOC-11 makes the third equity installment due on Part 3 approval.",
+   "claims_compared": "DOC-15 email says NPS approved Part 3 in October; DOC-11 says the third installment is due upon receipt of Part 3 approval; no Part 3 approval document is in the data room.",
+   "citations": [
+    "DOC-15 p.11: 'NPS approved Part 3 in October. We will send the paperwork once we have it in hand and request the third installment.'",
+    "DOC-11 p.14, Section 4.2(c): '$1,831,840 (being 40%) upon receipt of Part 3 approval from the National Park Service.'"
+   ],
+   "explanation": "The Part 3 approval and installment trigger rest only on an email; without the NPS approval letter, the claim cannot be verified from the data room.",
+   "confidence": 0.93
+  }
+ ]
+}

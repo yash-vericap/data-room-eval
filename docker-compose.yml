@@ -1,0 +1,12 @@
+services:
+  eval:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8501:8501"   # the app
+      - "8000:8000"   # POST /runs for the discrepancy checker
+    env_file: .env
+    volumes:
+      - eval-data:/data
+volumes:
+  eval-data:

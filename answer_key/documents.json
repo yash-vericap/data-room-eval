@@ -1,0 +1,353 @@
+[
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-01",
+  "title": "Part 1, Evaluation of Significance",
+  "type": "NPS approval",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-02",
+  "title": "Part 2, Description of Rehabilitation, with NPS conditional approval letter",
+  "type": "NPS approval",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-03",
+  "title": "Market and feasibility study",
+  "type": "Study",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-04",
+  "title": "Development budget with sources and uses",
+  "type": "Budget",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-05",
+  "title": "Financial model summary",
+  "type": "Financial model",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-06",
+  "title": "Cost certification",
+  "type": "Cost certification",
+  "role": "Source",
+  "status": "Unsigned draft",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-07",
+  "title": "Architect's scope of work and specifications",
+  "type": "Specification",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-08",
+  "title": "General contractor agreement excerpt with change orders",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-09",
+  "title": "Construction schedule",
+  "type": "Schedule",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-10",
+  "title": "Appraisal excerpt",
+  "type": "Appraisal",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-11",
+  "title": "Operating agreement excerpt with guaranty exhibit",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-12",
+  "title": "Virginia state credit purchase agreement",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-13",
+  "title": "Virginia state credit purchase agreement, revised draft",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Unsigned draft",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-14",
+  "title": "Window replacement quotation",
+  "type": "Quotation",
+  "role": "Source",
+  "status": "Estimate",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-15",
+  "title": "Monthly developer updates and emails",
+  "type": "Correspondence",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC01",
+  "doc_id": "DOC-16",
+  "title": "Investor summary memo",
+  "type": "Memo",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-01",
+  "title": "Part 1 - Evaluation of Significance",
+  "type": "Approval",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-02",
+  "title": "Part 2 - Decision and Description of Rehabilitation",
+  "type": "Approval",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-03",
+  "title": "Residential Market Study",
+  "type": "Study",
+  "role": "Source",
+  "status": "Estimate",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-04",
+  "title": "Investor Presentation v3",
+  "type": "Presentation",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Slides"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-05",
+  "title": "Investor Presentation v4 (revised per investor comments)",
+  "type": "Presentation",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Slides"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-06",
+  "title": "Investor Diligence Comments",
+  "type": "Letter",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-07",
+  "title": "Developer Response to Comments",
+  "type": "Letter",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-08",
+  "title": "Tax Counsel Memorandum",
+  "type": "Legal memo",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-09",
+  "title": "Financial Model Summary v7_FINAL",
+  "type": "Financial model",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-10",
+  "title": "Development Budget Revision 4",
+  "type": "Budget",
+  "role": "Source",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-11",
+  "title": "Amended and Restated Operating Agreement (Master Tenant)",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-12",
+  "title": "Master Lease",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-13",
+  "title": "Construction Loan Agreement and First Amendment",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-14",
+  "title": "GC Agreement (AIA A102)",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-15",
+  "title": "Architect Phased Rehabilitation Plan",
+  "type": "Certificate",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-16",
+  "title": "Cost Certification (draft)",
+  "type": "Cost certification",
+  "role": "Source",
+  "status": "Unsigned draft",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-17",
+  "title": "Virginia Credit Purchase Agreement",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-18",
+  "title": "Change Directive CD-04 (masonry subcontract)",
+  "type": "Change order",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-19",
+  "title": "Developer Reports and Emails",
+  "type": "Correspondence",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-20",
+  "title": "Closing Checklist (annotated)",
+  "type": "Checklist",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-21",
+  "title": "Appraisal Excerpt",
+  "type": "Appraisal",
+  "role": "Source",
+  "status": "Final",
+  "format": "Scanned"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-22",
+  "title": "Property Management Agreement",
+  "type": "Contract",
+  "role": "Source",
+  "status": "Signed",
+  "format": "Clean"
+ },
+ {
+  "data_room": "HTC02",
+  "doc_id": "DOC-23",
+  "title": "Project Snapshot for State Buyer",
+  "type": "Memo",
+  "role": "Summary",
+  "status": "Final",
+  "format": "Clean"
+ }
+]

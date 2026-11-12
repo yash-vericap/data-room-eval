@@ -1,0 +1,308 @@
+{
+ "run": {
+  "run_id": "DEEPSEEK-R1",
+  "data_room": "HTC01",
+  "source": "Baseline model",
+  "system": "DeepSeek-V3.2",
+  "model": "DeepSeek-V3.2",
+  "version": "BP-v2",
+  "run_number": 1,
+  "started_at": "2026-11-11",
+  "duration_minutes": 2.0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "API",
+  "snapshot": null,
+  "format_repairs": 0,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "DEEPSEEK-R1-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Cost certification names Riverside Heritage Development LLC as taxpayer while the owner and operating company is Ashby Mill Owner LLC.",
+   "claims_compared": "DOC-06 says taxpayer is Riverside Heritage Development LLC; DOC-01 says owner of record is Ashby Mill Owner LLC; DOC-11 says the Company owns the Building.",
+   "citations": [
+    "DOC-06 p.1, 1: 'Taxpayer: Riverside Heritage Development LLC'",
+    "DOC-01 p.1, 1: 'Owner of record: Ashby Mill Owner LLC, a Virginia limited liability company.'",
+    "DOC-11 p.2, Section 2.1: 'The Company is organized as a Virginia limited liability company to acquire, rehabilitate, own and operate the Building.'"
+   ],
+   "explanation": "The HTC claimant must be the owner or tax owner; a cost certification in a different taxpayer's name is a critical party mismatch. Signed ownership and operating documents govern over the draft cost certification.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Approved Part 2 requires wood replacement windows matching original profiles, but the window quotation is for vinyl units with simulated grilles.",
+   "claims_compared": "DOC-02 requires wood profiles and true historic muntin pattern; DOC-14 quotes vinyl double-hung units with simulated grilles between the glass.",
+   "citations": [
+    "DOC-02 p.3, Condition 2: 'Replacement windows must replicate the original wood profiles in material, dimensions and muntin pattern.'",
+    "DOC-02 p.5, Item 4: 'Sash too deteriorated to repair will be replaced with wood units replicating original profiles'",
+    "DOC-14 p.1: 'Item 1 - Vinyl double-hung, standard profile' and 'simulated grilles between the glass'"
+   ],
+   "explanation": "Vinyl windows with simulated grilles do not meet the approved Condition 2 material and muntin requirements and could jeopardize Part 3 certification. The approved Part 2 application governs.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F03",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "No evidence shows NPS approved the window shop drawings before installation; the update only says drawings were sent to SHPO for NPS review.",
+   "claims_compared": "DOC-02 requires NPS approval before installation; DOC-15 says drawings were sent for review; DOC-09 shows windows installed later.",
+   "citations": [
+    "DOC-02 p.3, Condition 2: 'Shop drawings for replacement windows must be submitted to and approved by NPS before installation.'",
+    "DOC-15 p.2, Mar 2024: 'Window shop drawings were sent to the SHPO for NPS review in February.'",
+    "DOC-09 p.1, 8: 'Windows floors 1 to 3 9/20/2024'"
+   ],
+   "explanation": "Sending shop drawings for review is not evidence of NPS approval, and no approval letter is in the data room. This is an unverified approval condition.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F04",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Placed-in-service date is March 28 in a developer update but July 15 in the cost certification and construction schedule.",
+   "claims_compared": "DOC-15 says the building was placed in service March 28 with the Phase 1 TCO; DOC-06 and DOC-09 say July 15, 2025.",
+   "citations": [
+    "DOC-15 p.8: 'Building placed in service March 28 with the Phase 1 TCO.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025'",
+    "DOC-09 p.2, 14: 'Placed in service 7/15/2025'"
+   ],
+   "explanation": "The final cost certification and schedule govern over the update, but the update creates a critical date conflict because placed-in-service date controls the credit year.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F05",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Investor memo says federal credits will be claimed on the 2024 return, but the building was placed in service July 15, 2025.",
+   "claims_compared": "DOC-16 says 2024 return; DOC-06 and DOC-09 say placed in service in 2025.",
+   "citations": [
+    "DOC-16 p.2, 5: 'Federal credits will be claimed on the 2024 return.'",
+    "DOC-06 p.1, 2: 'placed in service on July 15, 2025'",
+    "DOC-09 p.2, 14: 'Placed in service 7/15/2025'"
+   ],
+   "explanation": "A federal rehabilitation credit cannot be claimed on a return for a year before the building is placed in service. The final cost certification and schedule govern over the memo.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F06",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Federal HTC and equity figures in the financial model are arithmetically inconsistent and conflict with the final cost certification and operating agreement.",
+   "claims_compared": "DOC-05 says QRE 24.6M, 20% rate, federal HTC 5.12M, and federal equity 4.5056M; DOC-06 says federal credit 4.92M; DOC-04 and DOC-11 say federal equity 4.3296M.",
+   "citations": [
+    "DOC-05 p.2, 2.1-2.5: 'Qualified rehabilitation expenses: 24,600'; 'Federal historic tax credit rate: 20%'; 'Federal historic tax credit: $5,120,000'; 'Federal equity price per credit dollar: 0.82'; 'Federal investor equity: 4,505.6'",
+    "DOC-06 p.3, 4-5: 'Total qualified rehabilitation expenditures: 24,600,000'; 'Federal rehabilitation credit: 4,920,000'",
+    "DOC-04 p.1, Source 4: 'Federal historic tax credit equity $4,329,600'",
+    "DOC-11 p.13, 4.1(a): 'projected federal credits of $4,920,000 at 0.88 per credit dollar'"
+   ],
+   "explanation": "24.6M times 20% equals 4.92M, not 5.12M; 4.92M times 0.88 equals 4.3296M. The final cost certification and signed operating agreement govern over the model.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F07",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Signed Virginia credit purchase agreement prices credits at $0.82, but the model, memo, email and draft use $0.85.",
+   "claims_compared": "DOC-12 says $0.82; DOC-13 draft and DOC-05, DOC-16 and DOC-15 use $0.85.",
+   "citations": [
+    "DOC-12 p.3, 2.1: 'Buyer shall pay $0.82 per $1.00 of credit'",
+    "DOC-13 p.3, 2.1: 'Buyer shall pay $0.85 per $1.00 of credit'",
+    "DOC-05 p.2, 2.6-2.7: 'Virginia credit price per credit dollar: 0.85'; 'Virginia credit proceeds: 5,227.5'",
+    "DOC-16 p.1, 3: 'Virginia credits sold at $0.85 per credit'",
+    "DOC-15 p.6, Mar 4 2025: 'pricing came in at 85 cents'"
+   ],
+   "explanation": "The signed purchase agreement governs over the unsigned draft and later emails/memos unless an amendment is documented. The higher price overstates expected Virginia proceeds.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F08",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Budget shows a $600,000 funding gap, but the investor memo says the project is fully funded.",
+   "claims_compared": "DOC-04 total uses exceed total sources by $600,000; DOC-16 says all sources are committed and the project is fully funded.",
+   "citations": [
+    "DOC-04 p.1, 12-25: 'Total sources $31,150,000'; 'Total uses $31,750,000'; 'Gap ($600,000)'",
+    "DOC-16 p.1, 2: 'The project is fully funded, with all sources committed and construction complete.'"
+   ],
+   "explanation": "The budget and memo cannot both be true absent an additional source, and no additional source is documented. The budget is the detailed source and shows a gap.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F09",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Budget developer fee of $2.75M exceeds the operating agreement cap of $2.5M without documented investor consent.",
+   "claims_compared": "DOC-04 includes a $2,750,000 developer fee; DOC-11 caps the total development fee at $2,500,000 without prior written consent.",
+   "citations": [
+    "DOC-04 p.1, 22: 'Developer fee $2,750,000'",
+    "DOC-11 p.18, 6.3: 'The total development fee shall not exceed $2,500,000 without the prior written consent of the Investor Member.'"
+   ],
+   "explanation": "No consent document is in the data room. The operating agreement is a signed legal document and governs the fee cap.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F10",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Operating agreement installment amounts sum to $4,429,600, not the stated $4,329,600; the 40% installment is misstated.",
+   "claims_compared": "DOC-11 states total capital contribution of $4,329,600; the four installment amounts add to $4,429,600.",
+   "citations": [
+    "DOC-11 p.13, 4.1: 'Investor Member shall contribute a total of $4,329,600'",
+    "DOC-11 p.14, 4.2(a)-(d): '$865,920'; '$1,298,880'; '$1,831,840'; '$432,960'"
+   ],
+   "explanation": "40% of $4,329,600 is $1,731,840, not $1,831,840. The installment table overstates the total by $100,000.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F11",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The recapture guaranty cap is stated as $1.5M and $1.0M in the same operating agreement.",
+   "claims_compared": "DOC-11 p.21 says maximum $1,500,000; DOC-11 p.42 says maximum $1,000,000.",
+   "citations": [
+    "DOC-11 p.21, 7.4: 'up to a maximum of $1,500,000'",
+    "DOC-11 p.42, 2: 'shall not exceed $1,000,000'"
+   ],
+   "explanation": "The document contains two different legal caps for the same guaranty. The later or more specific provision would need clarification.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F12",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Developer plans to sell commercial unit C-1 during the compliance period, while the investor memo says no sale is planned and the operating agreement restricts transfers without consent.",
+   "claims_compared": "DOC-15 plans a sale of C-1 in June 2026; DOC-16 says no sale or transfer is planned during the credit period; DOC-11 prohibits sale of any unit during the compliance period without investor consent.",
+   "citations": [
+    "DOC-15 p.12: 'We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026.'",
+    "DOC-16 p.2, 7: 'No sale or transfer of any part of the property is planned during the credit period.'",
+    "DOC-11 p.24, 8.2: 'No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent'"
+   ],
+   "explanation": "A sale during the five-year compliance period can create recapture risk and conflicts with the operating agreement absent investor consent. No consent is documented.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F13",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Equity bridge loan matures March 31, 2026, but its stated repayment source is installment 3 received June 30, 2026.",
+   "claims_compared": "DOC-04 says bridge matures 3/31/2026 and is repaid from federal equity installment 3; DOC-05 says installment 3 is received 6/30/2026.",
+   "citations": [
+    "DOC-04 p.1, 9-10: 'Equity bridge loan $1,700,000, matures 3/31/2026'; 'Interim only; repaid from federal equity installment 3'",
+    "DOC-05 p.4, 4.3: 'Installment 3 received June 30, 2026'"
+   ],
+   "explanation": "The repayment source arrives three months after maturity, creating a liquidity gap unless the bridge is extended, which is not documented.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F14",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "GC agreement dated June 5, 2023 incorporates drawings dated July 20, 2023 and the Part 2 approval dated August 22, 2023.",
+   "claims_compared": "DOC-08 is entered June 5, 2023 but lists later drawings and the approved Part 2 application as contract documents; DOC-02 approval is dated August 22, 2023.",
+   "citations": [
+    "DOC-08 p.1, 3-4: 'Contract Documents include the drawings and specifications issued by Hollins and Reade Architects dated July 20, 2023, and the approved Part 2 application.'; 'This Agreement is entered into as of June 5, 2023.'",
+    "DOC-02 p.1: 'August 22, 2023'"
+   ],
+   "explanation": "A June 5 agreement cannot incorporate documents created or approved later without an amendment. The date conflict affects contract enforceability and approval sequencing.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F15",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "GC Notice to Proceed is dated June 5, 2023, but the construction schedule says construction started October 2, 2023.",
+   "claims_compared": "DOC-08 says contractor shall begin work on the NTP date of June 5, 2023; DOC-09 says construction start was 10/2/2023.",
+   "citations": [
+    "DOC-08 p.1, 1: 'Notice to Proceed dated June 5, 2023.'",
+    "DOC-09 p.1, 3: 'Construction start 10/2/2023'"
+   ],
+   "explanation": "If the NTP fixed the start date, the actual start was delayed by about four months; no change order or extension is documented.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F16",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Project documents say 84 apartments, but the appraisal says 86 rental units.",
+   "claims_compared": "DOC-07 and DOC-03 say 84 apartments; DOC-10 says 86 units of rental housing.",
+   "citations": [
+    "DOC-07 p.1, 1: 'converts the former Ashby Mill into 84 apartments'",
+    "DOC-03 p.1, 2: '84 apartments and 2 commercial suites'",
+    "DOC-10 p.2, 1: '86 units of rental housing'"
+   ],
+   "explanation": "The unit count mismatch affects appraisal, rent roll and underwriting assumptions. The architect and market study agree on 84; the appraisal is inconsistent.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F17",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Market study assumes absorption of 7 units per month, but the financial model assumes 12 units per month.",
+   "claims_compared": "DOC-03 projects 7 units per month; DOC-05 assumes 12 units per month.",
+   "citations": [
+    "DOC-03 p.8, 4: 'We project an absorption pace of 7 units per month'",
+    "DOC-05 p.3, 3.2: 'Lease-up assumption: 12 units per month from the first unit delivered.'"
+   ],
+   "explanation": "The two assumptions produce very different lease-up and stabilization timing. The market study is the demand source; the model assumption is inconsistent.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F18",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Model assumes Virginia credit proceeds on July 31, 2026, but the signed agreement requires closing within 30 days after DHR certification and has an April 30, 2026 outside date.",
+   "claims_compared": "DOC-05 assumes proceeds July 31, 2026; DOC-12 requires closing within 30 days after DHR certification and allows termination if certification is not delivered by April 30, 2026.",
+   "citations": [
+    "DOC-05 p.4, 4.4: 'Virginia credit proceeds received July 31, 2026'",
+    "DOC-12 p.5, 5.1: 'Closing shall take place within thirty days after Seller delivers the DHR Certification'",
+    "DOC-12 p.6, 5.3: 'If the DHR certification is not delivered by April 30, 2026, Buyer may terminate'"
+   ],
+   "explanation": "A July 31 closing is after the outside date and more than 30 days after a timely DHR certification. The timing conflict needs clarification.",
+   "confidence": 0.8
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F19",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "NPS Part 3 approval is supported only by an email; no NPS approval letter is in the data room.",
+   "claims_compared": "DOC-15 email says NPS approved Part 3 in October; DOC-09 says Part 3 was submitted 9/30/2025, but no approval document is included.",
+   "citations": [
+    "DOC-15 p.11: 'NPS approved Part 3 in October.'",
+    "DOC-09 p.2, 16: 'Part 3 submitted 9/30/2025'"
+   ],
+   "explanation": "Part 3 approval is critical to credit certification, and an email is not an approval letter. The data room lacks the authoritative NPS decision.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F20",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "summary": "Budget labels parking lot and FF&E as qualified costs, while the final cost certification excludes parking and furniture.",
+   "claims_compared": "DOC-04 marks parking lot and FF&E as qualified costs; DOC-06 excludes parking and furniture from QRE.",
+   "citations": [
+    "DOC-04 p.2, 31-34: 'Parking lot Yes $420,000'; 'Furniture, fixtures and equipment Yes $290,000'",
+    "DOC-06 p.3, 1: 'Costs for acquisition, land, site work outside the building, parking and furniture are excluded.'"
+   ],
+   "explanation": "The $710,000 difference explains why budget qualified costs of $25.31M exceed final QRE of $24.6M. The final cost certification governs, so this is an estimate-stage classification issue.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "DEEPSEEK-R1-F21",
+   "classification": "Contextual difference",
+   "severity": "Low",
+   "summary": "Market study spells the county name as Pittsburgh in one place and Pittsylvania in another.",
+   "claims_compared": "DOC-03 p.2 says Pittsburgh County; DOC-03 p.23 says Pittsylvania County.",
+   "citations": [
+    "DOC-03 p.2, 4: 'Pittsburgh County'",
+    "DOC-03 p.23, 65: 'Pittsylvania County'"
+   ],
+   "explanation": "This is a typographical county-name inconsistency with no money or eligibility impact.",
+   "confidence": 0.99
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+{
+ "run": {
+  "run_id": "CHATGPT-HTC02-R1",
+  "data_room": "HTC02",
+  "source": "Baseline model",
+  "system": "ChatGPT (GPT-5)",
+  "model": "ChatGPT (GPT-5)",
+  "version": "BP-v3",
+  "run_number": 1,
+  "started_at": "2026-11-11",
+  "duration_minutes": null,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "Chat app",
+  "snapshot": null,
+  "format_repairs": 1,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "QRE and derivative federal credit are shown at $39.8M/$7.96M in several documents although the corrected QRE base is $36.45M and federal credit $7.29M.",
+   "claims_compared": "DOC-04 p.6 says Qualified rehabilitation expenditures: $39.8M; DOC-05 p.7 says Qualified rehabilitation expenditures (revised): $36.45M; DOC-11 p.66 says Projected QRE $39,800,000 and Projected Federal Credits $7,960,000; DOC-17 p.26 says Total $39,800,000.",
+   "citations": [
+    "DOC-04 p.6: 'Qualified rehabilitation expenditures: $39.8M'",
+    "DOC-05 p.7: '(revised): $36.45M'",
+    "DOC-05 p.15: 'Qualified rehabilitation expenditures $39,800,000 Federal credit $7,960,000'",
+    "DOC-11 p.66: 'Projected QRE (sum of (a) through (d)) $39,800,000 Projected Federal Credits ... $7,960,000'",
+    "DOC-17 p.26: 'Total $39,800,000'",
+    "DOC-23 p.2: 'Qualified rehabilitation expenditures: $39.8M.'",
+    "DOC-06 p.2",
+    "DOC-10 p.2: '$36,450,000'",
+    "DOC-16 p.3",
+    "DOC-19 p.9: 'Some of the decks and exhibits still carry the $39.8M'"
+   ],
+   "explanation": "The signed VA purchase agreement and the OA Exhibit B still carry the old base that includes Building C and the parking deck, which Part 1 and tax counsel exclude; the corrected base governs and derivative credit amounts should be recomputed.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Part 2 approval is described as unconditional although the NPS decision is expressly approved with conditions.",
+   "claims_compared": "DOC-02 p.1 says NPS - APPROVED WITH CONDITIONS; DOC-05 p.14 says NPS Part 2 approved August 2023 - no conditions; DOC-23 p.1 says NPS Part 2 approved without conditions.",
+   "citations": [
+    "DOC-02 p.1: 'NPS - APPROVED WITH CONDITIONS August 14, 2023 Conditions: page 4'",
+    "DOC-05 p.14: 'NPS Part 2 approved August 2023 - no conditions'",
+    "DOC-23 p.1: 'NPS Part 2 approved without conditions.'"
+   ],
+   "explanation": "The NPS decision governs over investor summaries; Conditions 1 and 2 impose retain/repair and light-court/amendment requirements, so the 'no conditions' statements are incorrect.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F03",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Offering materials still describe a Section 6418 sale of the federal credit, which tax counsel says is unavailable for Section 47 credits.",
+   "claims_compared": "DOC-04 p.9 says monetized via IRC Section 6418 transfer; DOC-05 p.12 says transfer under IRC Section 6418; DOC-23 p.1 says to be sold under IRC Section 6418; DOC-06 p.2 and DOC-08 p.5 say Section 47 credits are not eligible for Section 6418 transfer.",
+   "citations": [
+    "DOC-04 p.9: 'monetized via IRC Section 6418 transfer at $0.91'",
+    "DOC-05 p.12: 'transfer under IRC Section 6418 to a corporate buyer'",
+    "DOC-23 p.1: 'to be sold under IRC Section 6418.'",
+    "DOC-06 p.2: 'Credits under Section 47 are not among the credits eligible for transfer under that section.'",
+    "DOC-08 p.5: 'cannot be transferred by election to an unrelated purchaser'"
+   ],
+   "explanation": "Tax counsel and the signed master lease/OA pass-through structure govern; offering and state-buyer materials describing a Section 6418 sale should be withdrawn and replaced with the lease pass-through description.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F04",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Investor deck calls Building C a certified historic building although Part 1 and Part 2 treat it as non-contributing and outside the certification.",
+   "claims_compared": "DOC-05 p.4 says 128 apartments across three certified historic buildings (Buildings A, B and C); DOC-01 p.3 says Building C is not a certified historic structure; DOC-02 p.2 says Building C is not included in the work reviewed.",
+   "citations": [
+    "DOC-05 p.4: 'three certified historic buildings (Buildings A, B and C)'",
+    "DOC-01 p.3: 'Building C is not a certified historic structure within the meaning of 36 CFR 67.2'",
+    "DOC-02 p.2: 'Building C, determined non-contributing in Part 1, is not included in the work reviewed'"
+   ],
+   "explanation": "Part 1 and Part 2 govern and exclude Building C from certified historic status and from the reviewed rehabilitation; describing it as certified can misstate the eligible credit base.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F05",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Unit count is 128 in some current documents and 134 in others, and the Part 2-required amendment reflecting the reduced count is not in the data room.",
+   "claims_compared": "DOC-05 p.4 says 128 apartments; DOC-05 p.18 says Unit mix: 134 units; DOC-23 p.1 says 134 lofts; DOC-02 p.4 requires an amendment with revised floor plans reflecting the reduction; DOC-22 p.3 says 128 dwelling units.",
+   "citations": [
+    "DOC-05 p.4: '128 apartments'",
+    "DOC-05 p.18: 'Unit mix: 134 units'",
+    "DOC-23 p.1: '134 lofts'",
+    "DOC-02 p.4: 'The applicant shall submit, as an amendment to this application, revised floor plans reflecting the resulting reduction in the number of dwelling units.'",
+    "DOC-22 p.3: '(128) dwelling units'",
+    "DOC-06 p.4"
+   ],
+   "explanation": "Condition 2 of Part 2 requires an amendment reflecting the reduced unit count; the data room does not contain that amendment, and the 134-unit statements conflict with the 128-unit current documents.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F06",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Signed Virginia credit purchase agreement uses $9,950,000 of estimated credits based on a $39.8M eligible-expense schedule that includes Building C and parking.",
+   "claims_compared": "DOC-17 p.3 says Estimated Credits are $9,950,000; DOC-17 p.26 lists Building C and site and parking in a $39,800,000 total; DOC-10 p.2 and DOC-06 p.2 set corrected QRE at $36,450,000.",
+   "citations": [
+    "DOC-17 p.3: 'twenty-five percent (25%) of the Eligible Rehabilitation Expenses set forth in Appendix 2, which the parties acknowledge to be ... ($9,950,000).'",
+    "DOC-17 p.26: 'Building C $2,750,000 Site and parking $600,000 Total $39,800,000'",
+    "DOC-10 p.2: '$36,450,000'",
+    "DOC-06 p.2"
+   ],
+   "explanation": "Twenty-five percent of the corrected $36,450,000 base is $9,112,500, not $9,950,000; the signed VA agreement and Appendix 2 overstate the state credit because they include non-QRE Building C and parking.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F07",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Virginia credit price is $0.84 in investor materials but $0.80 in the signed purchase agreement.",
+   "claims_compared": "DOC-05 p.13 says Virginia HTC sold at $0.84 per credit; DOC-23 p.1 says Virginia HTC $9.95M at $0.84; DOC-17 p.5 says Buyer shall pay eighty cents ($0.80); DOC-09 p.4 uses 0.80.",
+   "citations": [
+    "DOC-05 p.13: 'Virginia HTC sold at $0.84 per credit'",
+    "DOC-23 p.1: '$9.95M at $0.84.'",
+    "DOC-17 p.5: 'Buyer shall pay eighty cents ($0.80)'",
+    "DOC-09 p.4: '0.80 7,290.0'"
+   ],
+   "explanation": "The signed September 10, 2024 purchase agreement governs over earlier investor materials; the $0.84 references are stale and overstate expected VA proceeds.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F08",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Model v7 uses $0.91 federal credit price and $6,633,900 federal equity although the signed OA and Budget Rev4 use $0.86 and $6,269,400.",
+   "claims_compared": "DOC-09 p.4 says 0.91 and 6,633.9; DOC-09 p.5 says 6,633.9; DOC-11 p.14 says $6,269,400; DOC-10 p.1 says Federal HTC equity $6,269,400; DOC-11 p.6 says Federal Credit Price $0.86.",
+   "citations": [
+    "DOC-09 p.4: '7,290 0.91 6,633.9'",
+    "DOC-09 p.5",
+    "DOC-11 p.14: '($6,269,400)'",
+    "DOC-10 p.1: 'Federal HTC equity (master tenant) $6,269,400'",
+    "DOC-11 p.6: 'Federal Credit Price means eighty-six cents ($0.86)'"
+   ],
+   "explanation": "The signed OA and Budget Rev4 govern; model v7 still computes federal equity at the old $0.91 price and therefore does not match the transaction documents.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F09",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Sources and uses still show $26M loan, $5.4M developer fee and $49.8M total cost in DOC-05/DOC-13, while First Amendment and Budget Rev4 use $24.5M, $4.2M and $48.6M.",
+   "claims_compared": "DOC-05 p.15 says Construction loan $26,000,000, Developer fee $5,400,000, Total development cost $49,800,000; DOC-13 p.33 says Loan $26,000,000, Developer fee $5,400,000, Total Project Costs $49,800,000; DOC-10 p.1 says $24,500,000 loan, $4,200,000 developer fee, $48,600,000 total.",
+   "citations": [
+    "DOC-05 p.15",
+    "DOC-13 p.3: 'not to exceed Twenty-Six Million Dollars ($26,000,000)'",
+    "DOC-13 p.33: 'Loan $26,000,000 Developer fee $5,400,000 Total Project Costs $49,800,000'",
+    "DOC-13 p.38",
+    "DOC-10 p.1",
+    "DOC-06 p.3"
+   ],
+   "explanation": "The First Amendment and Budget Rev4 govern; the older sources-and-uses table and loan Exhibit C were not conformed and remain inconsistent with the current loan, fee cap and total cost.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F10",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Cost certification measures substantial rehabilitation over 60 months in reliance on an Architect's phased plan issued after physical work began.",
+   "claims_compared": "DOC-15 p.1 says the phased plan has an issue date of 15 November 2023; DOC-14 p.1 says notice to proceed was issued September 5, 2023 and physical work commenced that date; DOC-16 p.2 says the 60-month period commences 9/5/2023 in reliance on the Architect's plan; DOC-08 p.11 says no pre-notice plans were furnished and the 24-month period applies absent such plans.",
+   "citations": [
+    "DOC-15 p.1: 'bearing an issue date of 15 November 2023'",
+    "DOC-14 p.1: 'notice was issued on September 5, 2023, and the Contractor shall mobilize and commence physical work at the site on that date.'",
+    "DOC-16 p.2: 'measured over the sixty-month period ... commencing with the start of physical work on 9/5/2023, in reliance on the Architect's phased rehabilitation plan'",
+    "DOC-08 p.11: 'We have not been furnished with plans and specifications for all phases bearing a date earlier than that notice. Absent such plans, the twenty-four-month period applies'"
+   ],
+   "explanation": "Treas. Reg. Section 1.48-12(b)(2)(v) requires written plans completed before physical work begins; a plan issued after the September 5, 2023 start cannot support the 60-month period, so the 24-month test applies and may not be satisfied.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F11",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Change Directive CD-04 removed Building A's fired-clay entablature and substituted GFRC, contrary to Part 2 Condition 1 and without an amendment or Owner/Architect signatures.",
+   "claims_compared": "DOC-02 p.4 Condition 1 says the terra cotta cornice and frieze must be retained and repaired in situ and GFRC is not approved; DOC-18 p.1 directs full-depth removal and GFRC replacement; DOC-19 p.14 says the entablature was taken down; DOC-19 p.16 says no need to paper it.",
+   "citations": [
+    "DOC-02 p.4: 'They must be retained and repaired in situ ... The use of substitute materials, including glass-fiber-reinforced concrete, fiberglass or cast stone, has not been reviewed and is not approved.'",
+    "DOC-18 p.1: 'full-depth removal and off-site disposal of the existing street-elevation entablature assemblage of Building A, inclusive of all fired-clay ornamental units'",
+    "DOC-18 p.2: 'Owner and Architect signature lines: left blank.'",
+    "DOC-19 p.14: 'taken down to the backup'",
+    "DOC-19 p.16: 'I don't think we need to paper it.'"
+   ],
+   "explanation": "Part 2 Condition 1 governs and expressly rejects GFRC substitute material absent an approved amendment; an unsigned GC directive and an email do not satisfy the condition, creating a serious Part 3 certification and recapture risk.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F12",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Building B is forecast for March 31, 2026 completion in cost certification and December 2025 report, but investor materials say all buildings placed in service Q4 2025.",
+   "claims_compared": "DOC-05 p.20 says all buildings placed in service Q4 2025; DOC-23 p.1 says all buildings placed in service Q4 2025; DOC-16 p.4 says Building B expected CO March 31, 2026; DOC-19 p.24 forecasts CO on or about March 31, 2026.",
+   "citations": [
+    "DOC-05 p.20: 'All buildings placed in service Q4 2025'",
+    "DOC-23 p.1: same",
+    "DOC-16 p.4: 'on or about March 31, 2026.'",
+    "DOC-19 p.24: 'now forecasting CO on or about March 31, 2026.'"
+   ],
+   "explanation": "The placed-in-service date controls the tax year and the OA timing adjuster; the later March 31, 2026 forecast must be reflected, and the Q4 2025 statements are stale.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F13",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "No Part 3 certification or Virginia final certification is in the data room, although the investment assumes certified credits.",
+   "claims_compared": "DOC-02 p.1 says the Part 2 determination does not constitute certification of the completed project; DOC-19 p.22 says the Part 3 request for Building A was submitted October 20; no Part 3 approval or Virginia Final Certification appears.",
+   "citations": [
+    "DOC-02 p.1: 'This determination does not constitute certification of the completed project'",
+    "DOC-19 p.22: 'Part 3 request for A submitted to SHPO on October 20.'"
+   ],
+   "explanation": "Part 3 approval and Virginia final certification are required before final credits can be claimed or transferred; the data room lacks these critical support documents.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F14",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Operating Agreement caps property management fee at 3.5% in one section but provides for 4% in another, and the property management agreement uses 4%.",
+   "claims_compared": "DOC-11 p.7 says monthly management fee equal to four percent; DOC-11 p.34 says no management agreement shall exceed three and one-half percent; DOC-22 p.9 says four percent.",
+   "citations": [
+    "DOC-11 p.7: 'monthly management fee equal to four percent of gross collected revenues'",
+    "DOC-11 p.34: 'No management agreement shall provide for a management fee exceeding three and one-half percent (3.5%) of Gross Operating Revenues'",
+    "DOC-22 p.9: 'four percent (4%) of Gross Collections'"
+   ],
+   "explanation": "The signed OA and property management agreement conflict on an economic term; the 3.5% cap should govern or the OA must be amended, and the 4% agreement exceeds the stated cap.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "CHATGPT-HTC02-R1-F15",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Investor deck says federal HTC investor is admitted to Calder Works Owner LLC, while signed OA and Master Lease admit the investor to Calder Works Master Tenant LLC.",
+   "claims_compared": "DOC-05 p.8 says Federal HTC investor admitted to Calder Works Owner LLC; DOC-11 p.1 names Ridgeline as Investor Member of Calder Works Master Tenant LLC; DOC-12 p.1 names Calder Works Master Tenant LLC as Lessee; DOC-08 p.5 recommends admission to the lessee.",
+   "citations": [
+    "DOC-05 p.8: 'Federal HTC investor admitted to Calder Works Owner LLC'",
+    "DOC-11 p.1: 'Calder Works Master Tenant LLC ... as Investor Member'",
+    "DOC-12 p.1: 'Calder Works Master Tenant LLC, as Lessee'",
+    "DOC-08 p.5: 'a lease pass-through in which the investor is admitted to the lessee.'"
+   ],
+   "explanation": "The signed pass-through documents govern and place the investor in the master tenant, not the owner; the deck statement misidentifies the credit claimant/lessee structure.",
+   "confidence": 0.97
+  }
+ ]
+}

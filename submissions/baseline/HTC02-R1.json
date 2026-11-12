@@ -1,0 +1,358 @@
+{
+ "run": {
+  "run_id": "HTC02-R1",
+  "data_room": "HTC02",
+  "source": "Baseline model",
+  "system": "Gemini 3.8 Flash",
+  "model": "Gemini 3.8 Flash",
+  "version": "BP-v3",
+  "run_number": 1,
+  "started_at": "2026-11-11",
+  "duration_minutes": null,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "API",
+  "snapshot": null,
+  "format_repairs": 0,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "HTC02-R1-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Unauthorized removal and GFRC replacement of Building A historic entablature directly violates NPS Condition 1 and governing contracts.",
+   "claims_compared": "DOC-02 Condition 1 requires the terra cotta cornice and frieze of Building A to be retained and repaired in situ, explicitly prohibiting GFRC substitute materials without prior NPS review; DOC-18 CD-04 directs full-depth removal and disposal of the historic entablature and replacement with GFRC, which DOC-19 confirms was executed without NPS approval.",
+   "citations": [
+    "DOC-02 p.4, Condition 1: 'They must be retained and repaired in situ... The use of substitute materials, including glass-fiber-reinforced concrete, fiberglass or cast stone, has not been reviewed and is not approved.'",
+    "DOC-18 p.1, 1: 'full-depth removal and off-site disposal of the existing street-elevation entablature assemblage of Building A, inclusive of all fired-clay ornamental units ... glass-fiber-reinforced concrete entablature system'",
+    "DOC-19 p.14: 'the Commerce Street entablature on A was taken down to the backup during the week of October 7 under the Rojas directive'",
+    "DOC-19 p.16: 'I don't think we need to paper it.'"
+   ],
+   "explanation": "Demolishing character-defining historic terra cotta and installing unapproved GFRC without an approved Part 2 amendment violates NPS approval conditions, threatening complete denial of federal Part 3 certification and disallowance of all federal and state credits. The NPS Part 2 decision and contract specifications govern over field change directives and informal developer emails.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "HTC02-R1-F02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "NPS Part 2 approval conditions are misrepresented as unconditional in investor materials.",
+   "claims_compared": "DOC-02 shows Part 2 was approved subject to two specific conditions; DOC-05 and DOC-23 assert Part 2 was approved without conditions.",
+   "citations": [
+    "DOC-02 p.1: 'NPS - APPROVED WITH CONDITIONS August 14, 2023 Conditions: page 4'",
+    "DOC-05 p.14, Slide 14: 'NPS Part 2 approved August 2023 - no conditions'",
+    "DOC-23 p.1, 5: 'NPS Part 2 approved without conditions.'"
+   ],
+   "explanation": "Investor Deck v4 and the 2025 Project Snapshot falsely state to investors and state credit buyers that Part 2 was approved without conditions, concealing conditions regarding the Building A cornice and Building B light court. The official NPS Part 2 determination letter governs over promotional pitch materials.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "HTC02-R1-F03",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Substantial rehabilitation test improperly relies on a 60-month phased measuring period despite late architectural plans.",
+   "claims_compared": "DOC-16 measures substantial rehabilitation over a sixty-month phased period starting September 5, 2023 in reliance on the architect's phased plan; DOC-15 shows the phased rehabilitation plan was issued November 15, 2023, more than two months after physical work began on September 5, 2023 as documented in DOC-08 and DOC-14.",
+   "citations": [
+    "DOC-16 p.2, 3: 'measured over the sixty-month period available for phased rehabilitations, commencing with the start of physical work on 9/5/2023, in reliance on the Architect's phased rehabilitation plan'",
+    "DOC-15 p.1: 'bearing an issue date of 15 November 2023'",
+    "DOC-14 p.1, 1: 'notice was issued on September 5, 2023, and the Contractor shall mobilize and commence physical work'",
+    "DOC-08 p.4, 6: 'phases set forth in written architectural plans and specifications that are completed before the physical work begins ... Absent such plans, the general twenty-four-month period applies'"
+   ],
+   "explanation": "Under Treas. Reg. Section 1.48-12(b)(2)(v), the 60-month measuring period is only available if written architectural plans and specifications detailing all phases are completed before physical work begins. Because plans were completed on November 15, 2023 after work started on September 5, 2023, the 60-month rule is unavailable and the project must satisfy substantial rehabilitation within 24 months, jeopardizing credit eligibility for Building B.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "HTC02-R1-F04",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Operating Agreement Exhibit B includes non-qualifying Building C and parking deck in projected QRE.",
+   "claims_compared": "DOC-06, DOC-07, DOC-08, DOC-10, and DOC-11 Section 3.1 establish that Building C and the parking deck are excluded from QRE, limiting total QRE to $36,450,000; DOC-11 Exhibit B and DOC-20 claim Exhibit B was conformed, but Exhibit B attached to the signed Operating Agreement still includes Building C and the parking deck for a total QRE of $39,800,000.",
+   "citations": [
+    "DOC-06 p.2, Comment 1: 'qualified expenditures should not exceed thirty-six million four hundred fifty thousand dollars ($36,450,000)'",
+    "DOC-10 p.2, 5: 'Total qualified rehabilitation expenditures $36,450,000'",
+    "DOC-11 p.14, Section 3.1(a): 'which amount the parties acknowledge equals ... ($6,269,400)'",
+    "DOC-11 p.66, Exhibit B: 'Projected QRE (sum of (a) through (d)) $39,800,000 Projected Federal Credits: twenty percent (20%) of Projected QRE, or $7,960,000'",
+    "DOC-20 p.2, 14: 'OA Exhibit B (Projected Credits) - update to revised QRE DONE 8/14 - JH'"
+   ],
+   "explanation": "Building C was ruled non-contributing in Part 1 (DOC-01) and the parking deck is an ineligible site improvement. While closing checklist item 14 falsely recorded that Exhibit B was updated, the executed Operating Agreement attached the obsolete schedule from Model v6, creating an internal contradiction with Section 3.1(a) of the Operating Agreement and exposing the partnership to credit adjuster disputes.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "HTC02-R1-F05",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Virginia Credit Purchase Agreement sells credits based on ineligible Building C and parking deck expenditures.",
+   "claims_compared": "DOC-17 Section 1.4 and Appendix 2 define Estimated Credits as $9,950,000 based on $39,800,000 of expenses including Building C ($2,750,000) and site parking ($600,000); DOC-01, DOC-06, DOC-08, and DOC-10 confirm Building C and the parking deck are excluded, leaving eligible QRE of $36,450,000 and total state credits of only $9,112,500.",
+   "citations": [
+    "DOC-17 p.3, Section 1.4: 'twenty-five percent (25%) of the Eligible Rehabilitation Expenses set forth in Appendix 2, which the parties acknowledge to be ... ($9,950,000)'",
+    "DOC-17 p.26, Appendix 2: 'Building C $2,750,000 Site and parking $600,000 Total $39,800,000'",
+    "DOC-01 p.3, 7: 'Building C is not a certified historic structure'",
+    "DOC-10 p.2, 5: '$36,450,000'"
+   ],
+   "explanation": "Non-contributing structures and separate site improvements are ineligible for the 25% Virginia historic rehabilitation credit. Because actual eligible expenditures are only $36,450,000, valid state credits equal $9,112,500, creating an immediate delivery shortfall of $837,500 ($9,950,000 - $9,112,500) and triggering buyer refund remedies under Section 2.3 of the purchase agreement.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "HTC02-R1-F06",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Investor materials improperly advertise a Section 6418 transfer for Section 47 historic tax credits.",
+   "claims_compared": "DOC-04, DOC-05, and DOC-23 assert that the federal historic tax credit will be monetized via transfer under IRC Section 6418; DOC-06, DOC-08, and DOC-11 confirm that Section 47 credits are not eligible for transfer under Section 6418 and must use a master lease pass-through structure.",
+   "citations": [
+    "DOC-04 p.9, Slide 9: 'Federal HTC: $7.96M - monetized via IRC Section 6418 transfer at $0.91'",
+    "DOC-23 p.1, 2: 'Federal HTC: $7.96M, to be sold under IRC Section 6418.'",
+    "DOC-06 p.2, Comment 2",
+    "DOC-08 p.5, II.A.1: 'The rehabilitation credit determined under Section 47 does not appear in that list.'",
+    "DOC-11 p.1: 'by reason of the election described in Section 50(d) of the Code'"
+   ],
+   "explanation": "IRC Section 6418(f)(1) does not include Section 47 historic rehabilitation credits among eligible transferable credits. Pitch decks and the October 2025 Project Snapshot misstate the basic legal structure of the transaction; the governing legal structure is the Section 50(d) master lease pass-through documented in the executed Operating Agreement and Master Lease.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "HTC02-R1-F07",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Investor Deck v4 misrepresents investor admission to Owner LLC rather than Master Tenant LLC.",
+   "claims_compared": "DOC-05 Slide 8 states the federal HTC investor will be admitted to Calder Works Owner LLC; DOC-06 Comment 2 and DOC-11 confirm the investor is admitted as investor member of Calder Works Master Tenant LLC under a master lease pass-through structure.",
+   "citations": [
+    "DOC-05 p.8, Slide 8: 'Federal HTC investor admitted to Calder Works Owner LLC'",
+    "DOC-06 p.2, Comment 2: 'with our fund admitted as investor member of the master tenant rather than of the owner.'",
+    "DOC-11 p.1: 'Calder Works Master Tenant LLC ... Ridgeline Historic Equity Fund IV LLC, as Investor Member'"
+   ],
+   "explanation": "Under the required Section 50(d) lease pass-through structure, the tax credit investor must be admitted to the lessee entity (Master Tenant) rather than the property-owning landlord. The executed Master Tenant Operating Agreement governs over the contradictory slide in Investor Deck v4.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "HTC02-R1-F08",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Federal credit pricing in Financial Model v7 contradicts Operating Agreement and agreed diligence terms.",
+   "claims_compared": "DOC-09 Tab Equity models the federal credit price at $0.91 per dollar of credit generating $6,633,900 of equity; DOC-06 Comment 4, DOC-10 line 2, and DOC-11 Section 1.1 and Section 3.1(a) establish the price at $0.86 generating $6,269,400 of equity.",
+   "citations": [
+    "DOC-09 p.4, Tab: Equity: 'Federal credit price 0.91 Federal equity 6,633.9'",
+    "DOC-06 p.3, Comment 4: 'eighty-six cents ($0.86)'",
+    "DOC-10 p.1, line 2: 'Federal HTC equity (master tenant) $6,269,400'",
+    "DOC-11 p.6, Section 1.1: 'Federal Credit Price means eighty-six cents ($0.86)'",
+    "DOC-11 p.14, Section 3.1(a): '($6,269,400)'"
+   ],
+   "explanation": "Financial Model v7_FINAL failed to incorporate the reduced $0.86 pricing demanded by Ridgeline and memorialized in the executed Operating Agreement and Budget Revision 4. Overstating federal equity by $364,500 distorts sources, uses, and partnership economics. The executed Operating Agreement governs.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "HTC02-R1-F09",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Construction loan amount in Financial Model v7 and Loan Exhibit C contradicts First Amendment and Budget Rev 4.",
+   "claims_compared": "DOC-09 Tab Sources & Uses and DOC-13 Exhibit C state the construction loan is $26,000,000; DOC-06 Comment 6, DOC-10 line 1, and DOC-13 First Amendment state the loan was resized to $24,500,000.",
+   "citations": [
+    "DOC-09 p.5: 'Construction loan 26,000'",
+    "DOC-13 p.33, Exhibit C: 'Loan $26,000,000'",
+    "DOC-06 p.4, Comment 6",
+    "DOC-10 p.1, line 1: '$24,500,000'",
+    "DOC-13 p.38, 1: deletes '$26,000,000' and inserts '$24,500,000'"
+   ],
+   "explanation": "The lender resized the loan to $24.5M following a revised appraisal, which was formally executed in the First Amendment to the Construction Loan Agreement. Model v7 and the unreplaced Exhibit C of the loan agreement retain the superseded $26M amount, leaving sources and uses unaligned with the executed credit documents.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "HTC02-R1-F10",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Developer fee in Financial Model v7 and Loan Exhibit C exceeds the $4.2M contractual cap.",
+   "claims_compared": "DOC-09 Tab Sources & Uses and DOC-13 Exhibit C list a developer fee of $5,400,000; DOC-06 Comment 3, DOC-10 line 12, and DOC-11 Section 6.4 cap the aggregate developer fee at $4,200,000.",
+   "citations": [
+    "DOC-09 p.5: 'Developer fee 5,400'",
+    "DOC-13 p.33, Exhibit C: 'Developer fee $5,400,000'",
+    "DOC-06 p.3, Comment 3",
+    "DOC-10 p.1, line 12: '$4,200,000'",
+    "DOC-11 p.31, Section 6.4: 'shall not exceed Four Million Two Hundred Thousand Dollars ($4,200,000)'"
+   ],
+   "explanation": "Model v7 and Loan Agreement Exhibit C reflect an outdated $5.4M developer fee that exceeds the hard cap negotiated by Ridgeline by $1.2M. The covenant in Section 6.4 of the signed Operating Agreement and Budget Revision 4 govern over the model and initial loan exhibits.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "HTC02-R1-F11",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Financial Model v7 Sources & Uses tab fails to balance and misclassifies developer fee as a source.",
+   "claims_compared": "DOC-09 Tab Sources & Uses lists sources summing to $45,323,900 against total development costs of $49,800,000, while listing developer fee as a source; DOC-10 balances sources and uses at $48,600,000 with developer fee properly classified as a use.",
+   "citations": [
+    "DOC-09 p.5, Tab: Sources & Uses: 'Construction loan 26,000 Federal equity 6,633.9 Virginia proceeds 7,290.0 Developer fee 5,400 Total development cost 49,800'",
+    "DOC-10 p.1: 'Total sources $48,600,000 ... Total development cost $48,600,000'"
+   ],
+   "explanation": "Model v7's sources total only $45,323,900, creating an unreconciled $4,476,100 funding deficit against the stated $49.8M TDC. It also erroneously classifies the developer fee as an incoming funding source and omits required sponsor equity. Budget Revision 4 governs.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "HTC02-R1-F12",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Financial Model v7 projects 100% federal credit delivery in year 1 instead of five-year ratable delivery.",
+   "claims_compared": "DOC-09 Tab Timing delivers 100% of federal credits ($7,290,000) in 2025 and zero in 2026-2029; DOC-08 Section I.3 and II.C.1 state federal credits must be claimed ratably over five years beginning with each building's placed-in-service year.",
+   "citations": [
+    "DOC-09 p.7, Tab: Timing: 'Federal credits delivered: 2025 7,290 Federal credits delivered: 2026 to 2029 0'",
+    "DOC-08 p.3, I.3",
+    "DOC-08 p.9, II.C.1: 'the credit for each Building is allowed ratably over the five taxable years beginning with the year in which that Building is placed in service.'"
+   ],
+   "explanation": "Under IRC Section 47(a), federal rehabilitation tax credits cannot be claimed lump-sum in year 1 and must be taken ratably at 20% per year over five taxable years. Model v7's timing assumption materially overstates early investor tax benefits and IRR. The Code and Tax Counsel opinion govern.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "HTC02-R1-F13",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Building B completion delayed past December 31, 2025, triggering mandatory credit price reduction.",
+   "claims_compared": "DOC-05 Slide 20, DOC-09 Tab Timing, and DOC-23 Item 4 claim all buildings will be placed in service in Q4 2025; DOC-16 p.4 and DOC-19 p.24 confirm Building B is delayed to March 31, 2026, which triggers the credit price step-down under DOC-11 Section 3.4(c).",
+   "citations": [
+    "DOC-05 p.20: 'All buildings placed in service Q4 2025'",
+    "DOC-23 p.1, 4: same",
+    "DOC-16 p.4, 1: 'on or about March 31, 2026'",
+    "DOC-19 p.24: 'now forecasting CO on or about March 31, 2026.'",
+    "DOC-11 p.18, Section 3.4(c): 'If either Building has not been placed in service on or before December 31, 2025, the Federal Credit Price shall be reduced ... by two cents ($0.02)'"
+   ],
+   "explanation": "Because Building B will not achieve a certificate of occupancy by December 31, 2025, Section 3.4(c) of the Operating Agreement requires a mandatory $0.02 per credit price reduction across all federal credits, reducing investor equity contributions. Construction progress reports and the CPA draft govern over earlier projections.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "HTC02-R1-F14",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Property management fee in agreement exceeds Operating Agreement cap and creates internal document conflict.",
+   "claims_compared": "DOC-11 Section 7.2 prohibits any management agreement providing for a fee exceeding 3.5% of Gross Operating Revenues; DOC-22 Section 4.1 sets the management fee at 4.0% of Gross Collections, which is also duplicated in DOC-11 Section 3.8.",
+   "citations": [
+    "DOC-11 p.34, Section 7.2: 'No management agreement shall provide for a management fee exceeding three and one-half percent (3.5%)'",
+    "DOC-22 p.9, Section 4.1: 'four percent (4%) of Gross Collections'",
+    "DOC-11 p.7, Section 3.8: 'monthly management fee equal to four percent of gross collected revenues of the Property'"
+   ],
+   "explanation": "The Property Management Agreement provides for a 4.0% management fee, exceeding the 3.5% fee ceiling in Section 7.2 of the Operating Agreement. Moreover, the Operating Agreement contains an internal contradiction between Section 7.2 (3.5%) and Section 3.8 (4.0%), which requires formal clarification.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "HTC02-R1-F15",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Property Management Agreement executed by Calder Works Owner LLC instead of Calder Works Master Tenant LLC.",
+   "claims_compared": "DOC-12 Section 2.2 vests exclusive possession and property manager engagement in Calder Works Master Tenant LLC; DOC-22 is executed by Calder Works Owner LLC as owner engaging the manager.",
+   "citations": [
+    "DOC-12 p.4, Section 2.2: 'shall be solely responsible for leasing, management and day-to-day operation, including the engagement of any property manager.'",
+    "DOC-22 p.1: 'Owner hereby engages Manager as the exclusive agent of Owner to operate, lease and manage the Property on Owner's behalf'"
+   ],
+   "explanation": "Under the Section 50(d) master lease structure, the Master Tenant is the operating entity and holds sole legal authority to engage the property manager. Contracting directly through the fee owner undermines the true lease characterization and operational independence of the master tenant.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "HTC02-R1-F16",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "State credit price in Project Snapshot misstates binding purchase agreement pricing.",
+   "claims_compared": "DOC-23 Item 3 states the Virginia HTC is sold at $0.84 per credit; DOC-17 Section 2.1 fixes the purchase price at $0.80 per dollar of credit.",
+   "citations": [
+    "DOC-23 p.1, 3: 'Virginia HTC: $9.95M at $0.84.'",
+    "DOC-17 p.5, Section 2.1: 'Buyer shall pay eighty cents ($0.80)'",
+    "DOC-10 p.1, line 3: 'Virginia HTC proceeds $7,290,000'"
+   ],
+   "explanation": "The Project Snapshot dated October 6, 2025 presents an outdated $0.84 pricing assumption from early investor decks, whereas the binding Virginia Credit Purchase Agreement executed on September 10, 2024 establishes the purchase price at $0.80. The signed purchase agreement governs.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "HTC02-R1-F17",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Unit count discrepancy between project materials (134 units vs 128 units).",
+   "claims_compared": "DOC-04 Slide 4, DOC-21 Appraisal, and DOC-23 Item 1 state the project contains 134 units; DOC-02 Condition 2, DOC-05 Slide 4, DOC-06 Comment 5, and DOC-22 Section 1.2 confirm the unit count was reduced to 128 units.",
+   "citations": [
+    "DOC-23 p.1, 1: '134 lofts'",
+    "DOC-21 p.2, 1: '134 units of rental housing'",
+    "DOC-02 p.4, Condition 2",
+    "DOC-05 p.4: '128 apartments'",
+    "DOC-22 p.3, Section 1.2: '(128) dwelling units'"
+   ],
+   "explanation": "Retaining the Building B central light court under NPS Condition 2 required floor plan revisions that eliminated 6 units, reducing the total count from 134 to 128. Later summaries like the 2025 Project Snapshot erroneously continue to cite the obsolete 134-unit count.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "HTC02-R1-F18",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Subcontract Change Directive CD-04 lacks required Owner and Architect signatures and NPS consultation.",
+   "claims_compared": "DOC-14 Section 2.1 and Spec Section 04 20 00 require written Change Orders signed by Owner, GC, and Architect and submitted to NPS for historic alterations; DOC-18 CD-04 was executed solely by the GC as an unreviewed field directive leaving Owner and Architect signature lines blank.",
+   "citations": [
+    "DOC-14 p.2, Section 2.1: 'No change in the Work shall be made except by written Change Order signed by the Owner, the Contractor and the Architect.'",
+    "DOC-14 p.12, Spec 04 20 00",
+    "DOC-18 p.2: 'Owner and Architect signature lines: left blank.'",
+    "DOC-18 p.3, 2: 'Directive issued as a field directive; no further review required by Subcontractor.'"
+   ],
+   "explanation": "Tredegar Builders issued a change directive altering a character-defining historic feature without required Owner and Architect signatures or SHPO/NPS submission, directly breaching the GC Agreement and jeopardizing the project's historic certifications.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "HTC02-R1-F19",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Premature drawdown notice issued for Investor Installment 2 prior to NPS Part 3 approval.",
+   "claims_compared": "DOC-11 Section 3.2(b) makes receipt of NPS Part 3 approval for Building A an express condition precedent to Installment 2; DOC-19 Monthly Report confirms the developer issued the drawdown notice in December 2025 while the Part 3 request was still pending.",
+   "citations": [
+    "DOC-11 p.15, Section 3.2(b): 'upon receipt by the Investor Member of a copy of the National Park Service's approval of the Part 3 request for Building A'",
+    "DOC-19 p.22: 'Part 3 request for A submitted to SHPO on October 20.'",
+    "DOC-19 p.24: 'Investor installment 2 drawdown notice issued, subject to Part 3.'"
+   ],
+   "explanation": "The developer issued a drawdown notice for the $2,507,760 second capital installment before obtaining Part 3 certification from the National Park Service. Under Section 3.2(b) of the Operating Agreement, the investor has no obligation to fund until unconditional Part 3 approval is received.",
+   "confidence": 0.93
+  },
+  {
+   "finding_id": "HTC02-R1-F20",
+   "classification": "Contradiction",
+   "severity": "Low",
+   "summary": "Tax Counsel Memorandum cites future budget revision date.",
+   "claims_compared": "DOC-08 is dated May 10, 2024 but purports to rely upon Budget Revision 4 dated June 28, 2024; DOC-10 confirms Budget Revision 4 was prepared on June 28, 2024.",
+   "citations": [
+    "DOC-08 p.1: 'Date: May 10, 2024'",
+    "DOC-08 p.2, 3: 'We have relied, without independent verification, upon Budget Revision 4 dated June 28, 2024'",
+    "DOC-10 p.1: 'Development Budget - Revision 4 Calder Works | June 28, 2024'"
+   ],
+   "explanation": "The tax opinion letter cites reliance on a budget version dated seven weeks after the date of the opinion letter itself. This reflects an anachronistic clerical defect that should be conformed in the final tax opinion.",
+   "confidence": 0.92
+  },
+  {
+   "finding_id": "HTC02-R1-F21",
+   "classification": "Contradiction",
+   "severity": "Low",
+   "summary": "Borrower entity name misstated on Construction Loan Agreement signature page.",
+   "claims_compared": "DOC-13 page 1 names Calder Works Owner LLC as Borrower; DOC-13 page 39 executes the agreement as Calder Work Owners LLC.",
+   "citations": [
+    "DOC-13 p.1: 'Calder Works Owner LLC, Borrower'",
+    "DOC-13 p.39: 'BORROWER: Calder Work Owners LLC, by its manager'"
+   ],
+   "explanation": "The borrower signature line contains a typographical error in the corporate name ('Calder Work Owners LLC' vs 'Calder Works Owner LLC'), which creates a minor technical defect on the loan execution block.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "HTC02-R1-F22",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "Critical environmental, title, and guarantor financial diligence items omitted from the data room.",
+   "claims_compared": "DOC-06 Requests 8, 10, and 11 require sponsor financial statements, Phase I environmental/lead/asbestos reports, and an updated ALTA title survey; none of these reports are present in the data room.",
+   "citations": [
+    "DOC-06 p.6, Request 8",
+    "DOC-06 p.7, Request 10",
+    "DOC-06 p.7, Request 11"
+   ],
+   "explanation": "The developer response in DOC-07 failed to provide the environmental reports, ALTA survey, and guarantor financial statements requested by the investor. Without these documents, environmental remediation risk, title exceptions, and the financial capacity of the guarantor cannot be verified.",
+   "confidence": 0.93
+  },
+  {
+   "finding_id": "HTC02-R1-F23",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "Absence of Virginia Department of Historic Resources state rehabilitation approval in data room.",
+   "claims_compared": "DOC-08 and DOC-17 establish that the project relies on Virginia historic tax credits administered by the Virginia Department of Historic Resources; no state Part 2 approval or DHR correspondence is included in the data room.",
+   "citations": [
+    "DOC-08 p.2, 4: 'The state credit is subject to its own certification requirements and timing'",
+    "DOC-17 p.3, Section 1.5: 'Final Certification means ... issued by the Virginia Department of Historic Resources'"
+   ],
+   "explanation": "The transaction anticipates $9,112,500 in state credits and executes a credit purchase agreement, but the data room contains only federal NPS certifications and no Virginia DHR state rehabilitation plan approvals or verification of state eligibility.",
+   "confidence": 0.91
+  }
+ ]
+}

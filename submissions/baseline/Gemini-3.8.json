@@ -1,0 +1,335 @@
+{
+ "run": {
+  "run_id": "Gemini-3.8",
+  "data_room": "HTC01",
+  "source": "Baseline model",
+  "system": "Gemini 3.8 Flash",
+  "model": "gemini-3.8-flash",
+  "version": "BP-v1",
+  "run_number": 1,
+  "started_at": "2026-11-11",
+  "duration_minutes": 4.4,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "Chat app",
+  "snapshot": null,
+  "format_repairs": 6,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "Gemini-3.8-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Replacement windows installed are vinyl units with simulated grilles rather than wood windows replicating original profiles required by NPS approval conditions.",
+   "claims_compared": "DOC-02 Condition 2 and DOC-07 Section 08 52 00 require replacement windows to replicate original wood profiles with true divided lites; DOC-14 quotes 412 white vinyl double-hung windows with simulated grilles between the glass, and DOC-15 confirms all windows were installed.",
+   "citations": [
+    "DOC-02 p.3, Condition 2: 'Replacement windows must replicate the original wood profiles in material, dimensions and muntin pattern.'",
+    "DOC-07 p.6, 1: 'Wood windows replicating original profiles, with true divided lites matching the historic muntin pattern and profile.'",
+    "DOC-14 p.1, Item 1: 'Item 1 - Vinyl double-hung, standard profile'",
+    "DOC-14 p.1: 'Units are white vinyl with a standard sash profile and simulated grilles between the glass.'",
+    "DOC-15 p.4: 'Windows installed on floors 1 to 3.'",
+    "DOC-15 p.7: 'Windows on floors 4 and 5 are in.'"
+   ],
+   "explanation": "Installing vinyl windows with simulated grilles directly violates NPS Part 2 Condition 2, jeopardizing Part 3 certification of completed work under 36 CFR 67.6 and the entire federal tax credit. The NPS approval conditions in DOC-02 govern over contractor purchase orders.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Gemini-3.8-F02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The federal historic tax credit in the financial model is calculated incorrectly as $5,120,000 instead of 20% of $24,600,000 of qualified expenditures.",
+   "claims_compared": "DOC-05 line 2.3 states the federal credit is $5,120,000 based on $24,600,000 of QRE; DOC-06 line 5 and DOC-11 Section 4.1(a) state the 20% federal credit on $24,600,000 is [text lost in copy]",
+   "citations": [
+    "[text lost in copy] in thousands)'",
+    "DOC-05 p.2, 2.2: 'Federal historic tax credit rate: 20%'",
+    "DOC-05 p.2, 2.3: 'Federal historic tax credit: $5,120,000'",
+    "DOC-06 p.3, 4: 'Total qualified rehabilitation expenditures: $24,600,000'",
+    "DOC-06 p.3, 5: 'Federal rehabilitation credit: $4,920,000'",
+    "DOC-11 p.13, Section 4.1(a): 'The capital contribution has been calculated on projected federal credits of $4,920,000 at $0.88 per credit dollar.'"
+   ],
+   "explanation": "Twenty percent of $24,600,000 is $4,920,000, not $5,120,000, creating an internal calculation error in DOC-05 of $200,000. The CPA cost certification draft DOC-06 and Operating Agreement DOC-11 govern over the financial model summary.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "Gemini-3.8-F03",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Federal investor equity in the financial model is overstated at $4,505,600 due to the erroneous credit amount rather than the agreed $4,329,600.",
+   "claims_compared": "DOC-05 line 2.5 calculates federal investor equity as $4,505,600; DOC-04 line 4 and DOC-11 Section 4.1 establish total federal equity at [text lost in copy]",
+   "citations": [
+    "[text lost in copy] in thousands)'",
+    "DOC-04 p.1, line 4: 'Federal historic tax credit equity $4,329,600'",
+    "DOC-11 p.13, Section 4.1: 'The Investor Member shall contribute a total of $4,329,600 to the capital of the Company, payable in installments as set out in Section 4.2.'"
+   ],
+   "explanation": "The financial model multiplies the incorrect $5,120,000 credit by $0.88 to arrive at $4,505,600, whereas 20% of [text lost in copy] 4,920,000) at $0.88 equals $4,329,600. The signed Operating Agreement DOC-11 and development budget DOC-04 govern over the model summary.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Gemini-3.8-F04",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The capital contribution installment schedule in Section 4.2 sums to $4,429,600, exceeding the total agreed contribution of $4,329,600 in Section 4.1 by $100,000.",
+   "claims_compared": "DOC-11 Section 4.1 sets total capital contribution at $4,329,600; DOC-11 Section 4.2 lists installments of $865,920, $1,298,880, $1,831,840, and $432,960 that total $4,429,600.",
+   "citations": [
+    "DOC-11 p.13, Section 4.1: 'The Investor Member shall contribute a total of [text lost in copy] 865,920, being 20% of the capital contribution'",
+    "DOC-11 p.14, Section 4.2(b): '[text lost in copy] 1,831,840, being 40% upon receipt of Part 3 approval from the National Park Service.'",
+    "DOC-11 p.14, Section 4.2(d): '$432,960, being 10% of the capital contribution'"
+   ],
+   "explanation": "Forty percent of $4,329,600 is $1,731,840, but Section 4.2(c) incorrectly states $1,831,840, creating a $100,000 internal contradiction within the Operating Agreement. Section 4.1 defining total contribution should govern.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "Gemini-3.8-F05",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The development budget includes non-qualifying parking lot and FF&E expenditures in its total qualified rehabilitation costs.",
+   "claims_compared": "DOC-04 lines 31, 34, and 38 classify $420,000 of parking lot costs and $290,000 of furniture, fixtures and equipment as qualified; DOC-06 Section 1 explicitly excludes parking and furniture from qualified expenditures.",
+   "citations": [
+    "DOC-04 p.2, line 31: 'Parking lot Yes $420,000'",
+    "DOC-04 p.2, line 34: 'Furniture, fixtures and equipment Yes $290,000'",
+    "DOC-04 p.2, line 38: 'Total qualified costs $25,310,000 $25,310,000'",
+    "DOC-06 p.3, 1: 'Costs for acquisition, land, site work outside the building, parking and furniture are excluded.'"
+   ],
+   "explanation": "Under IRC Section 47(c)(2) and Treas. Reg. Section 1.48-12(c)(5), parking lots, site improvements, and personal property such as furniture and fixtures are statutory exclusions from QREs. The CPA cost certification draft DOC-06 correctly excludes these items and governs over the developer estimate DOC-04.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Gemini-3.8-F06",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Financial model and memos assume Virginia state credits are sold at $0.85 per credit dollar, contradicting the executed purchase agreement price of $0.82.",
+   "claims_compared": "DOC-12 Section 2.1 establishes a signed sale price of [text lost in copy] 5,043,000 proceeds in DOC-04); DOC-13 Section 2.1, DOC-05 line 2.6, and DOC-16 item 3 claim pricing of [text lost in copy] 5,227,500 proceeds).",
+   "citations": [
+    "DOC-12 p.3, Section 2.1: 'Price. Buyer shall pay $0.82 per $1.00 of credit for all Credits transferred at Closing.'",
+    "DOC-04 p.1, line 5: 'Virginia historic tax credit proceeds $5,043,000'",
+    "DOC-13 p.3, Section 2.1: 'Price. Buyer shall pay $0.85 per $1.00 of credit for all Credits transferred at Closing.'",
+    "DOC-05 p.2, 2.6: 'Virginia credit price per credit dollar: 0.85'",
+    "DOC-16 p.1, 3: 'Virginia credits sold at $0.85 per credit.'"
+   ],
+   "explanation": "The executed purchase agreement DOC-12 dated November 4, 2024 is legally binding and governs over the unexecuted draft DOC-13, financial model DOC-05, and investor memo DOC-16. Relying on $0.85 overstates state credit proceeds by [text lost in copy]",
+   "confidence": null
+  },
+  {
+   "finding_id": "Gemini-3.8-F09",
+   "classification": null,
+   "severity": null,
+   "summary": "[ID, class, severity and summary lost in copy]",
+   "claims_compared": "[text lost in copy] 5,120,000) are delivered in 2025 and 0 in 2026 to 2029; tax law requires 20% per year over five years.",
+   "citations": [
+    "DOC-05 p.4, 4.1: 'Federal credits delivered: 2025 5,120; 2026 to 2029 0 ($ in thousands)'"
+   ],
+   "explanation": "Under IRC Section 47(a)(1) as amended by the 2017 Tax Cuts and Jobs Act, the federal historic tax credit must be claimed ratably over a 5-year period beginning in the placed-in-service year. Projecting full delivery in year 1 fundamentally distorts investor returns and tax liability modeling.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Gemini-3.8-F10",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Total budgeted developer fee of $2,750,000 exceeds the $2,500,000 contractual fee cap in the Operating Agreement.",
+   "claims_compared": "DOC-04 lines 22 and 40 budget a developer fee of $2,750,000; DOC-11 Section 6.3 limits the developer fee to a maximum of $2,500,000 without prior written investor consent.",
+   "citations": [
+    "DOC-04 p.1, line 22: 'Developer fee $2,750,000'",
+    "DOC-04 p.2, line 40: 'Developer fee (not included above) $2,750,000'",
+    "DOC-11 p.18, Section 6.3: 'The total development fee shall not exceed $2,500,000 without the prior written consent of the Investor Member.'"
+   ],
+   "explanation": "The development budget includes a developer fee that is $250,000 higher than allowed by the governing partnership agreement. The Operating Agreement DOC-11 governs over the developer budget DOC-04.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Gemini-3.8-F11",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The Operating Agreement text sets the recapture guaranty cap at $1,500,000, while the attached Form of Guaranty caps liability at $1,000,000.",
+   "claims_compared": "DOC-11 Section 7.4 states the credit recapture guaranty maximum is $1,500,000; DOC-11 Exhibit C paragraph 2 limits the Guarantor total liability for recapture to $1,000,000.",
+   "citations": [
+    "DOC-11 p.21, Section 7.4: 'up to a maximum of $1,500,000.'",
+    "DOC-11 p.42, 2: 'The total liability of the Guarantor for recapture under this Guaranty shall not exceed $1,000,000.'"
+   ],
+   "explanation": "The body of the agreement and Exhibit C provide conflicting caps on the guarantor exposure for tax credit recapture, creating a $500,000 discrepancy in investor indemnification protection.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Gemini-3.8-F12",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Developer updates disclose a planned sale of commercial unit C-1 during the compliance period, contradicting transfer restrictions and the investor summary memo.",
+   "claims_compared": "DOC-15 Update, Oct 2025 plans to sell commercial unit C-1 to Danville Arts Collective on June 30, 2026; DOC-11 Section 8.2 prohibits any unit sale during the 5-year compliance period without investor consent, and DOC-16 item 7 claims no sale or transfer is planned.",
+   "citations": [
+    "DOC-15 p.12: 'We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026.'",
+    "DOC-11 p.24, Section 8.2: 'No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent'",
+    "DOC-16 p.2, 7: 'No sale or transfer of any part of the property is planned during the credit period.'"
+   ],
+   "explanation": "Selling a portion of the building during the 5-year compliance period triggers partial recapture of the federal tax credit under IRC Section 50(a) and breaches Section 8.2 of the Operating Agreement.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "Gemini-3.8-F13",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The cost certification draft reflects only the base construction contract of $21,900,000 and omits $640,000 of executed change orders.",
+   "claims_compared": "DOC-06 line 3 lists the construction contract at $21,900,000; DOC-04 line 16 and DOC-08 Exhibit D show the adjusted contract sum is $22,540,000 following $640,000 in approved change orders.",
+   "citations": [
+    "DOC-06 p.2, 3: 'Construction contract $21,900,000'",
+    "DOC-04 p.1, line 16: 'Hard construction (contract plus change orders) $22,540,000'",
+    "DOC-08 p.9: 'Summary: CO-1 $315,000; CO-2 $60,000; CO-3 $265,000 $640,000'",
+    "DOC-08 p.9: 'Adjusted contract sum after change orders $22,540,000'"
+   ],
+   "explanation": "The CPA draft fails to reflect the executed change orders in the hard construction line item, reallocating $640,000 to qualified developer fee instead. The executed general contractor agreement and change orders DOC-08 govern.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Gemini-3.8-F14",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The appraisal report evaluates 86 residential units, whereas architectural specifications, market study, and Part 2 specify 84 units.",
+   "claims_compared": "DOC-10 paragraph 1 describes proposed improvements as 86 units of rental housing; DOC-02 paragraph 1, DOC-03 paragraph 2, and DOC-07 paragraph 1 state the project contains 84 apartments and 2 commercial suites.",
+   "citations": [
+    "DOC-10 p.2, 1: 'Proposed improvements: 86 units of rental housing in a converted five-story mill'",
+    "DOC-02 p.2, 1: 'apartments on floors 1 to 5 and two commercial suites on the ground floor.'",
+    "DOC-03 p.1, 2: 'The subject will contain 84 apartments and 2 commercial suites.'",
+    "DOC-07 p.1, 1: 'converts the former Ashby Mill into 84 apartments and 2 ground-floor commercial suites'"
+   ],
+   "explanation": "The appraiser evaluated an 86-unit residential scheme, conflicting with the 84 residential units approved in architectural specifications and Part 2. The architect scope of work DOC-07 governs actual physical improvements.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Gemini-3.8-F15",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The general construction agreement is dated June 5, 2023, but purports to incorporate architectural specifications dated July 20, 2023 and the Part 2 approval dated August 22, 2023.",
+   "claims_compared": "DOC-08 paragraphs 3 and 4 state the agreement was entered into June 5, 2023 and incorporates drawings dated July 20, 2023 and the approved Part 2; DOC-07 is dated July 20, 2023 and DOC-02 approval was issued August 22, 2023.",
+   "citations": [
+    "DOC-08 p.1, 3: 'The Contract Documents include the drawings and specifications issued by Hollins and Reade Architects dated July 20, 2023, and the approved Part 2 application.'",
+    "DOC-08 p.1, 4: 'This Agreement is entered into as of June 5, 2023.'",
+    "DOC-07 p.1: 'ISSUE: JULY 20, 2023'",
+    "DOC-02 p.1: 'August 22, 2023'"
+   ],
+   "explanation": "The contract was signed before the architectural specifications and Part 2 approval existed, creating contractual ambiguity as to what documents were bound on June 5, 2023.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Gemini-3.8-F16",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The equity bridge loan matures on March 31, 2026, but the financial model projects receipt of the third equity installment on June 30, 2026.",
+   "claims_compared": "DOC-04 lines 9-10 state the bridge loan matures on March 31, 2026 and is repaid from installment 3; DOC-05 paragraph 4.3 projects installment 3 will be received on June 30, 2026.",
+   "citations": [
+    "DOC-04 p.1, line 9: 'Equity bridge loan $1,700,000, matures 3/31/2026 (memo)'",
+    "DOC-04 p.1, line 10: 'Interim only; repaid from federal equity installment 3'",
+    "DOC-05 p.4, 4.3: 'Installment 3 received June 30, 2026'"
+   ],
+   "explanation": "The project faces a three-month liquidity gap and default on the bridge loan unless an extension is secured, since the dedicated repayment source arrives after maturity.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Gemini-3.8-F17",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The state credit purchase agreement permits buyer termination if DHR certification is not delivered by April 30, 2026, but the financial model projects receipt on July 31, 2026.",
+   "claims_compared": "DOC-12 Section 5.3 allows buyer to terminate and receive a refund if DHR certification is not delivered by April 30, 2026; DOC-05 paragraph 4.4 projects proceeds received July 31, 2026.",
+   "citations": [
+    "DOC-12 p.6, Section 5.3: 'If the DHR certification is not delivered by April 30, 2026, Buyer may terminate this Agreement and receive a refund of the deposit.'",
+    "DOC-05 p.4, 4.4: 'Virginia credit proceeds received July 31, 2026'"
+   ],
+   "explanation": "The financial model projects receipt of proceeds three months past the outside delivery date in the signed contract, exposing the project to cancellation and loss of the credit buyer.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Gemini-3.8-F18",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "Developer email claims NPS approved Part 3 in October 2025, but no official Part 3 certification letter exists in the data room.",
+   "claims_compared": "DOC-15 Email, Nov 3, 2025 asserts NPS approved Part 3 in October; no supporting NPS Part 3 approval document is in the data room.",
+   "citations": [
+    "DOC-15 p.11: 'Quick note: NPS approved Part 3 in October. We will send the paperwork once we have it in hand and request the third installment.'",
+    "DOC-09 p.2, line 16: 'Part 3 submitted 9/30/2025'"
+   ],
+   "explanation": "The claim rests solely on an informal developer update with no official NPS certification documentation, creating high risk given the unauthorized vinyl window installation.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "Gemini-3.8-F19",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "The investor summary memo asserts Virginia DHR has issued final certification, but no DHR certification letter is present in the data room.",
+   "claims_compared": "DOC-16 paragraph 6 states Virginia DHR has issued final certification for the state credits; no DHR certification document is provided in the data room.",
+   "citations": [
+    "DOC-16 p.2, 6: 'Virginia DHR has issued final certification for the state credits.'",
+    "DOC-12 p.2, Section 1.2: 'DHR Certification means the final certification of the Credits issued by the Virginia Department of Historic Resources.'"
+   ],
+   "explanation": "State credit monetization under DOC-12 is contingent upon DHR final certification, which cannot be verified without the official state certification document.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Gemini-3.8-F20",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "summary": "The as-is appraised value figure on page 4 of the appraisal excerpt is blurred and completely illegible.",
+   "claims_compared": "DOC-10 page 4 paragraph 1 contains blurred, illegible text for the value of the building.",
+   "citations": [
+    "DOC-10 p.4, 1: '[Illegible blurred text under Value of the building]'"
+   ],
+   "explanation": "The lender starting point for loan-to-value calculations cannot be verified from the data room because the text has been blurred out.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "Gemini-3.8-F21",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "Developer updates claim the building was placed in service on March 28, 2025 upon Phase 1 TCO, while the cost certification and schedule report July 15, 2025.",
+   "claims_compared": "DOC-15 Update, Apr 2025 states the building was placed in service March 28 with Phase 1 TCO; DOC-06 paragraph 2 and DOC-09 milestone 14 report placed in service as July 15, 2025.",
+   "citations": [
+    "DOC-15 p.8: 'Building placed in service March 28 with the Phase 1 TCO. Residents have started moving in on floors 1 to 3.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025'",
+    "DOC-09 p.2, line 14: 'Placed in service 7/15/2025'"
+   ],
+   "explanation": "Partial occupancy of lower floors in March 2025 could constitute placing those units in service for tax purposes under Treas. Reg. Section 1.48-12(f)(2). The certified CPA report DOC-06 governs the project-wide placed-in-service date.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "Gemini-3.8-F22",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The development budget sources and uses shows an unfunded deficit gap of $600,000 despite including $600,000 of deferred developer fee.",
+   "claims_compared": "DOC-04 lines 12, 24, and 25 show total uses of $31,750,000 against total sources of [text lost in copy] 600,000).",
+   "citations": [
+    "DOC-04 p.1, line 7: 'Deferred developer fee $600,000'",
+    "DOC-04 p.1, line 12: 'Total sources $31,150,000'",
+    "DOC-04 p.1, line 24: 'Total uses $31,750,000 [text lost in copy] 600,000) ($600,000)'"
+   ],
+   "explanation": "The development budget does not balance and reveals an unfinanced $600,000 gap that threatens project completion unless additional capital is sourced.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Gemini-3.8-F23",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The financial model assumes an aggressive lease-up pace of 12 units per month, contradicting the market study projection of 7 units per month.",
+   "claims_compared": "DOC-03 paragraph 4 projects absorption of 7 units per month and warns against faster assumptions; DOC-05 paragraph 3.2 assumes 12 units per month.",
+   "citations": [
+    "DOC-03 p.8, 4: 'We project an absorption pace of 7 units per month; stabilization in about 12 months, defined as 93% physical occupancy.'",
+    "DOC-03 p.8, 5: 'A faster pace would require pricing below the proposed rents and is not assumed.'",
+    "DOC-05 p.3, 3.2: 'Lease-up assumption: 12 units per month from the first unit delivered.'"
+   ],
+   "explanation": "Overstating the absorption pace by over 70% distorts working capital, operating deficit reserves, and permanent loan conversion timing. The independent market study DOC-03 governs realistic market absorption.",
+   "confidence": 0.93
+  },
+  {
+   "finding_id": "Gemini-3.8-F24",
+   "classification": "Contextual difference",
+   "severity": "Low",
+   "summary": "The architect specifications misspell the property owner entity name as Ashbey Mill Owner LLC instead of Ashby Mill Owner LLC.",
+   "claims_compared": "DOC-07 page 1 header names the owner as Ashbey Mill Owner LLC; DOC-01 paragraph 1, DOC-08 paragraph 1, and DOC-11 Preamble name the owner as Ashby Mill Owner LLC.",
+   "citations": [
+    "DOC-07 p.1: 'OWNER: Ashbey Mill Owner LLC'",
+    "DOC-01 p.1, 1: 'Owner of record: Ashby Mill Owner LLC, a Virginia limited liability company.'",
+    "DOC-08 p.1, 1: 'Between Ashby Mill Owner LLC (Owner) and Blue Ridge Builders Inc.'",
+    "DOC-11 p.1, Preamble: 'Operating Agreement of Ashby Mill Owner LLC'"
+   ],
+   "explanation": "The discrepancy is a typographical spelling variant across project documentation with no substantive legal impact on ownership.",
+   "confidence": 0.95
+  }
+ ]
+}

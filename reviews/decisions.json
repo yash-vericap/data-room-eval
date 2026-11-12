@@ -1,0 +1,2664 @@
+{
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F02": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Same underlying issue as F03 (model uses the draft price). Summary says the model's math is wrong, but the explanation shows it is right; the real conflict is the price.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: money, not eligibility, so High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Right conclusion, but cites the pre-2018 rule. Credits are claimed over five years from 2025. It cited the model's all-in-2025 line without flagging it (HTC01-035 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity overstated: both dates fall in 2025, so the credit year does not change. Expected Medium.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Quoted the shop-drawing condition but did not raise the missing NPS approval of shop drawings (HTC01-010 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Right issue, wrong class: no document says the certification is outstanding, so it is Insufficient evidence. Severity expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F17": {
+  "status": "False positive candidate",
+  "case_ids": [],
+  "evidence": "Not supported",
+  "reasoning": 0,
+  "note": "Not a discrepancy. The schedule's later date is a conservative forecast, and the market study's 12 months is an estimate. The model must invent a start date to create the conflict.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F19": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Valid issue that is not in the ground truth. The agreement dated June 5, 2023 cites drawings issued July 20, 2023. Candidate new case (Low or Medium); decide before freezing Library v1.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: its own explanation says the credit cannot pass to the investor, which is Critical.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F23": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: a loan default risk is money, so High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "GEMINI_Flash2.5::GEMINI_Flash2.5-F24": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Same issue as F12 (unsupported Part 3 claim). The point that Part 3 needs a final cost certification is not supported by the documents.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Treats the vinyl installation as fact. DOC-15 says windows were installed, not which type.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Format repaired: text lost in copy marked.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F03": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Knock-on effect of F02; the ground truth treats the equity built on the wrong credit as part of HTC01-001. Format repaired.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Format repaired: text lost in copy marked.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Format repaired: explanation cut off and confidence lost in copy.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F09": {
+  "status": "Needs review",
+  "case_ids": [
+   "HTC01-035"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Finds HTC01-035, but its class and severity were lost in copy. Recopy, then set to Match.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Claims the $640,000 was moved into the developer fee. The amounts match, but no document says so.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Says Part 2 gives 84 units; DOC-02 gives no unit count.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F15": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same new candidate case as GEMINI_Flash2.5-F19: the contract is dated before the drawings and approval it cites.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Treats the vinyl installation as established.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-027"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Flags the unreadable page but not the adjusted basis in DOC-06 that depends on it.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Finds the gap but not the memo's fully funded claim. Format repaired.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F23": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini-3.8::Gemini-3.8-F24": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Wrong class: a misspelled entity name is a Low contradiction, not a contextual difference.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011",
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Merged finding: also covers HTC01-010, stored as a second row below. Careful not to treat the vinyl purchase as proved.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity overstated: both dates fall in 2025. Expected Medium. Treats a partial TCO as placing part of the building in service, which goes further than the documents support.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-035"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: affects timing and returns, not eligibility. Expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High. Strong reasoning: it noticed the matching $640,000 amounts without claiming one was moved into the other.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-025"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "First model to catch this one.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F18": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Valid issue not in the ground truth: the memo presents a draft, not-for-reliance cost certification as final. Candidate new case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected High. Also covers the new candidate case (contract dated before the documents it cites).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F23": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "True of the excerpt, but DOC-11 is marked as an excerpt, so the definition may sit in pages not provided. Decide whether it becomes a Low or Medium case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F24": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-027"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Flags the unreadable page but links it to the loan, not to the adjusted basis in DOC-06.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F25": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Wrong class and severity: parking and furniture never qualify, so this is a Critical contradiction, not an estimate difference. It counts as a false alarm on class.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7::Grok4.7-F26": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Did not raise the missing NPS approval of shop drawings (HTC01-010 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Cited the model's all-in-2025 line as support without flagging it (HTC01-035 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Cites DOC-15's 48 units as if it supported 84; it is a progress figure.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F13": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same new candidate case found by every run so far: the contract is dated before the documents it cites.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Quoted $1,831,840 for installment 3 without noticing it should be $1,731,840 (HTC01-014 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini flash 3.8::Gemini flash 3.8-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "ID renamed. Uses the pre-2018 one-year rule and cites the model's all-in-2025 line as support, so HTC01-035 is missed this time.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity understated: expected Critical. Corrects run 1, which called this a contextual difference.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-025"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Citation list of the nineteen lines shortened to one cell; content unchanged.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity and reasoning both right this time, unlike run 1.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F16": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Valid issue not in the ground truth: the schedule dated July 20, 2025 calls September 2025 milestones actual. Candidate new case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity understated: expected High. Also covers the candidate new case on the contract date.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity understated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "ID renamed. Wrong class: the model contradicts the study it relies on, so this is a contradiction. Run 1 labeled it correctly.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity overstated: expected High. Right class, unlike run 1, which folded this into the vinyl finding.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F23": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F24": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Same candidate new case as run 1 F18: memo presents a not-for-reliance draft as the cost certification.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F25": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-027"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "ID renamed. Flags the unreadable page but ties it to the loan, not to the adjusted basis in DOC-06, and dismisses the credit impact.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Grok4.7-R2::Grok4.7-R2-F26": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed for run 2.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity overstated: expected Medium. Leans toward the March date, which the documents do not support; Part 2 treats the work as one project.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Right conclusion but uses the pre-2018 one-year rule, and cites the model's all-in-2025 line as support (HTC01-035 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Partial",
+  "reasoning": 2,
+  "note": "Severity understated: expected Critical. The DOC-11 Section 4.1(a) citation is garbled and quotes text that is not in the document.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected Critical.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-025"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F16": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same candidate new case found by both Grok runs: the memo presents a not-for-reliance draft as the cost certification.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F17": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Valid point, but it comes from filler text in the generated DOC-06 notes rather than a planted issue. Decide whether to keep it as a Medium case or rewrite the notes.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F23": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Valid issue not in the ground truth: a model dated March 1, 2025 reports installment 2 as received, which depends on completion in mid-2025. Candidate new case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F24": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected High. Also covers the candidate new case on the contract date, and adds that the July 2023 specifications cite a Part 2 approval not yet issued.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F25": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same candidate new case as Grok4.7-R2-F16: schedule dated before the milestones it calls actual.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F26": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F27": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-027"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "First run to connect the unreadable page to the adjusted basis in DOC-06, which is the full case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F28": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-026"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "First run of any model to catch HTC01-026. The missing signature page is an extra point the ground truth does not cover.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F29": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CLAUDE SONNET 5.5::CLAUDE SONNET 5.5-F30": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Borderline. A conditional approval is still an approval, so this may be a summary leaving out detail rather than a discrepancy. Lean: not a case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Split finding: F03 covers the furniture half of the same case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F03": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Second half of a split finding (see F02). Counted once, not as a false positive.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F05": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Knock-on effect of F04; the ground truth treats the equity built on the wrong credit as part of HTC01-001.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "States as fact that vinyl windows were procured and installed. The quote is unsigned and DOC-15 does not say which windows went in.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High. First Gemini run to catch this case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F15": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same candidate new case found by every run: contract dated before the documents it cites. Does not raise the construction start date, so not HTC01-008.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: both dates fall in 2025. Expected Medium.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Cites the pre-2018 one-year rule here, while F18 states the five-year rule correctly. The two findings disagree.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-035"
+  ],
+  "evidence": "Partial",
+  "reasoning": 2,
+  "note": "Severity overstated: timing and returns, not eligibility. Expected High. Did not cite the placed-in-service date it depends on.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F22": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F23": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F24": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-027"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Full catch: ties the unreadable page to the adjusted basis used in the substantial rehabilitation test.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F25": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "Gemini 3.8 flash::Gemini 3.8 flash-F26": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity overstated: both dates fall in 2025, so the credit year does not change. Expected Medium. Calls the draft cost certification final.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Partial",
+  "reasoning": 2,
+  "note": "Misquote: DOC-05 2.4 reads 0.88, not 0.82. The conclusion is right, but one cited quote is not in the document.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-037"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F14": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same candidate new case found by every run: contract dated before the documents it cites.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity understated: expected High. Treats it as a delay and misses that a June start would come before Part 2 approval.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-028"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F18": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-038"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F20": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-002"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Wrong class and severity: parking and furniture never qualify, so this is a Critical contradiction. Also calls the draft cost certification final.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "DEEPSEEK-R1::DEEPSEEK-R1-F21": {
+  "status": "False positive candidate",
+  "case_ids": [],
+  "evidence": "Not supported",
+  "reasoning": 0,
+  "note": "Invented quote. DOC-03 never says 'Pittsburgh County'; every mention reads Pittsylvania. Checked against the PDF text.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F02": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC01-001"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Knock-on of F01. Misreads DOC-05 2.4 as 0.82; it reads 0.88 (checked with two PDF text extractors). DeepSeek made the same misreading.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-033"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Severity overstated: both dates fall in 2025, so the tax year does not change. Expected Medium.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-010"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Class and severity both exactly right.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-025"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Citation of the nineteen lines shortened to one cell; content unchanged. Assumes the subtotal is the error, but it matches the adjusted contract, so a missing line item is just as likely.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-036"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: a sale in recapture year 1 means full recapture on that unit's share. Expected Critical.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F14": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Same candidate new case found by every run: contract dated before the documents it cites.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: expected High. Reasoning is right: a June start would come before Part 2 approval.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-032"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-R1::CHATGPT-R1-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC01-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity understated: Part 3 decides whether the credit exists. Expected Critical. Quoted $1,831,840 without noticing it should be $1,731,840 (HTC01-014 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-013",
+   "HTC02-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Decoded the obscure wording correctly. Also covers HTC02-014 (stored as second row).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-019"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-003",
+   "HTC02-011"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High. Also covers HTC02-011 (second row). Mentions adjuster disputes but does not compute the $576,200 (HTC02-039 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High. Computed the $837,500 shortfall from the appendix.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Quoted the snapshot's $7.96M but did not flag it as a stale credit amount (HTC02-002 missed).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-021"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-008"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-007"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F11": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Real issue not in the ground truth: the model tab mixes sources and uses without sponsor equity or deferred fee, so it does not balance. Candidate new case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-016"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-015",
+   "HTC02-040"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Also covers HTC02-040, the buried timing adjuster (second row). Did not compute the $145,800.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-042"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity: expected Medium. Also found a real internal conflict in the OA itself: a boilerplate clause on p.7 says 4%. Not in the ground truth; candidate addition.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-020"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Severity: expected Medium.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F16": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F17": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-009"
+  ],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Missed the internal deck conflict (slide 18 says 134). Lumps in the 2023 appraisal, which predates the change (HTC02-027 is a contextual difference).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F18": {
+  "status": "Duplicate",
+  "case_ids": [
+   "HTC02-013"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Split of F01: the missing signatures are part of HTC02-013.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F19": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-024"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Wrong class: no document claims approval, so this is Insufficient evidence. Severity expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F20": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "Real dating defect not in the ground truth: a May 10 memo relies on a June 28 budget. Candidate new case (Low).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F21": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-022"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F22": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Partial",
+  "reasoning": 1,
+  "note": "Citations shortened to references; quotes in the original reply. True of the data room but these are routine open diligence requests, not discrepancies. Lean: not a case.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "HTC02-R1::HTC02-R1-F23": {
+  "status": "Needs review",
+  "case_ids": [],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "Plausible gap not in the ground truth. Candidate new case (Medium).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F01": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-001",
+   "HTC02-002",
+   "HTC02-003"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Merged finding: also covers HTC02-002 and HTC02-003 (rows below). Some citation quotes shortened. Lists the superseded deck v3 alongside the live documents.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F02": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-019"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F03": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-004"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F04": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-005"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity overstated: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F05": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-009"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity: expected Medium. Caught the internal deck conflict. The missing Part 2 amendment is a valid extra point; candidate addition.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F06": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-017"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity: expected High.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F07": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-018"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F08": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-006"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F09": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-008",
+   "HTC02-007",
+   "HTC02-023"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Merged finding: also covers HTC02-007 and HTC02-023 (rows below). Some citation quotes shortened.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F10": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-012"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F11": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-013",
+   "HTC02-014"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Also covers HTC02-014 (row below).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F12": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-015"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Mentions the timing adjuster but does not say the price drops or by how much (HTC02-040 not counted).",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F13": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-024"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 1,
+  "note": "ID renamed. Severity: expected High. Does not tie the gap to the installment 2 drawdown already issued.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F14": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-042"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed. Severity: expected Medium. Also found the OA's internal 4% clause, as Gemini did.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ },
+ "CHATGPT-HTC02-R1::CHATGPT-HTC02-R1-F15": {
+  "status": "Match",
+  "case_ids": [
+   "HTC02-021"
+  ],
+  "evidence": "Sufficient",
+  "reasoning": 2,
+  "note": "ID renamed.",
+  "decided_by": "sheet import",
+  "decided_at": null
+ }
+}

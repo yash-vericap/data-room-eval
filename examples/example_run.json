@@ -1,0 +1,73 @@
+{
+  "run": {
+    "run_id": "EXAMPLE-v0.01-HTC01-R1",
+    "data_room": "HTC01",
+    "source": "Our system",
+    "system": "Discrepancy checker",
+    "version": "v0.01",
+    "model": "example-model",
+    "run_number": 1,
+    "started_at": "2026-11-11T10:00:00Z",
+    "ended_at": "2026-11-11T10:04:30Z",
+    "duration_minutes": 4.5,
+    "input_tokens": 412000,
+    "output_tokens": 9800,
+    "cost_usd": 1.42,
+    "steps": 37,
+    "notes": "Made-up run that shows the file format. Not a real result."
+  },
+  "findings": [
+    {
+      "finding_id": "F01",
+      "classification": "Contradiction",
+      "severity": "Critical",
+      "summary": "Federal credit in the model is higher than 20% of QRE",
+      "claims_compared": "DOC-05 shows a federal credit of $5,120,000 on QRE of 24,600 ($ in thousands). DOC-06 certifies QRE of $24,600,000 and a credit of $4,920,000.",
+      "citations": [
+        {"doc_id": "DOC-05", "page": 2, "location": "2.3", "quote": "Federal historic tax credit: $5,120,000"},
+        {"doc_id": "DOC-06", "page": 3, "location": "5", "quote": "Federal rehabilitation credit: $4,920,000"}
+      ],
+      "explanation": "20% of $24,600,000 is $4,920,000. The model overstates the credit by $200,000.",
+      "confidence": 0.97
+    },
+    {
+      "finding_id": "F02",
+      "classification": "Contradiction",
+      "severity": "High",
+      "summary": "Signed and draft purchase agreements show different credit prices",
+      "claims_compared": "DOC-12 sets the price at $0.82 per $1.00 of credit. DOC-13 shows $0.85.",
+      "citations": [
+        {"doc_id": "DOC-12", "page": 3, "location": "Section 2.1", "quote": "Buyer shall pay $0.82 per $1.00 of credit"},
+        {"doc_id": "DOC-13", "page": 3, "location": "Section 2.1", "quote": "Buyer shall pay $0.85 per $1.00 of credit"}
+      ],
+      "explanation": "The two versions of the agreement disagree on price.",
+      "confidence": 0.8
+    },
+    {
+      "finding_id": "F03",
+      "classification": "Insufficient evidence",
+      "severity": "Critical",
+      "summary": "Part 3 approval is mentioned in an email but the approval itself is not in the data room",
+      "claims_compared": "DOC-15 says NPS approved Part 3 in October. DOC-11 releases 40% of equity on receipt of Part 3 approval.",
+      "citations": [
+        {"doc_id": "DOC-15", "page": 11, "location": "email Nov 3, 2025", "quote": "NPS approved Part 3 in October"},
+        {"doc_id": "DOC-11", "page": 14, "location": "Section 4.2(c)", "quote": "40% upon receipt of Part 3 approval"}
+      ],
+      "explanation": "No Part 3 document was found, so the installment trigger cannot be confirmed.",
+      "confidence": 0.9
+    },
+    {
+      "finding_id": "F04",
+      "classification": "Contradiction",
+      "severity": "Medium",
+      "summary": "Insurance premium differs between the budget and the lender term sheet",
+      "claims_compared": "DOC-04 shows builder's risk insurance of $96,000. DOC-03 mentions $104,000.",
+      "citations": [
+        {"doc_id": "DOC-04", "page": 2, "location": "line 29", "quote": "Builder's risk insurance $96,000"},
+        {"doc_id": "DOC-03", "page": 19, "location": "2", "quote": "insurance of roughly $104,000"}
+      ],
+      "explanation": "The two premiums do not agree.",
+      "confidence": 0.55
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label": "Eval: open the app", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "streamlit", "run", "app.py"], "problemMatcher": [], "group": {"kind": "build", "isDefault": true}},
+    {"label": "Eval: score all runs", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "eval", "score"], "problemMatcher": []},
+    {"label": "Eval: run the judge", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "eval", "judge"], "problemMatcher": []},
+    {"label": "Eval: submit a run file", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "eval", "submit", "${input:runFile}"], "problemMatcher": []},
+    {"label": "Eval: start the endpoint (port 8000)", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "eval", "serve", "--port", "8000"], "problemMatcher": [], "isBackground": true},
+    {"label": "Eval: run the tests", "type": "process", "command": "${command:python.interpreterPath}",
+     "args": ["-m", "pytest", "-q"], "problemMatcher": []}
+  ],
+  "inputs": [
+    {"id": "runFile", "type": "promptString", "description": "Path to the run JSON file", "default": "examples/example_run.json"}
+  ]
+}

@@ -1,0 +1,448 @@
+{
+ "run": {
+  "run_id": "Grok4.7",
+  "data_room": "HTC01",
+  "source": "Baseline model",
+  "system": "Grok Build, April 2026",
+  "model": "Grok Build, April 2026",
+  "version": "BP-v1",
+  "run_number": 1,
+  "started_at": "2026-11-11",
+  "duration_minutes": 11.5,
+  "input_tokens": null,
+  "output_tokens": null,
+  "cost_usd": null,
+  "access_route": "Chat app",
+  "snapshot": null,
+  "format_repairs": 1,
+  "notes": ""
+ },
+ "findings": [
+  {
+   "finding_id": "Grok4.7-F01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "Approved wood-window work and prior NPS shop-drawing approval conflict with the only window quotation, and no approval is in the file.",
+   "claims_compared": "DOC-02 and DOC-07 require repair or wood replacements matching original profiles, with NPS approval before installation; DOC-14 quotes 412 vinyl units with simulated grilles; DOC-09 and DOC-15 say the windows were installed.",
+   "citations": [
+    "DOC-02 p.3, Condition 2: 'Replacement windows must replicate the original wood profiles in material, dimensions and muntin pattern. Shop drawings for replacement windows must be submitted to and approved by NPS before installation.'",
+    "DOC-02 p.5, Item 4: 'Sash that can be repaired will be repaired. Sash too deteriorated to repair will be replaced with wood units replicating original profiles'",
+    "DOC-02 p.1: 'Failure to meet the conditions may result in denial of certification of the completed work (Part 3).'",
+    "DOC-07 p.6, Section 08 52 00: 'Wood windows replicating original profiles, with true divided lites matching the historic muntin pattern and profile.'",
+    "DOC-07 p.6: 'Repair existing sash where the window survey shows it can be repaired. Replace only sash documented as deteriorated.'",
+    "DOC-14 p.1: 'Item 1 - Vinyl double-hung, standard profile' '412'",
+    "DOC-14 p.1: 'Units are white vinyl with a standard sash profile and simulated grilles between the glass.'",
+    "DOC-14 p.2: 'Total $1,180,000, supply only'",
+    "DOC-14 p.3: 'Accepted by: ____________________ Date: ___________'",
+    "DOC-04 p.2, line 17: 'Windows, furnish and install' '$1,240,000'",
+    "DOC-08 p.9: 'CO-2 window installation' '05/06/2024' '$60,000'",
+    "DOC-09 p.1: 'Windows floors 1 to 3' '9/20/2024'",
+    "DOC-09 p.1: 'Windows floors 4 and 5' '12/13/2024'",
+    "DOC-15 p.2: 'Window shop drawings were sent to the SHPO for NPS review in February.'"
+   ],
+   "explanation": "Condition 2 is a condition of certification under the Secretary of the Interior's Standards: vinyl units with grilles between the glass do not match original wood material or true muntin profiles, and replacing all 412 openings conflicts with repair-first. The quotation is unsigned, so purchase is not proved, but it is the only window product in the file, its quantity matches the 412 openings, and $1,180,000 plus the $60,000 window change order equals the budget window line. No NPS shop-drawing approval appears, although installation dates are in 2024. The conditional Part 2 letter governs.",
+   "confidence": 0.8
+  },
+  {
+   "finding_id": "Grok4.7-F02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The cost certification names the developer as taxpayer, but the building owner is the entity that must claim the federal credit.",
+   "claims_compared": "DOC-06 says the taxpayer is Riverside Heritage Development LLC; DOC-01 and DOC-11 say Ashby Mill Owner LLC owns the building and will claim the federal credit.",
+   "citations": [
+    "DOC-06 p.1, 1: 'Taxpayer: Riverside Heritage Development LLC'",
+    "DOC-06 p.2, 1: 'The schedule includes costs paid or incurred by the taxpayer for the rehabilitation of the building'",
+    "DOC-01 p.1, 1: 'Owner of record: Ashby Mill Owner LLC, a Virginia limited liability company.'",
+    "DOC-11 p.1: 'This Operating Agreement of Ashby Mill Owner LLC'",
+    "DOC-11 p.1: 'The Company owns the historic building known as the Ashby Mill, 410 Bridge Street, Danville, Virginia (the Building), and intends to rehabilitate it and claim the federal historic rehabilitation tax credit.'",
+    "DOC-08 p.1: 'Between Ashby Mill Owner LLC (Owner) and Blue Ridge Builders Inc. (Contractor)'"
+   ],
+   "explanation": "Under IRC section 47, the credit belongs to the owner that incurs the qualified rehabilitation expenditures. The construction contract is with Ashby Mill Owner LLC, while Riverside Heritage Development LLC is only the authorized representative and developer. The owner documents govern. A certification in the wrong taxpayer's name puts both the credit claimant and the expenditure schedule in doubt.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Grok4.7-F03",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The developer treats March 28, 2025 as placed in service, while the cost certification, schedule, and operating agreement use July 15, 2025.",
+   "claims_compared": "DOC-15 says the building was placed in service on March 28, 2025 with the Phase 1 TCO; DOC-06, DOC-09, and DOC-11 say it was placed in service on July 15, 2025.",
+   "citations": [
+    "DOC-15 p.8: 'Building placed in service March 28 with the Phase 1 TCO. Residents have started moving in on floors 1 to 3.'",
+    "DOC-09 p.2: 'Phase 1 temporary certificate of occupancy (floors 1 to 3)' '3/28/2025'",
+    "DOC-09 p.2: 'Placed in service' '7/15/2025'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025, being the date the completed rehabilitation was ready and available for its intended use.'",
+    "DOC-06 p.3, 2: 'Costs incurred after the placed-in-service date are excluded.'",
+    "DOC-11 p.14, 4.2(b): '[Recital added by First Amendment:] the Building was placed in service on July 15, 2025.'",
+    "DOC-07 p.1, 3: 'Floors 1 to 3 will be completed first and may be occupied before floors 4 and 5 are complete, subject to a temporary certificate of occupancy.'"
+   ],
+   "explanation": "A building is placed in service when it is ready and available for its intended use. Occupancy of floors 1 to 3 on March 28, 2025 can start the credit period and cut off later costs for that portion, so a single July 15 date may overstate qualified costs. The August 1, 2025 operating-agreement amendment and the cost certification are the later formal sources, but they conflict with the developer's contemporaneous update.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "Grok4.7-F04",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The investor memo says the federal credit will be claimed on the 2024 return, but the building was placed in service in 2025.",
+   "claims_compared": "DOC-16 says federal credits will be claimed on the 2024 return and recapture runs through July 2030; DOC-06, DOC-09, and DOC-11 place the building in service on July 15, 2025.",
+   "citations": [
+    "DOC-16 p.2, 5: 'Federal credits will be claimed on the 2024 return.'",
+    "DOC-16 p.2, 8: 'As is standard, credits remain subject to recapture through July 2030.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025'",
+    "DOC-09 p.2: 'Placed in service' '7/15/2025'",
+    "DOC-11 p.14, 4.2(b): 'the Building was placed in service on July 15, 2025.'"
+   ],
+   "explanation": "The rehabilitation credit is allowed beginning in the taxable year the qualified rehabilitated building is placed in service. Nothing in the schedule was placed in service in 2024, so a 2024 claim cannot be right. Recapture through July 2030 fits a July 2025 start under the five-year rule, not a 2024 claim. The cost certification and operating agreement govern the memo.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "Grok4.7-F05",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The model delivers the entire federal credit in 2025 and none in the next four years.",
+   "claims_compared": "DOC-05 assigns all federal credits to 2025 and zero to 2026 through 2029; DOC-06 and DOC-09 place the building in service in 2025, which starts a five-year ratable period.",
+   "citations": [
+    "DOC-05 p.4, 4.1: 'Federal credits delivered: 2025 5,120; 2026 to 2029 0 ($ in thousands)'",
+    "DOC-05 p.5, 5.1: 'Investor returns are calculated on the timing of credits and equity shown in section 4.'",
+    "DOC-06 p.1, 2: 'The building was placed in service on July 15, 2025'",
+    "DOC-09 p.2: 'Placed in service' '7/15/2025'"
+   ],
+   "explanation": "Under IRC section 47(a) and (b), for property placed in service after 2017 the 20% credit is allowed ratably over the five taxable years beginning with the placed-in-service year, not all in year one. The model's benefit timing, which drives the stated investor return, cannot be true for a 2025 placed-in-service date.",
+   "confidence": 0.93
+  },
+  {
+   "finding_id": "Grok4.7-F06",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The model's federal credit is not 20% of its own qualified-expense figure and conflicts with the equity documents.",
+   "claims_compared": "DOC-05 says qualified expenses are 24,600 ($ in thousands) and the federal credit is $5,120,000; 20% of that base is $4,920,000, which is the credit used in DOC-06, DOC-11, and DOC-04.",
+   "citations": [
+    "DOC-05 p.2, 2.1: 'Qualified rehabilitation expenses: 24,600 ($ in thousands)'",
+    "DOC-05 p.2, 2.2: 'Federal historic tax credit rate: 20%'",
+    "DOC-05 p.2, 2.3: 'Federal historic tax credit: $5,120,000'",
+    "DOC-05 p.2, 2.4: 'Federal equity price per credit dollar: 0.88'",
+    "DOC-05 p.2, 2.5: 'Federal investor equity: 4,505.6 ($ in thousands)'",
+    "DOC-06 p.3, 4: 'Total qualified rehabilitation expenditures: $24,600,000'",
+    "DOC-06 p.3, 5: 'Federal rehabilitation credit: $4,920,000'",
+    "DOC-11 p.13, 4.1(a): 'The capital contribution has been calculated on projected federal credits of $4,920,000 at $0.88 per credit dollar.'",
+    "DOC-11 p.13, 4.1: 'The Investor Member shall contribute a total of $4,329,600'",
+    "DOC-04 p.1, line 4: 'Federal historic tax credit equity' '$4,329,600'",
+    "DOC-16 p.1, 4: 'generating $4.9M in federal credits.'"
+   ],
+   "explanation": "24,600 ($ in thousands) times 20% is $4,920,000, not $5,120,000. Model equity of 4,505.6 ($ in thousands) equals the wrong credit times 0.88; $4,920,000 times 0.88 is $4,329,600, the signed contribution and the budget. The operating agreement governs the model. The memo's $4.9M matches $4,920,000 at the memo's precision and does not match $5,120,000.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Grok4.7-F07",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "The draft cost certification and the signed contract reach the same $24,600,000 qualified total by including different $640,000 items.",
+   "claims_compared": "DOC-08 adjusts the contract to $22,540,000 after $640,000 of change orders; DOC-06 uses the original $21,900,000 contract and a $640,000 qualified developer fee; DOC-04 treats the full hard cost as qualified and leaves the developer fee outside qualified costs.",
+   "citations": [
+    "DOC-08 p.9: 'Original contract sum' '$21,900,000'",
+    "DOC-08 p.9: 'CO-1 Structural repairs, floors 2 and 3' '$315,000'",
+    "DOC-08 p.9: 'CO-2 window installation' '$60,000'",
+    "DOC-08 p.9: 'CO-3 Masonry repairs at river elevation' '$265,000'",
+    "DOC-08 p.9: 'Adjusted contract sum after change orders' '$22,540,000'",
+    "DOC-06 p.2, 3: 'Construction contract $21,900,000'",
+    "DOC-06 p.2, 5: 'Developer fee (qualified part) $640,000.'",
+    "DOC-06 p.3, 4: 'Total qualified rehabilitation expenditures: $24,600,000'",
+    "DOC-04 p.1, line 16: 'Hard construction (contract plus change orders)' '$22,540,000'",
+    "DOC-04 p.2, line 40: 'Developer fee (not included above)' '$2,750,000'"
+   ],
+   "explanation": "The signed change orders are rehabilitation costs and govern the hard-cost amount. The draft certification omits that $640,000 and instead includes a $640,000 fee the budget does not treat as qualified, so both land on $24,600,000 for different scopes. If both the change orders and a qualified fee belong in the base, qualified expenditures are understated by $640,000 and the federal credit by $128,000. The draft is stamped not for reliance.",
+   "confidence": 0.92
+  },
+  {
+   "finding_id": "Grok4.7-F08",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "summary": "A planned June 30, 2026 sale of a commercial unit falls inside the five-year recapture period that the memo says will have no transfers.",
+   "claims_compared": "DOC-15 plans to sell unit C-1 on June 30, 2026; DOC-16 says no sale is planned during the credit period; DOC-11 bars any sale of a unit during the five-year compliance period without investor consent.",
+   "citations": [
+    "DOC-15 p.12: 'We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026.'",
+    "DOC-16 p.2, 7: 'No sale or transfer of any part of the property is planned during the credit period.'",
+    "DOC-16 p.2, 8: 'credits remain subject to recapture through July 2030.'",
+    "DOC-11 p.24, 8.1: 'Compliance Period: five years beginning on the placed-in-service date of the Building.'",
+    "DOC-11 p.24, 8.2: 'No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent, including any conversion of the Building or any part of it to condominium ownership.'"
+   ],
+   "explanation": "June 30, 2026 is inside a compliance period that runs from July 15, 2025 through July 2030. A sale of part of the building can trigger federal recapture under IRC section 50(a). The operating agreement governs, and neither it nor the file shows investor consent. The recapture guaranty is capped well below the credit.",
+   "confidence": 0.94
+  },
+  {
+   "finding_id": "Grok4.7-F09",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "summary": "Part 3 approval is asserted only in an email that says the approval paperwork is not in hand.",
+   "claims_compared": "DOC-15 says NPS approved Part 3 in October 2025; DOC-09 records only that Part 3 was submitted on September 30, 2025; no approval letter is in the data room.",
+   "citations": [
+    "DOC-15 p.11: 'NPS approved Part 3 in October. We will send the paperwork once we have it in hand and request the third installment.'",
+    "DOC-09 p.2: 'Part 3 submitted' '9/30/2025'",
+    "DOC-09 p.3, 1: 'Dates through milestone 16 are actual.'",
+    "DOC-11 p.14, 4.2(c): '$1,831,840, being 40% upon receipt of Part 3 approval from the National Park Service.'",
+    "DOC-02 p.1: 'Approval of this application does not mean that the completed project will be certified.'"
+   ],
+   "explanation": "Part 3 is the certification of completed work, and denial can disallow the credit. The email itself says the sponsor does not have the paperwork, and the 40% equity installment is triggered by receipt of that approval. An email does not govern. The approval cannot be verified.",
+   "confidence": 0.91
+  },
+  {
+   "finding_id": "Grok4.7-F10",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Virginia credits are priced at $0.82 in the signed purchase agreement and at $0.85 in the model, memo, email, and unexecuted draft.",
+   "claims_compared": "DOC-12 requires $0.82 per credit dollar; DOC-13, DOC-05, DOC-15, and DOC-16 use $0.85; DOC-04's proceeds match $0.82.",
+   "citations": [
+    "DOC-12 p.3, 2.1: 'Buyer shall pay $0.82 per $1.00 of credit for all Credits transferred at Closing.'",
+    "DOC-12 p.2, 1.1: 'expected to total $6,150,000.'",
+    "DOC-13 p.1: 'Draft dated February 18, 2025 - not for execution'",
+    "DOC-13 p.3, 2.1: 'Buyer shall pay $0.85 per $1.00 of credit for all Credits transferred at Closing.'",
+    "DOC-05 p.2, 2.6: 'Virginia credit price per credit dollar: 0.85'",
+    "DOC-05 p.2, 2.7: 'Virginia credit proceeds: 5,227.5 ($ in thousands)'",
+    "DOC-04 p.1, line 5: 'Virginia historic tax credit proceeds' '$5,043,000'",
+    "DOC-15 p.6: 'pricing came in at 85 cents. We have updated the model to reflect it.'",
+    "DOC-16 p.1, 3: 'Virginia credits sold at $0.85 per credit.'"
+   ],
+   "explanation": "$6,150,000 times $0.82 is $5,043,000, the budget figure. Times $0.85 it is $5,227,500, the model figure. The difference is $184,500. The November 4, 2024 signed agreement governs the February 18, 2025 draft marked not for execution, and the later memo and model rely on the unsigned price.",
+   "confidence": 0.97
+  },
+  {
+   "finding_id": "Grok4.7-F11",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The budget developer fee is $2,750,000, above the operating agreement cap of $2,500,000.",
+   "claims_compared": "DOC-11 caps the development fee at $2,500,000 without investor consent; DOC-04 uses a $2,750,000 developer fee. No consent is in the file.",
+   "citations": [
+    "DOC-11 p.18, 6.3: 'The total development fee shall not exceed $2,500,000 without the prior written consent of the Investor Member.'",
+    "DOC-04 p.1, line 22: 'Developer fee' '$2,750,000'",
+    "DOC-04 p.4, 6: 'Changes since the prior version reflect approved change orders, updated interest costs and the current developer fee.'"
+   ],
+   "explanation": "The August 1, 2025 budget is $250,000 over the cap. The first amendment of that date, as excerpted, adds only the placed-in-service recital and does not raise the cap. The signed operating agreement governs, and consent is not shown.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Grok4.7-F12",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "Sources are $600,000 short of uses, but the investor memo says the project is fully funded.",
+   "claims_compared": "DOC-04 shows total sources of $31,150,000, total uses of $31,750,000, and a $600,000 gap; DOC-16 says the project is fully funded with all sources committed.",
+   "citations": [
+    "DOC-04 p.1, line 12: 'Total sources' '$31,150,000'",
+    "DOC-04 p.1, line 24: 'Total uses $31,750,000' '$31,750,000'",
+    "DOC-04 p.1, line 25: 'Gap ($600,000)' '($600,000)'",
+    "DOC-04 p.1, line 7: 'Deferred developer fee' '$600,000'",
+    "DOC-16 p.1, 2: 'The project is fully funded, with all sources committed and construction complete.'"
+   ],
+   "explanation": "The line items add to the printed source and use totals. The $600,000 deferred fee is already inside the $31,150,000 sources, so it does not close the gap. The budget is the source document and governs the memo.",
+   "confidence": 0.96
+  },
+  {
+   "finding_id": "Grok4.7-F13",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The stated equity installments do not add up to the investor's $4,329,600 contribution.",
+   "claims_compared": "DOC-11 sets the contribution at $4,329,600 and labels the third installment as 40%, but that installment is stated as $1,831,840 rather than 40% of the total.",
+   "citations": [
+    "DOC-11 p.13, 4.1: 'The Investor Member shall contribute a total of $4,329,600'",
+    "DOC-11 p.14, 4.2(a): '$865,920, being 20% of the capital contribution'",
+    "DOC-11 p.14, 4.2(b): '$1,298,880, being 30% of the capital contribution'",
+    "DOC-11 p.14, 4.2(c): '$1,831,840, being 40% upon receipt of Part 3 approval'",
+    "DOC-11 p.14, 4.2(d): '$432,960, being 10% of the capital contribution'"
+   ],
+   "explanation": "The 20%, 30%, and 10% amounts match $4,329,600. Forty percent is $1,731,840, not $1,831,840. The four stated installments add to $4,429,600, which is $100,000 more than the contribution the same article fixes. The operating agreement contradicts itself.",
+   "confidence": 0.98
+  },
+  {
+   "finding_id": "Grok4.7-F14",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The budget's hard-cost line items add to $22,140,000, not the $22,540,000 subtotal used as qualified cost.",
+   "claims_compared": "DOC-04 states a hard-cost subtotal of $22,540,000 and marks it qualified; the line items on that page add to $22,140,000.",
+   "citations": [
+    "DOC-04 p.2, line 22: 'Hard cost subtotal $22,540,000' 'Yes' '$22,540,000'",
+    "DOC-04 p.2, line 38: 'Total qualified costs $25,310,000' '$25,310,000'"
+   ],
+   "explanation": "Lines 3 through 21, from general conditions through bonds and permits, add to $22,140,000, which is $400,000 below the printed subtotal. The qualified total of $25,310,000 uses the higher subtotal, so that total is not supported by its own lines. The signed adjusted contract sum is $22,540,000, but this schedule does not build to it.",
+   "confidence": 0.99
+  },
+  {
+   "finding_id": "Grok4.7-F15",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The operating agreement caps the recapture guaranty at $1,500,000 in the body and at $1,000,000 in the guaranty form.",
+   "claims_compared": "DOC-11 Article 7 caps recapture indemnity at $1,500,000; Exhibit C of the same agreement caps it at $1,000,000.",
+   "citations": [
+    "DOC-11 p.21, 7.4: 'The Guarantor shall indemnify the Investor Member for any recapture of federal credits caused by an act or omission of the Managing Member, up to a maximum of $1,500,000.'",
+    "DOC-11 p.42, 2: 'The total liability of the Guarantor for recapture under this Guaranty shall not exceed $1,000,000.'"
+   ],
+   "explanation": "Both caps are in the same amended operating agreement, and the visible amendment does not reconcile them. The investor's recapture protection is uncertain by $500,000, and either cap is far below the roughly $4,920,000 federal credit.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Grok4.7-F16",
+   "classification": "Contradiction",
+   "severity": "High",
+   "summary": "The model collects Virginia credit proceeds on July 31, 2026, after the buyer's April 30, 2026 walk date and outside a 30-day closing.",
+   "claims_compared": "DOC-05 says Virginia proceeds are received July 31, 2026; DOC-12 lets the buyer terminate if certification is not delivered by April 30, 2026 and requires closing within 30 days after delivery.",
+   "citations": [
+    "DOC-05 p.4, 4.4: 'Virginia credit proceeds received July 31, 2026'",
+    "DOC-12 p.6, 5.3: 'If the DHR certification is not delivered by April 30, 2026, Buyer may terminate this Agreement and receive a refund of the deposit.'",
+    "DOC-12 p.5, 5.1: 'Closing shall take place within thirty days after Seller delivers the DHR Certification to Buyer.'"
+   ],
+   "explanation": "Payment on July 31, 2026 would require a certification delivered around July 1, 2026, which is after the buyer can already terminate. If certification is delivered by April 30, 2026, closing is due by about May 30, 2026, not July 31. The signed purchase agreement governs the model forecast.",
+   "confidence": 0.88
+  },
+  {
+   "finding_id": "Grok4.7-F17",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "The memo says Virginia has issued final credit certification, but no certification is in the data room.",
+   "claims_compared": "DOC-16 says Virginia DHR has issued final certification; the data room has no DHR certificate.",
+   "citations": [
+    "DOC-16 p.2, 6: 'Virginia DHR has issued final certification for the state credits.'",
+    "DOC-12 p.2, 1.2: 'DHR Certification means the final certification of the Credits issued by the Virginia Department of Historic Resources.'",
+    "DOC-09 p.2: 'Part 3 submitted' '9/30/2025'"
+   ],
+   "explanation": "State-credit proceeds and closing depend on that certificate. The only support is the October 1, 2025 memo, one day after the Part 3 submission date on the schedule. The certificate cannot be verified, so the memo does not govern.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "Grok4.7-F18",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "summary": "The investor memo treats the cost certification as established, but the only CPA report is a draft marked not for reliance.",
+   "claims_compared": "DOC-16 says the cost certification shows about $24.6 million of qualified expenses and was prepared by an independent CPA; DOC-06 is a September 15, 2025 draft and says it is not for reliance.",
+   "citations": [
+    "DOC-06 p.1: 'DRAFT - FOR DISCUSSION PURPOSES ONLY - NOT FOR RELIANCE'",
+    "DOC-06 p.1: 'Draft dated September 15, 2025'",
+    "DOC-05 p.1, 1.3: 'The model will be updated when the cost certification is final.'",
+    "DOC-16 p.1, 4: 'The cost certification shows approximately $24.6 million of qualified rehabilitation expenditures, generating $4.9M in federal credits.'",
+    "DOC-16 p.2, 3: 'The cost certification has been prepared by an independent CPA.'",
+    "DOC-04 p.3, 2: 'Final qualified rehabilitation expenses will be set by the cost certification.'"
+   ],
+   "explanation": "A draft that disclaims reliance is not a final certification of the credit base. The memo uses those figures as if they were final. No final cost certification is in the data room.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Grok4.7-F19",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The equity bridge that is to be repaid from federal installment 3 matures before the only date given for that installment.",
+   "claims_compared": "DOC-04 says the $1,700,000 bridge matures on March 31, 2026 and is repaid from federal equity installment 3; DOC-05 says installment 3 is received on June 30, 2026.",
+   "citations": [
+    "DOC-04 p.1, line 9: 'Equity bridge loan $1,700,000, matures 3/31/2026'",
+    "DOC-04 p.1, line 10: 'Interim only; repaid from federal equity installment 3'",
+    "DOC-05 p.4, 4.3: 'Installment 3 received June 30, 2026'",
+    "DOC-11 p.14, 4.2(c): '$1,831,840, being 40% upon receipt of Part 3 approval from the National Park Service.'"
+   ],
+   "explanation": "The repayment source in the model arrives three months after the loan matures. The operating agreement triggers installment 3 on Part 3 approval rather than on a calendar date, and that approval is not documented. The March 1, 2025 model is an earlier forecast, but it is the only dated receipt and it does not support repayment by maturity.",
+   "confidence": 0.72
+  },
+  {
+   "finding_id": "Grok4.7-F20",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The appraisal describes 86 rental units plus commercial space, while the other project documents describe 84 apartments and 2 commercial suites.",
+   "claims_compared": "DOC-10 says 86 units of rental housing with commercial space on the ground floor; DOC-03 and DOC-07 say 84 apartments and 2 commercial suites.",
+   "citations": [
+    "DOC-10 p.2, 1: 'Proposed improvements: 86 units of rental housing in a converted five-story mill, with commercial space on the ground floor.'",
+    "DOC-03 p.1, 2: 'The subject will contain 84 apartments and 2 commercial suites.'",
+    "DOC-07 p.1, 1: 'The project converts the former Ashby Mill into 84 apartments and 2 ground-floor commercial suites'"
+   ],
+   "explanation": "Eighty-four apartments plus two commercial suites is not 86 rental units plus commercial space. The appraisal was the bank's underwriting basis. The later architectural scope and the market study agree with each other and are the better description of the project that was built.",
+   "confidence": 0.86
+  },
+  {
+   "finding_id": "Grok4.7-F21",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The financial model leases up at 12 units a month, and the market study it relies on uses 7.",
+   "claims_compared": "DOC-05 assumes 12 units per month; DOC-03 projects 7 units per month to a 93% stabilization.",
+   "citations": [
+    "DOC-05 p.3, 3.1: 'Average monthly rent per unit is based on the market study, increased by three percent a year.'",
+    "DOC-05 p.3, 3.2: 'Lease-up assumption: 12 units per month from the first unit delivered.'",
+    "DOC-03 p.8, 4: 'We project an absorption pace of 7 units per month; stabilization in about 12 months, defined as 93% physical occupancy.'",
+    "DOC-09 p.2: 'Stabilization (93% occupancy)' '9/30/2026'"
+   ],
+   "explanation": "At 84 apartments, 93% occupancy is about 78 units. Twelve units a month is roughly six and a half months, which does not land on the September 30, 2026 stabilization date; seven units a month is about eleven months. The study and the model cannot both be the lease-up pace.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "Grok4.7-F22",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "summary": "The June 5, 2023 construction contract incorporates later documents, including a Part 2 approval that did not yet exist, and starts work before the schedule does.",
+   "claims_compared": "DOC-08 is dated June 5, 2023, tells the contractor to begin on the notice-to-proceed date, and includes July 20, 2023 drawings and an approved Part 2; DOC-02 approves Part 2 on August 22, 2023; DOC-09 starts construction on October 2, 2023.",
+   "citations": [
+    "DOC-08 p.1, 1: 'Notice to Proceed dated June 5, 2023. The Contractor shall begin the work on the date stated in the Notice to Proceed.'",
+    "DOC-08 p.1, 3: 'The Contract Documents include the drawings and specifications issued by Hollins and Reade Architects dated July 20, 2023, and the approved Part 2 application.'",
+    "DOC-08 p.1, 4: 'This Agreement is entered into as of June 5, 2023.'",
+    "DOC-07 p.1: 'ISSUE: JULY 20, 2023'",
+    "DOC-02 p.1: 'August 22, 2023'",
+    "DOC-02 p.1: 'NPS - CONDITIONALLY APPROVED'",
+    "DOC-09 p.1: 'Construction start' '10/2/2023'",
+    "DOC-02 p.2, 2: 'Estimated rehabilitation start: October 2023.'"
+   ],
+   "explanation": "On June 5, 2023 the specifications were not yet issued and Part 2 was not approved, so the contract cannot already include them. The schedule, which marks the October 2, 2023 start as actual, conflicts with a notice to proceed that starts work on June 5. The approval letter and the schedule govern the dates.",
+   "confidence": 0.88
+  },
+  {
+   "finding_id": "Grok4.7-F23",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "summary": "The completion and recapture guarantor is never named.",
+   "claims_compared": "DOC-11 imposes guaranty obligations on 'the Guarantor' but does not identify that party.",
+   "citations": [
+    "DOC-11 p.21, 7.1: 'The Guarantor shall guarantee completion of the rehabilitation in accordance with the plans and specifications.'",
+    "DOC-11 p.42, 1: 'The Guarantor unconditionally guarantees to the Investor Member the obligations of the Managing Member described in Article 7 of the Operating Agreement.'"
+   ],
+   "explanation": "Completion and recapture protection depend on a named, creditworthy guarantor. No guaranty signature block or guarantor name appears in the operating agreement or Exhibit C. The obligation cannot be verified.",
+   "confidence": 0.92
+  },
+  {
+   "finding_id": "Grok4.7-F24",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "summary": "The appraisal's value conclusions cannot be read, so the construction-loan value is unsupported.",
+   "claims_compared": "DOC-10 says it contains the value conclusions and that as-is value is used for loan-to-value; the value figures on page 4 are obscured, and page 5 points to a full report that is not in the data room.",
+   "citations": [
+    "DOC-10 p.1, 1: 'Purpose: to estimate the as-is market value of the fee simple interest and the prospective value upon completion of the proposed rehabilitation.'",
+    "DOC-10 p.1, 4: 'This excerpt contains the property description and the value conclusions only.'",
+    "DOC-10 p.4, 3: 'The as-is value is used by the lender as the starting point for the loan-to-value calculation.'",
+    "DOC-10 p.5, 1: 'The prospective value upon completion and stabilization is set out in the full report.'",
+    "DOC-04 p.1, line 3: 'Construction loan - Piedmont Community Bank' '$18,500,000'"
+   ],
+   "explanation": "Page 4's value conclusion is covered and paragraph 1 is not readable. No as-is or prospective value figure can be verified against the $18,500,000 loan. The missing full report is not a substitute.",
+   "confidence": 0.95
+  },
+  {
+   "finding_id": "Grok4.7-F25",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "summary": "The budget counts the parking lot and furniture as qualified rehabilitation costs, and the draft cost certification excludes them.",
+   "claims_compared": "DOC-04 marks the $420,000 parking lot and $290,000 furniture as qualified; DOC-06 excludes parking, site work outside the building, and furniture.",
+   "citations": [
+    "DOC-04 p.2, line 31: 'Parking lot' 'Yes' '$420,000'",
+    "DOC-04 p.2, line 34: 'Furniture, fixtures and equipment' 'Yes' '$290,000'",
+    "DOC-04 p.2, line 38: 'Total qualified costs $25,310,000'",
+    "DOC-04 p.3, 2: 'Qualified costs are an estimate prepared by the developer. Final qualified rehabilitation expenses will be set by the cost certification.'",
+    "DOC-06 p.3, 1: 'Costs for acquisition, land, site work outside the building, parking and furniture are excluded.'"
+   ],
+   "explanation": "Both can be true at different stages: the budget says its qualified total is an estimate, and the later draft certification removes items that are generally not qualified rehabilitation expenditures under Treas. Reg. section 1.48-12. The $710,000 difference is worth confirming because the budget total has not been revised and the certification is not final.",
+   "confidence": 0.9
+  },
+  {
+   "finding_id": "Grok4.7-F26",
+   "classification": "Contradiction",
+   "severity": "Low",
+   "summary": "The architectural specifications spell the owner as Ashbey Mill Owner LLC.",
+   "claims_compared": "DOC-07 names the owner Ashbey Mill Owner LLC; DOC-01, DOC-08, and DOC-11 name Ashby Mill Owner LLC.",
+   "citations": [
+    "DOC-07 p.1: 'OWNER: Ashbey Mill Owner LLC'",
+    "DOC-01 p.1, 1: 'Owner of record: Ashby Mill Owner LLC'",
+    "DOC-08 p.1: 'Ashby Mill Owner LLC (Owner)'",
+    "DOC-11 p.1: 'Ashby Mill Owner LLC, a Virginia limited liability company (the Company)'"
+   ],
+   "explanation": "Ashbey and Ashby are different spellings, not an LLC versus L.L.C. variant. The owner documents agree on Ashby. The specification header looks like a typo and does not by itself change who owns the building, but it should be corrected before it is used as a contract document.",
+   "confidence": 0.84
+  }
+ ]
+}
