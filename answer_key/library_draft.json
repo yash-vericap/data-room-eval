@@ -1,0 +1,4351 @@
+{
+ "snapshot": "Working draft",
+ "base": "library_v1",
+ "cases": [
+  {
+   "case_id": "HTC01-001",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Federal credit in the financial model does not match the QRE",
+   "claims_compared": "DOC-05 shows a federal credit of $5,120,000. DOC-05 and DOC-06 both show QRE of $24,600,000, and DOC-06 gives the credit as $4,920,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".3",
+     "quote": "$5,120,000",
+     "raw": "DOC-05 p.2, 2.3: \"$5,120,000\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".1",
+     "quote": "24,600 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.1: \"24,600 ($ in thousands)\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$24,600,000",
+     "raw": "DOC-06 p.3, 4: \"$24,600,000\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$4,920,000",
+     "raw": "DOC-06 p.3, 5: \"$4,920,000\""
+    }
+   ],
+   "explanation": "The federal credit is 20% of QRE. $24.6M x 20% = $4.92M, so the model overstates the credit by $200,000, and the investor equity built on it.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-05",
+    "DOC-06"
+   ],
+   "register_ids": [
+    "R-001",
+    "R-002",
+    "R-003",
+    "R-004"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Cross-document dependency",
+    "units"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-002",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Budget counts non-qualifying costs as QRE",
+   "claims_compared": "DOC-04 totals qualified costs at $25,310,000, including a $420,000 parking lot and $290,000 of furniture. DOC-06 certifies QRE of $24,600,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 38",
+     "quote": "Total qualified costs $25,310,000",
+     "raw": "DOC-04 p.2, line 38: \"Total qualified costs $25,310,000\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 31",
+     "quote": "$420,000",
+     "raw": "DOC-04 p.2, line 31: \"$420,000\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 34",
+     "quote": "$290,000",
+     "raw": "DOC-04 p.2, line 34: \"$290,000\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$24,600,000",
+     "raw": "DOC-06 p.3, 4: \"$24,600,000\""
+    }
+   ],
+   "explanation": "Parking lots and furniture do not qualify. Taking out $710,000 brings the budget to $24,600,000, which matches the cost certification. Any credit worked out from the budget figure is overstated.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-04",
+    "DOC-06"
+   ],
+   "register_ids": [
+    "R-003",
+    "R-005",
+    "R-006",
+    "R-007"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Non-qualifying costs"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-003",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Cost certification leaves out the change orders",
+   "claims_compared": "DOC-08 shows three change orders totaling $640,000, bringing the contract to $22,540,000. DOC-06 certifies a construction contract of $21,900,000 with no change orders.",
+   "citations": [
+    {
+     "doc_id": "DOC-08",
+     "page": 9,
+     "location": "change order log",
+     "quote": "CO-1 $315,000; CO-2 $60,000; CO-3 $265,000",
+     "raw": "DOC-08 p.9, change order log: \"CO-1 $315,000; CO-2 $60,000; CO-3 $265,000\""
+    },
+    {
+     "doc_id": "DOC-08",
+     "page": 9,
+     "location": "change order log",
+     "quote": "$22,540,000",
+     "raw": "DOC-08 p.9, change order log: \"$22,540,000\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 2,
+     "location": "",
+     "quote": "Construction contract $21,900,000",
+     "raw": "DOC-06 p.2, 3: \"Construction contract $21,900,000\""
+    }
+   ],
+   "explanation": "The cost certification uses the original contract sum. The change orders are either missing from certified costs or left out without explanation, so certified costs may be understated.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-06",
+    "DOC-08"
+   ],
+   "register_ids": [
+    "R-008",
+    "R-009",
+    "R-010"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Were any of the change orders for non-qualifying work?",
+   "scenario_tags": [
+    "Cross-document dependency"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-004",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Financial model and summaries use the draft credit price, not the signed one",
+   "claims_compared": "DOC-12, the signed agreement, sets the Virginia credit price at $0.82. DOC-05, DOC-15 and DOC-16 use $0.85, the price in the unsigned draft DOC-13.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 3,
+     "location": "Section 2.1",
+     "quote": "$0.82 per $1.00 of credit",
+     "raw": "DOC-12 p.3, Section 2.1: \"$0.82 per $1.00 of credit\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".6",
+     "quote": "0.85",
+     "raw": "DOC-05 p.2, 2.6: \"0.85\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".7",
+     "quote": "5,227.5 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.7: \"5,227.5 ($ in thousands)\""
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 6,
+     "location": "email Mar 4, 2025",
+     "quote": "pricing came in at 85 cents",
+     "raw": "DOC-15 p.6, email Mar 4, 2025: \"pricing came in at 85 cents\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "$0.85 per credit",
+     "raw": "DOC-16 p.1, 3: \"$0.85 per credit\""
+    }
+   ],
+   "explanation": "The signed agreement governs. At $0.82, proceeds are $5,043,000, not $5,227,500, a shortfall of $184,500. The same wrong price appears in three documents and should be reported once.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-12",
+    "DOC-15",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-011",
+    "R-013",
+    "R-014",
+    "R-015",
+    "R-016"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Signed versus draft",
+    "repeated discrepancy"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-005",
+   "data_room": "HTC01",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Signed and draft purchase agreements give different prices",
+   "claims_compared": "DOC-12, signed, sets the price at $0.82. DOC-13, an unsigned later draft, shows $0.85.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 3,
+     "location": "Section 2.1",
+     "quote": "$0.82 per $1.00 of credit",
+     "raw": "DOC-12 p.3, Section 2.1: \"$0.82 per $1.00 of credit\""
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 3,
+     "location": "Section 2.1",
+     "quote": "$0.85 per $1.00 of credit",
+     "raw": "DOC-13 p.3, Section 2.1: \"$0.85 per $1.00 of credit\""
+    }
+   ],
+   "explanation": "The draft was never signed, so the signed price stands. Two versions of an agreement differing is expected and is not a discrepancy on its own. The real issue is HTC01-004, where other documents rely on the draft.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-12",
+    "DOC-13"
+   ],
+   "register_ids": [
+    "R-011",
+    "R-012"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "A reviewer could note that a price change was attempted. That is context, not a conflict.",
+   "open_questions": "",
+   "scenario_tags": [
+    "Signed versus draft"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-006",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Memo says the project is fully funded, but the budget shows a gap",
+   "claims_compared": "DOC-16 says the project is fully funded. DOC-04 shows sources of $31,150,000 against uses of $31,750,000, a $600,000 gap.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "The project is fully funded",
+     "raw": "DOC-16 p.1, 2: \"The project is fully funded\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 1,
+     "location": "line 12",
+     "quote": "$31,150,000",
+     "raw": "DOC-04 p.1, line 12: \"$31,150,000\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 1,
+     "location": "line 24",
+     "quote": "Total uses $31,750,000",
+     "raw": "DOC-04 p.1, line 24: \"Total uses $31,750,000\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 1,
+     "location": "line 25",
+     "quote": "Gap ($600,000)",
+     "raw": "DOC-04 p.1, line 25: \"Gap ($600,000)\""
+    }
+   ],
+   "explanation": "The budget itself shows a $600,000 shortfall. An investor reading the memo would not know the gap exists.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-04",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-017",
+    "R-018",
+    "R-019",
+    "R-020"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Has the gap been closed since the budget date?",
+   "scenario_tags": [
+    "Summary versus source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-007",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Memo puts the federal credits in the wrong tax year",
+   "claims_compared": "DOC-16 says federal credits will be claimed on the 2024 return. DOC-06 gives the placed-in-service date as July 15, 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "Federal credits will be claimed on the 2024 return",
+     "raw": "DOC-16 p.2, 5: \"Federal credits will be claimed on the 2024 return\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 1,
+     "location": "",
+     "quote": "July 15, 2025",
+     "raw": "DOC-06 p.1, 2: \"July 15, 2025\""
+    }
+   ],
+   "explanation": "Credits for a building placed in service after 2017 are claimed in five equal parts, starting with the year it is placed in service. A July 15, 2025 date means the first 20% goes on the 2025 return and the last on the 2029 return. Nothing can be claimed on a 2024 return.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-06",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-021",
+    "R-022"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Dates and timing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-008",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Two different construction start dates, one before Part 2 approval",
+   "claims_compared": "DOC-08 has a notice to proceed dated June 5, 2023. DOC-09 shows construction starting October 2, 2023. DOC-02 shows Part 2 approved on August 22, 2023.",
+   "citations": [
+    {
+     "doc_id": "DOC-08",
+     "page": 1,
+     "location": "",
+     "quote": "Notice to Proceed dated June 5, 2023",
+     "raw": "DOC-08 p.1, 1: \"Notice to Proceed dated June 5, 2023\""
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 1,
+     "location": "row 3",
+     "quote": "10/2/2023",
+     "raw": "DOC-09 p.1, row 3: \"10/2/2023\""
+    },
+    {
+     "doc_id": "DOC-02",
+     "page": 1,
+     "location": "approval letter",
+     "quote": "August 22, 2023",
+     "raw": "DOC-02 p.1, approval letter: \"August 22, 2023\""
+    }
+   ],
+   "explanation": "If work began in June, it started before NPS approved the scope, which puts certification at risk. The documents disagree on the start date, so it has to be confirmed.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-02",
+    "DOC-08",
+    "DOC-09"
+   ],
+   "register_ids": [
+    "R-023",
+    "R-024",
+    "R-025"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": true,
+   "alternative_readings": "The June date may be when the notice was issued, with work on site starting in October. On the face of the documents it is still a conflict.",
+   "open_questions": "When did work on site actually begin?",
+   "scenario_tags": [
+    "Dates and timing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-009",
+   "data_room": "HTC01",
+   "classification": "Insufficient evidence",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Development",
+   "summary": "Part 3 approval is claimed but not in the data room",
+   "claims_compared": "DOC-15 says NPS approved Part 3 in October. No Part 3 approval is in the data room. DOC-11 ties the 40% equity installment to Part 3 approval.",
+   "citations": [
+    {
+     "doc_id": "DOC-15",
+     "page": 11,
+     "location": "email Nov 3, 2025",
+     "quote": "NPS approved Part 3 in October",
+     "raw": "DOC-15 p.11, email Nov 3, 2025: \"NPS approved Part 3 in October\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(c)",
+     "quote": "40% upon receipt of Part 3 approval",
+     "raw": "DOC-11 p.14, Section 4.2(c): \"40% upon receipt of Part 3 approval\""
+    }
+   ],
+   "explanation": "Part 3 approval cannot be confirmed from the documents. Until it is, the third installment of $1,731,840 should not be treated as due.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-11",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-026",
+    "R-027"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Missing document",
+    "weak source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-010",
+   "data_room": "HTC01",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "No evidence NPS approved the window shop drawings before installation",
+   "claims_compared": "DOC-02 requires NPS approval of window shop drawings before installation. DOC-15 reports windows installed on floors 1 to 3 in September 2024. Nothing in the data room shows the drawings were approved.",
+   "citations": [
+    {
+     "doc_id": "DOC-02",
+     "page": 3,
+     "location": "condition 2",
+     "quote": "Shop drawings for replacement windows must be submitted to and approved by NPS before installation",
+     "raw": "DOC-02 p.3, condition 2: \"Shop drawings for replacement windows must be submitted to and approved by NPS before installation\""
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 4,
+     "location": "update Sep 2024",
+     "quote": "Windows installed on floors 1 to 3",
+     "raw": "DOC-15 p.4, update Sep 2024: \"Windows installed on floors 1 to 3\""
+    }
+   ],
+   "explanation": "If the condition was not met, Part 3 certification could be at risk. The NPS response is needed before this can be closed.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-02",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-028",
+    "R-029"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Did NPS respond to the shop drawings?",
+   "scenario_tags": [
+    "Missing document"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-011",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Window quote is for vinyl, but the approval requires wood",
+   "claims_compared": "DOC-02 requires replacement windows to replicate the original wood profiles, and DOC-07 specifies wood. DOC-14, the supplier quote, is for vinyl double-hung windows with a standard profile.",
+   "citations": [
+    {
+     "doc_id": "DOC-02",
+     "page": 3,
+     "location": "condition 2",
+     "quote": "Shop drawings for replacement windows must be submitted to and approved by NPS before installation",
+     "raw": "DOC-02 p.3, condition 2: \"Shop drawings for replacement windows must be submitted to and approved by NPS before installation\""
+    },
+    {
+     "doc_id": "DOC-07",
+     "page": 6,
+     "location": "Section 08 52 00",
+     "quote": "Wood windows replicating original profiles",
+     "raw": "DOC-07 p.6, Section 08 52 00: \"Wood windows replicating original profiles\""
+    },
+    {
+     "doc_id": "DOC-14",
+     "page": 1,
+     "location": "item 1",
+     "quote": "Vinyl double-hung, standard profile",
+     "raw": "DOC-14 p.1, item 1: \"Vinyl double-hung, standard profile\""
+    }
+   ],
+   "explanation": "Vinyl windows would not meet the Part 2 condition, which could cost the project its certification. Which windows were actually ordered and installed must be confirmed.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-02",
+    "DOC-07",
+    "DOC-14"
+   ],
+   "register_ids": [
+    "R-028",
+    "R-030",
+    "R-031"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Was the vinyl quote replaced by a wood window order?",
+   "scenario_tags": [
+    "Approvals and scope"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-012",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Development",
+   "summary": "Appraisal and architect disagree on the unit count",
+   "claims_compared": "DOC-07 shows 84 apartments. DOC-10 shows 86 units.",
+   "citations": [
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "",
+     "quote": "84 apartments",
+     "raw": "DOC-07 p.1, 1: \"84 apartments\""
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "",
+     "quote": "86 units",
+     "raw": "DOC-10 p.2, 1: \"86 units\""
+    }
+   ],
+   "explanation": "No phase, commercial space or date explains the difference. Unit count drives rent and the appraised value.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-07",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R-032",
+    "R-033"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Project facts"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-013",
+   "data_room": "HTC01",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Gross area and rentable area differ",
+   "claims_compared": "DOC-10 gives 112,400 sq ft of gross building area. DOC-07 gives 78,650 rentable sq ft.",
+   "citations": [
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "",
+     "quote": "112,400 SF gross building area",
+     "raw": "DOC-10 p.2, 2: \"112,400 SF gross building area\""
+    },
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "",
+     "quote": "78,650 rentable SF",
+     "raw": "DOC-07 p.1, 2: \"78,650 rentable SF\""
+    }
+   ],
+   "explanation": "Gross area includes corridors, walls and common space, and rentable area does not. Both figures are correct.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-07",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R-034",
+    "R-035"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different definitions"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-014",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Equity installments do not add up to the equity amount",
+   "claims_compared": "DOC-11 sets federal investor equity at $4,329,600, but its four installments add up to $4,429,600. Installment 3 reads $1,831,840, while 40% of equity is $1,731,840.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 13,
+     "location": "Section 4.1",
+     "quote": "$4,329,600",
+     "raw": "DOC-11 p.13, Section 4.1: \"$4,329,600\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(a)",
+     "quote": "$865,920",
+     "raw": "DOC-11 p.14, Section 4.2(a): \"$865,920\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(b)",
+     "quote": "$1,298,880",
+     "raw": "DOC-11 p.14, Section 4.2(b): \"$1,298,880\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(c)",
+     "quote": "$1,831,840",
+     "raw": "DOC-11 p.14, Section 4.2(c): \"$1,831,840\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(d)",
+     "quote": "$432,960",
+     "raw": "DOC-11 p.14, Section 4.2(d): \"$432,960\""
+    }
+   ],
+   "explanation": "Installment 3 is overstated by $100,000. The pay-in schedule has to match total equity.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-036",
+    "R-037",
+    "R-038",
+    "R-039",
+    "R-040"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Internal contradiction",
+    "arithmetic"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-015",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Developer fee in the budget is above the operating agreement cap",
+   "claims_compared": "DOC-04 shows a developer fee of $2,750,000. DOC-11 caps the fee at $2,500,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 40",
+     "quote": "$2,750,000",
+     "raw": "DOC-04 p.2, line 40: \"$2,750,000\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 18,
+     "location": "Section 6.3",
+     "quote": "shall not exceed $2,500,000",
+     "raw": "DOC-11 p.18, Section 6.3: \"shall not exceed $2,500,000\""
+    }
+   ],
+   "explanation": "The budget fee is $250,000 over the cap. Either the budget is wrong or the fee breaches the agreement.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-04",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-041",
+    "R-042"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Money and legal terms"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-016",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Operating agreement gives two different guaranty caps",
+   "claims_compared": "DOC-11 Section 7.4 caps the recapture guaranty at $1,500,000. Exhibit C of the same agreement caps it at $1,000,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 21,
+     "location": "Section 7.4",
+     "quote": "$1,500,000",
+     "raw": "DOC-11 p.21, Section 7.4: \"$1,500,000\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 42,
+     "location": "Exhibit C, paragraph 2",
+     "quote": "$1,000,000",
+     "raw": "DOC-11 p.42, Exhibit C, paragraph 2: \"$1,000,000\""
+    }
+   ],
+   "explanation": "The investor's protection depends on which figure governs, and the agreement contradicts itself.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-043",
+    "R-044"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Which provision does the agreement say controls?",
+   "scenario_tags": [
+    "Internal contradiction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-017",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Cost certification names the developer as taxpayer, not the building owner",
+   "claims_compared": "DOC-06 names Riverside Heritage Development LLC as the taxpayer. DOC-10 shows Ashby Mill Owner LLC as the owner of the building.",
+   "citations": [
+    {
+     "doc_id": "DOC-06",
+     "page": 1,
+     "location": "",
+     "quote": "Taxpayer: Riverside Heritage Development LLC",
+     "raw": "DOC-06 p.1, 1: \"Taxpayer: Riverside Heritage Development LLC\""
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "",
+     "quote": "Ashby Mill Owner LLC, fee simple owner",
+     "raw": "DOC-10 p.1, 3: \"Ashby Mill Owner LLC, fee simple owner\""
+    }
+   ],
+   "explanation": "Only the building's owner can claim the credit. If the certification names the wrong entity, the credit claim and the investor's admission are at risk.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-06",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R-045",
+    "R-046"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Parties"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-018",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Low",
+   "weight": 1,
+   "report": true,
+   "set": "Development",
+   "summary": "Owner name is misspelled on the architect's documents",
+   "claims_compared": "DOC-07 title block reads Ashbey Mill Owner LLC. Every other document has Ashby Mill Owner LLC.",
+   "citations": [
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "title block",
+     "quote": "Ashbey Mill Owner LLC",
+     "raw": "DOC-07 p.1, title block: \"Ashbey Mill Owner LLC\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 1,
+     "location": "preamble",
+     "quote": "Ashby Mill Owner LLC",
+     "raw": "DOC-11 p.1, preamble: \"Ashby Mill Owner LLC\""
+    }
+   ],
+   "explanation": "A typo with no money or eligibility impact, but it should be corrected.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-07",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-047",
+    "R-049"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Parties"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-019",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Low",
+   "weight": 1,
+   "report": false,
+   "set": "Development",
+   "summary": "Owner name written two ways",
+   "claims_compared": "DOC-12 reads Ashby Mill Owner, L.L.C. DOC-11 reads Ashby Mill Owner LLC.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 1,
+     "location": "preamble",
+     "quote": "Ashby Mill Owner, L.L.C.",
+     "raw": "DOC-12 p.1, preamble: \"Ashby Mill Owner, L.L.C.\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 1,
+     "location": "preamble",
+     "quote": "Ashby Mill Owner LLC",
+     "raw": "DOC-11 p.1, preamble: \"Ashby Mill Owner LLC\""
+    }
+   ],
+   "explanation": "Same entity. Only the punctuation differs.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-11",
+    "DOC-12"
+   ],
+   "register_ids": [
+    "R-048",
+    "R-049"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Name variant"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-020",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Memo's rounded QRE and credit figures match the cost certification",
+   "claims_compared": "DOC-16 gives about $24.6 million of QRE and $4.9M of federal credits. DOC-06 gives $24,600,000 and $4,920,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "approximately $24.6 million of qualified rehabilitation expenses",
+     "raw": "DOC-16 p.1, 4: \"approximately $24.6 million of qualified rehabilitation expenses\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "$4.9M in federal credits",
+     "raw": "DOC-16 p.1, 4: \"$4.9M in federal credits\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$24,600,000",
+     "raw": "DOC-06 p.3, 4: \"$24,600,000\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$4,920,000",
+     "raw": "DOC-06 p.3, 5: \"$4,920,000\""
+    }
+   ],
+   "explanation": "$4.92M rounds to $4.9M at the memo's precision. Rounding is not a discrepancy.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-06",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-003",
+    "R-004",
+    "R-050",
+    "R-051"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Rounding"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-021",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Part 2 approval date written in different formats",
+   "claims_compared": "DOC-02 gives August 22, 2023. DOC-15 gives 8/22/2023 and DOC-16 gives 8/22/23.",
+   "citations": [
+    {
+     "doc_id": "DOC-02",
+     "page": 1,
+     "location": "approval letter",
+     "quote": "August 22, 2023",
+     "raw": "DOC-02 p.1, approval letter: \"August 22, 2023\""
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 1,
+     "location": "update Sep 2023",
+     "quote": "8/22/2023",
+     "raw": "DOC-15 p.1, update Sep 2023: \"8/22/2023\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "8/22/23",
+     "raw": "DOC-16 p.2, 1: \"8/22/23\""
+    }
+   ],
+   "explanation": "All three are the same date.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-02",
+    "DOC-15",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-025",
+    "R-052",
+    "R-053"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Format"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-022",
+   "data_room": "HTC01",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Window quote differs from the budget line",
+   "claims_compared": "DOC-14 quotes $1,180,000 for supply only. DOC-04 budgets $1,240,000 to furnish and install. DOC-08 change order 2 adds $60,000 for window installation.",
+   "citations": [
+    {
+     "doc_id": "DOC-14",
+     "page": 2,
+     "location": "total",
+     "quote": "$1,180,000, supply only",
+     "raw": "DOC-14 p.2, total: \"$1,180,000, supply only\""
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 17",
+     "quote": "Windows, furnish and install $1,240,000",
+     "raw": "DOC-04 p.2, line 17: \"Windows, furnish and install $1,240,000\""
+    },
+    {
+     "doc_id": "DOC-08",
+     "page": 9,
+     "location": "change order log",
+     "quote": "CO-2 window installation $60,000",
+     "raw": "DOC-08 p.9, change order log: \"CO-2 window installation $60,000\""
+    }
+   ],
+   "explanation": "The quote leaves out installation, which change order 2 adds. $1,180,000 + $60,000 = $1,240,000.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-04",
+    "DOC-08",
+    "DOC-14"
+   ],
+   "register_ids": [
+    "R-054",
+    "R-055",
+    "R-056"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Estimate versus final"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-023",
+   "data_room": "HTC01",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Update reports 48 units complete against 84 planned",
+   "claims_compared": "DOC-15 says 48 units are complete and leasing in April 2025. DOC-07 shows 84 apartments.",
+   "citations": [
+    {
+     "doc_id": "DOC-15",
+     "page": 9,
+     "location": "update Apr 2025",
+     "quote": "48 units complete and leasing",
+     "raw": "DOC-15 p.9, update Apr 2025: \"48 units complete and leasing\""
+    },
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "",
+     "quote": "84 apartments",
+     "raw": "DOC-07 p.1, 1: \"84 apartments\""
+    }
+   ],
+   "explanation": "The 48 units are Phase 1, floors 1 to 3. Phase 2 holds the other 36.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-07",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-032",
+    "R-057"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Phases"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-024",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "QRE shown in thousands in the model",
+   "claims_compared": "DOC-05 gives QRE as 24,600 in thousands of dollars. DOC-06 gives $24,600,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".1",
+     "quote": "24,600 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.1: \"24,600 ($ in thousands)\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "",
+     "quote": "$24,600,000",
+     "raw": "DOC-06 p.3, 4: \"$24,600,000\""
+    }
+   ],
+   "explanation": "Same value in a different unit.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-06"
+   ],
+   "register_ids": [
+    "R-002",
+    "R-003"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Units"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-025",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Hard cost line items do not add up to the subtotal",
+   "claims_compared": "DOC-04 lines 3 to 21 add up to $22,140,000, but the hard cost subtotal on line 22 is $22,540,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "lines 3 to 21",
+     "quote": "line items totaling $22,140,000",
+     "raw": "DOC-04 p.2, lines 3 to 21: line items totaling $22,140,000"
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 2,
+     "location": "line 22",
+     "quote": "Hard cost subtotal $22,540,000",
+     "raw": "DOC-04 p.2, line 22: \"Hard cost subtotal $22,540,000\""
+    }
+   ],
+   "explanation": "There is a $400,000 gap. The subtotal matches the contractor's adjusted contract, so a line item is likely missing.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-04"
+   ],
+   "register_ids": [
+    "R-058",
+    "R-059"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Which cost is missing from the line items?",
+   "scenario_tags": [
+    "Arithmetic",
+    "internal contradiction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-026",
+   "data_room": "HTC01",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Deposit payment is backed only by an email",
+   "claims_compared": "DOC-12 requires a 10% deposit within 10 business days of signing. DOC-15 says the buyer wired it. No wire confirmation is in the data room.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 4,
+     "location": "Section 2.4",
+     "quote": "10% deposit due within 10 business days of signing",
+     "raw": "DOC-12 p.4, Section 2.4: \"10% deposit due within 10 business days of signing\""
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 5,
+     "location": "email Nov 20, 2024",
+     "quote": "Buyer wired the deposit last week",
+     "raw": "DOC-15 p.5, email Nov 20, 2024: \"Buyer wired the deposit last week\""
+    }
+   ],
+   "explanation": "An email is not proof of payment. The deposit cannot be confirmed from the documents.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-12",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-060",
+    "R-061"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Weak source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-027",
+   "data_room": "HTC01",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Adjusted basis in the substantial rehabilitation test has no readable source",
+   "claims_compared": "DOC-06 uses an adjusted basis of $1,540,000 and gives no source. DOC-10 page 4, where the building value is stated, cannot be read.",
+   "citations": [
+    {
+     "doc_id": "DOC-06",
+     "page": 4,
+     "location": "",
+     "quote": "Adjusted basis $1,540,000",
+     "raw": "DOC-06 p.4, 7: \"Adjusted basis $1,540,000\""
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 4,
+     "location": "",
+     "quote": "[page partly illegible]",
+     "raw": "DOC-10 p.4, 1: [page partly illegible]"
+    }
+   ],
+   "explanation": "The test passes easily, since QRE is far above the basis, but the figure cannot be verified from the data room.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-06",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R-062",
+    "R-063"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Unreadable page"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-028",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Development",
+   "summary": "Model assumes faster lease-up than the market study supports",
+   "claims_compared": "DOC-05 assumes 12 units leased per month. DOC-03 projects 7 units per month.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 3,
+     "location": ".2",
+     "quote": "12 units per month",
+     "raw": "DOC-05 p.3, 3.2: \"12 units per month\""
+    },
+    {
+     "doc_id": "DOC-03",
+     "page": 8,
+     "location": "",
+     "quote": "7 units per month; stabilization in about 12 months",
+     "raw": "DOC-03 p.8, 4: \"7 units per month; stabilization in about 12 months\""
+    }
+   ],
+   "explanation": "The model leases up about 70% faster than the study supports. Stabilization, and the 10% equity installment tied to it, would come later than modeled.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-03",
+    "DOC-05"
+   ],
+   "register_ids": [
+    "R-064",
+    "R-065"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": false,
+   "alternative_readings": "The sponsor may have newer leasing data that supports a faster pace.",
+   "open_questions": "",
+   "scenario_tags": [
+    "Cross-document dependency"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-029",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Placed-in-service date agrees across documents",
+   "claims_compared": "DOC-06, DOC-09 and DOC-11 all give July 15, 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-06",
+     "page": 1,
+     "location": "",
+     "quote": "July 15, 2025",
+     "raw": "DOC-06 p.1, 2: \"July 15, 2025\""
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 2,
+     "location": "milestone 14",
+     "quote": "7/15/2025",
+     "raw": "DOC-09 p.2, milestone 14: \"7/15/2025\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(b)",
+     "quote": "the Building was placed in service on July 15, 2025",
+     "raw": "DOC-11 p.14, Section 4.2(b): \"the Building was placed in service on July 15, 2025\""
+    }
+   ],
+   "explanation": "All three agree.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-06",
+    "DOC-09",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-022",
+    "R-066",
+    "R-067"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Dates and timing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-030",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "High",
+   "weight": 4,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Construction loan amount agrees across documents",
+   "claims_compared": "DOC-04 gives $18,500,000, DOC-05 gives 18,500 in thousands, and DOC-16 gives $18.5M.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 1,
+     "location": "line 3",
+     "quote": "$18,500,000",
+     "raw": "DOC-04 p.1, line 3: \"$18,500,000\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": ".9",
+     "quote": "18,500 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.9: \"18,500 ($ in thousands)\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "$18.5M construction loan",
+     "raw": "DOC-16 p.1, 3: \"$18.5M construction loan\""
+    }
+   ],
+   "explanation": "Same value in three formats.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-04",
+    "DOC-05",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-068",
+    "R-069",
+    "R-070"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Units",
+    "rounding"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-031",
+   "data_room": "HTC01",
+   "classification": "Contextual difference",
+   "severity": "Low",
+   "weight": 1,
+   "report": false,
+   "set": "Development",
+   "summary": "Memo describes a mixed-use community; plans show two commercial suites",
+   "claims_compared": "DOC-16 describes a vibrant mixed-use community. DOC-07 shows 84 apartments and 2 ground-floor commercial suites.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 1,
+     "location": "",
+     "quote": "a vibrant mixed-use community at the heart of Danville's River District",
+     "raw": "DOC-16 p.1, 1: \"a vibrant mixed-use community at the heart of Danville's River District\""
+    },
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "",
+     "quote": "2 ground-floor commercial suites",
+     "raw": "DOC-07 p.1, 1: \"2 ground-floor commercial suites\""
+    }
+   ],
+   "explanation": "The memo describes the vision. Two commercial suites still make the building mixed use, so both are correct.",
+   "check_type": "Vision versus detail",
+   "documents": [
+    "DOC-07",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-071",
+    "R-072"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Vision versus detail"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-032",
+   "data_room": "HTC01",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Memo claims the state credit certification has been issued",
+   "claims_compared": "DOC-16 says Virginia DHR has issued final certification for the state credits. No DHR certification is in the data room.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "Virginia DHR has issued final certification for the state credits",
+     "raw": "DOC-16 p.2, 6: \"Virginia DHR has issued final certification for the state credits\""
+    }
+   ],
+   "explanation": "State certification follows Part 3 approval, which is also not in the data room. The claim cannot be verified.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-073"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Missing document"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-033",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Update treats the Phase 1 temporary occupancy date as the placed-in-service date",
+   "claims_compared": "DOC-15 says the building was placed in service on March 28, 2025, with the Phase 1 temporary certificate. DOC-06 and DOC-09 give July 15, 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-15",
+     "page": 8,
+     "location": "update Apr 2025",
+     "quote": "Building placed in service March 28 with the Phase 1 TCO",
+     "raw": "DOC-15 p.8, update Apr 2025: \"Building placed in service March 28 with the Phase 1 TCO\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 1,
+     "location": "",
+     "quote": "July 15, 2025",
+     "raw": "DOC-06 p.1, 2: \"July 15, 2025\""
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 2,
+     "location": "milestone 14",
+     "quote": "7/15/2025",
+     "raw": "DOC-09 p.2, milestone 14: \"7/15/2025\""
+    }
+   ],
+   "explanation": "A temporary certificate for floors 1 to 3 does not place the whole rehabilitated building in service. Both dates fall in 2025, so the first credit year does not change, but the recapture period and the completion installment would start almost four months early.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-06",
+    "DOC-09",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-022",
+    "R-066",
+    "R-074"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different milestones",
+    "weak source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-034",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Substantial completion date agrees between the schedule and the update",
+   "claims_compared": "DOC-09 and DOC-15 both give June 13, 2025. It comes before the certificate of occupancy on June 30 and placed in service on July 15.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 2,
+     "location": "milestone 12",
+     "quote": "6/13/2025",
+     "raw": "DOC-09 p.2, milestone 12: \"6/13/2025\""
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 10,
+     "location": "update Jun 2025",
+     "quote": "Architect issued the certificate of substantial completion on June 13",
+     "raw": "DOC-15 p.10, update Jun 2025: \"Architect issued the certificate of substantial completion on June 13\""
+    }
+   ],
+   "explanation": "Same date, and the milestones run in the right order.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-09",
+    "DOC-15"
+   ],
+   "register_ids": [
+    "R-075",
+    "R-076"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Dates and timing",
+    "format"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-035",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Financial model puts the whole federal credit in 2025",
+   "claims_compared": "DOC-05 shows all federal credits delivered in tax year 2025 and none in 2026 to 2029. DOC-06 gives a July 15, 2025 placed-in-service date.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 4,
+     "location": ".1",
+     "quote": "Federal credits delivered: 2025 5,120; 2026 to 2029 0 ($ in thousands)",
+     "raw": "DOC-05 p.4, 4.1: \"Federal credits delivered: 2025 5,120; 2026 to 2029 0 ($ in thousands)\""
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 1,
+     "location": "",
+     "quote": "July 15, 2025",
+     "raw": "DOC-06 p.1, 2: \"July 15, 2025\""
+    }
+   ],
+   "explanation": "The credit is claimed in equal parts over five years. At $4,920,000, that is $984,000 a year for 2025 to 2029. Front-loading overstates the investor's early benefit and its return. The wrong credit amount is a separate case, HTC01-001.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-05",
+    "DOC-06"
+   ],
+   "register_ids": [
+    "R-022",
+    "R-077"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Credit timing",
+    "cross-document dependency"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-036",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Planned sale of a commercial unit falls inside the recapture period, but the memo says no transfers are planned",
+   "claims_compared": "DOC-15 plans to sell commercial unit C-1 by June 30, 2026. DOC-16 says no sale or transfer is planned during the credit period. DOC-11 bars selling any unit in the compliance period without investor consent.",
+   "citations": [
+    {
+     "doc_id": "DOC-15",
+     "page": 12,
+     "location": "update Oct 2025",
+     "quote": "We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026",
+     "raw": "DOC-15 p.12, update Oct 2025: \"We plan to sell commercial unit C-1 to Danville Arts Collective, targeting June 30, 2026\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "No sale or transfer of any part of the property is planned during the credit period",
+     "raw": "DOC-16 p.2, 7: \"No sale or transfer of any part of the property is planned during the credit period\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 24,
+     "location": "Section 8.2",
+     "quote": "No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent",
+     "raw": "DOC-11 p.24, Section 8.2: \"No sale or transfer of the Building or any unit during the Compliance Period without Investor Member consent\""
+    }
+   ],
+   "explanation": "A sale on June 30, 2026 falls in recapture year 1, which ends July 14, 2026, so credits already claimed on that unit's share of QRE would be recaptured in full. The memo leaves the plan out, and no investor consent is in the data room.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-11",
+    "DOC-15",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-078",
+    "R-079",
+    "R-080"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "If the sale slips past July 14, 2026, recapture drops to 80%.",
+   "open_questions": "Has the investor consented, and what share of QRE belongs to unit C-1?",
+   "scenario_tags": [
+    "Recapture",
+    "summary versus source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-037",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Equity bridge loan matures before the installment meant to repay it",
+   "claims_compared": "DOC-04 shows a $1,700,000 equity bridge loan maturing March 31, 2026. DOC-05 expects installment 3, which repays it, on June 30, 2026. DOC-11 ties installment 3 to Part 3 approval.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 1,
+     "location": "line 9",
+     "quote": "Equity bridge loan $1,700,000, matures 3/31/2026",
+     "raw": "DOC-04 p.1, line 9: \"Equity bridge loan $1,700,000, matures 3/31/2026\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 4,
+     "location": ".3",
+     "quote": "Installment 3 received June 30, 2026",
+     "raw": "DOC-05 p.4, 4.3: \"Installment 3 received June 30, 2026\""
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 4.2(c)",
+     "quote": "40% upon receipt of Part 3 approval",
+     "raw": "DOC-11 p.14, Section 4.2(c): \"40% upon receipt of Part 3 approval\""
+    }
+   ],
+   "explanation": "The loan falls due three months before its repayment source arrives, and that source depends on a Part 3 approval that is still pending. The bridge needs an extension or another source of cash.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-04",
+    "DOC-05",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R-027",
+    "R-081",
+    "R-082"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "The lender may already have agreed to extend the maturity.",
+   "open_questions": "Is there a bridge extension or a commitment to extend?",
+   "scenario_tags": [
+    "Cross-document dependency",
+    "financing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-038",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Model expects state credit proceeds after the buyer can walk away",
+   "claims_compared": "DOC-12 lets the buyer terminate if the DHR certification is not delivered by April 30, 2026. DOC-05 expects Virginia credit proceeds on July 31, 2026.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 6,
+     "location": "Section 5.3",
+     "quote": "If the DHR certification is not delivered by April 30, 2026, Buyer may terminate this Agreement",
+     "raw": "DOC-12 p.6, Section 5.3: \"If the DHR certification is not delivered by April 30, 2026, Buyer may terminate this Agreement\""
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 4,
+     "location": ".4",
+     "quote": "Virginia credit proceeds received July 31, 2026",
+     "raw": "DOC-05 p.4, 4.4: \"Virginia credit proceeds received July 31, 2026\""
+    }
+   ],
+   "explanation": "DHR certification follows Part 3 approval. If the timing in the model holds, the buyer can terminate before closing and the deal loses $5,043,000 of expected proceeds.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-12"
+   ],
+   "register_ids": [
+    "R-083",
+    "R-084"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Has the buyer agreed to extend the outside date?",
+   "scenario_tags": [
+    "Cross-document dependency",
+    "legal terms"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-039",
+   "data_room": "HTC01",
+   "classification": "Consistent",
+   "severity": "High",
+   "weight": 4,
+   "report": false,
+   "set": "Development",
+   "summary": "Recapture period is described the same way in the operating agreement and the memo",
+   "claims_compared": "DOC-11 sets a five-year compliance period from the placed-in-service date. DOC-16 says credits stay subject to recapture through July 2030.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 24,
+     "location": "Section 8.1",
+     "quote": "Compliance Period: five years beginning on the placed-in-service date",
+     "raw": "DOC-11 p.24, Section 8.1: \"Compliance Period: five years beginning on the placed-in-service date\""
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "credits remain subject to recapture through July 2030",
+     "raw": "DOC-16 p.2, 8: \"credits remain subject to recapture through July 2030\""
+    }
+   ],
+   "explanation": "Five years from July 15, 2025 ends July 14, 2030. The memo's \"through July 2030\" matches at its level of detail.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-11",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R-085",
+    "R-086"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Recapture",
+    "rounding"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-001",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Pre-review QRE of $39.8M survives in the revised deck and the snapshot after it was corrected to $36.45M",
+   "claims_compared": "DOC-05 slide 15 and DOC-23 say $39.8M; DOC-05 slide 7, DOC-10, DOC-16 and the CFO email say $36.45M.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 15,
+     "location": "",
+     "quote": "Qualified rehabilitation expenditures $39,800,000",
+     "raw": "DOC-05 slide 15: 'Qualified rehabilitation expenditures $39,800,000'"
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 7,
+     "location": "",
+     "quote": "$36.45M",
+     "raw": "DOC-05 slide 7: '$36.45M'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 2,
+     "location": "",
+     "quote": "$39.8M",
+     "raw": "DOC-23 p.2, 6: '$39.8M'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "line 5",
+     "quote": "$36,450,000",
+     "raw": "DOC-10 p.2, line 5: '$36,450,000'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 3,
+     "location": "",
+     "quote": "Qualified rehabilitation expenditures, Buildings A and B (incurred and projected to completion): $36,450,000",
+     "raw": "DOC-16 p.3, 1: 'Qualified rehabilitation expenditures, Buildings A and B (incurred and projected to completion): $36,450,000'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 9,
+     "location": "",
+     "quote": "the QRE base is $36.45M going forward ... Some of the decks and exhibits still carry the $39.8M",
+     "raw": "DOC-19 p.9: 'the QRE base is $36.45M going forward ... Some of the decks and exhibits still carry the $39.8M'"
+    }
+   ],
+   "explanation": "The investor comment removed $3.35M of Building C and parking costs. The fix reached one deck slide, the budget and the CPA, but not the sources table or the snapshot sent to the state buyer. The same deck now contradicts itself.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-10",
+    "DOC-16",
+    "DOC-19",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-001",
+    "R2-002",
+    "R2-003",
+    "R2-004",
+    "R2-005",
+    "R2-006"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "repeated discrepancy",
+    "internal contradiction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-002",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Federal credit stated as $7.96M to the state buyer and in the revised deck, against $7.29M in the model",
+   "claims_compared": "DOC-23 and DOC-05 slide 15 give $7.96M; DOC-09 gives 7,290 ($000s).",
+   "citations": [
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "Federal HTC: $7.96M",
+     "raw": "DOC-23 p.1, 2: 'Federal HTC: $7.96M'"
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 15,
+     "location": "",
+     "quote": "Federal credit $7,960,000",
+     "raw": "DOC-05 slide 15: 'Federal credit $7,960,000'"
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 3,
+     "location": "",
+     "quote": "Federal credit 7,290",
+     "raw": "DOC-09 p.3: 'Federal credit 7,290'"
+    }
+   ],
+   "explanation": "$7.96M is 20% of the superseded $39.8M QRE. On the corrected $36.45M the credit is $7.29M. The figure sent to a third party in October 2025 overstates the credit by $670,000.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-09",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-007",
+    "R2-008",
+    "R2-009"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "summary sent to third party"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-003",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Operating agreement body was updated but its Exhibit B still carries the old credits",
+   "claims_compared": "Section 3.1(a) sets $6,269,400 as Projected Federal Credits times $0.86; Section 1.1 defines Projected Federal Credits by Exhibit B, which says $7,960,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 3.1(a)",
+     "quote": "equal to the product of (x) the Projected Federal Credits and (y) the Federal Credit Price, which amount the parties acknowledge equals ... ($6,269,400)",
+     "raw": "DOC-11 p.14, Section 3.1(a): 'equal to the product of (x) the Projected Federal Credits and (y) the Federal Credit Price, which amount the parties acknowledge equals ... ($6,269,400)'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 6,
+     "location": "Section 1.1",
+     "quote": "Projected Federal Credits means ... twenty percent (20%) of the Projected QRE, as set forth on Exhibit B",
+     "raw": "DOC-11 p.6, Section 1.1: 'Projected Federal Credits means ... twenty percent (20%) of the Projected QRE, as set forth on Exhibit B'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 66,
+     "location": "Exhibit B Schedule 1",
+     "quote": "Building C $2,750,000', 'Site and parking deck $600,000', 'Projected QRE (sum of (a) through (d)) $39,800,000",
+     "raw": "DOC-11 p.66, Exhibit B Schedule 1: 'Building C $2,750,000', 'Site and parking deck $600,000', 'Projected QRE (sum of (a) through (d)) $39,800,000'"
+    }
+   ],
+   "explanation": "Read through its own definitions, Projected Federal Credits are 20% of the Schedule 1 total, which still includes Building C and the parking deck: 20% of $39,800,000 is $7,960,000, and $7,960,000 x 0.86 = $6,845,600, not the $6,269,400 the parties 'acknowledge'. The exhibit can only be changed by an amendment that refers to the definition, so the stale figure governs until amended.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R2-010",
+    "R2-011",
+    "R2-012"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "internal contradiction",
+    "defined terms"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-004",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Investor materials say the federal credit will be sold under Section 6418, which the law does not allow",
+   "claims_compared": "DOC-05 slide 12 and DOC-23 describe a Section 6418 transfer; DOC-08 and DOC-06 say Section 47 credits cannot be transferred.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 12,
+     "location": "",
+     "quote": "transfer under IRC Section 6418 to a corporate buyer",
+     "raw": "DOC-05 slide 12: 'transfer under IRC Section 6418 to a corporate buyer'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "to be sold under IRC Section 6418",
+     "raw": "DOC-23 p.1, 2: 'to be sold under IRC Section 6418'"
+    },
+    {
+     "doc_id": "DOC-08",
+     "page": 5,
+     "location": "II.A, 1",
+     "quote": "The rehabilitation credit determined under Section 47 does not appear in that list ... cannot be transferred by election to an unrelated purchaser",
+     "raw": "DOC-08 p.5, II.A, 1: 'The rehabilitation credit determined under Section 47 does not appear in that list ... cannot be transferred by election to an unrelated purchaser'"
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 2,
+     "location": "Comment 2",
+     "quote": "Credits under Section 47 are not among the credits eligible for transfer under that section",
+     "raw": "DOC-06 p.2, Comment 2: 'Credits under Section 47 are not among the credits eligible for transfer under that section'"
+    }
+   ],
+   "explanation": "The structure was changed to a master lease pass-through because the federal rehabilitation credit is not transferable. Telling an investor or buyer otherwise misstates how the credit can be monetized and damages the sponsor's credibility.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-06",
+    "DOC-08",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-014",
+    "R2-015",
+    "R2-016",
+    "R2-017"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Wrong credit mechanism",
+    "summary versus source"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-005",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Building C is described as a certified historic building, but Part 1 says it is not",
+   "claims_compared": "DOC-05 slide 4 and DOC-23 call all three buildings historic; DOC-11 defines the Project as Buildings A, B and C; DOC-01 says Building C is non-contributing.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 4,
+     "location": "",
+     "quote": "three certified historic buildings (Buildings A, B and C)",
+     "raw": "DOC-05 slide 4: 'three certified historic buildings (Buildings A, B and C)'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "three historic buildings",
+     "raw": "DOC-23 p.1, 1: 'three historic buildings'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 6,
+     "location": "Section 1.1",
+     "quote": "Project means the acquisition and rehabilitation of the structures known as Buildings A, B and C",
+     "raw": "DOC-11 p.6, Section 1.1: 'Project means the acquisition and rehabilitation of the structures known as Buildings A, B and C'"
+    },
+    {
+     "doc_id": "DOC-01",
+     "page": 3,
+     "location": "",
+     "quote": "Building C is not a certified historic structure within the meaning of 36 CFR 67.2",
+     "raw": "DOC-01 p.3, 7: 'Building C is not a certified historic structure within the meaning of 36 CFR 67.2'"
+    }
+   ],
+   "explanation": "Only Buildings A and B are certified historic structures. The investor-facing descriptions and the operating agreement definition still include Building C.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-01",
+    "DOC-05",
+    "DOC-11",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-018",
+    "R2-019",
+    "R2-020",
+    "R2-021"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "eligibility"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-006",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Model v7 prices federal equity at $0.91 after the investor reset it to $0.86",
+   "claims_compared": "DOC-09 uses 0.91 and federal equity 6,633.9; DOC-11 sets the Federal Credit Price at $0.86.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 4,
+     "location": "",
+     "quote": "Federal credit price 0.91' and 'Federal equity 6,633.9",
+     "raw": "DOC-09 p.4: 'Federal credit price 0.91' and 'Federal equity 6,633.9'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 6,
+     "location": "Section 1.1",
+     "quote": "Federal Credit Price means eighty-six cents ($0.86) per dollar of Federal Credit",
+     "raw": "DOC-11 p.6, Section 1.1: 'Federal Credit Price means eighty-six cents ($0.86) per dollar of Federal Credit'"
+    }
+   ],
+   "explanation": "The model's credits tab was updated, but its equity tab kept the old price. Federal equity is overstated by $364,500 against the signed $6,269,400.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-09",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R2-022",
+    "R2-023",
+    "R2-024"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "model tabs disagree"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-007",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Developer fee of $5.4M remains in the model, the deck and the loan exhibit after being capped at $4.2M",
+   "claims_compared": "DOC-09, DOC-05 slide 15 and DOC-13 Exhibit C show $5.4M; DOC-11 Section 6.4 and DOC-10 show $4.2M.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 5,
+     "location": "",
+     "quote": "Developer fee 5,400",
+     "raw": "DOC-09 p.5: 'Developer fee 5,400'"
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 15,
+     "location": "",
+     "quote": "Developer fee $5,400,000",
+     "raw": "DOC-05 slide 15: 'Developer fee $5,400,000'"
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 33,
+     "location": "Exhibit C",
+     "quote": "Developer fee $5,400,000",
+     "raw": "DOC-13 p.33, Exhibit C: 'Developer fee $5,400,000'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 31,
+     "location": "Section 6.4",
+     "quote": "shall not exceed Four Million Two Hundred Thousand Dollars ($4,200,000)",
+     "raw": "DOC-11 p.31, Section 6.4: 'shall not exceed Four Million Two Hundred Thousand Dollars ($4,200,000)'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "line 12",
+     "quote": "$4,200,000",
+     "raw": "DOC-10 p.1, line 12: '$4,200,000'"
+    }
+   ],
+   "explanation": "The cap was written into the operating agreement and the budget, but three other documents still carry the old fee. Any of them used for funding would breach the cap by $1.2M.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-09",
+    "DOC-10",
+    "DOC-11",
+    "DOC-13"
+   ],
+   "register_ids": [
+    "R2-025",
+    "R2-026",
+    "R2-027",
+    "R2-028",
+    "R2-029"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "repeated discrepancy"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-008",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Construction loan still shown at $26M after the amendment cut it to $24.5M",
+   "claims_compared": "DOC-05 slide 15, DOC-09 and DOC-13 Exhibit C show $26M; DOC-13 First Amendment and DOC-10 show $24.5M.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 15,
+     "location": "",
+     "quote": "Construction loan $26,000,000",
+     "raw": "DOC-05 slide 15: 'Construction loan $26,000,000'"
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 5,
+     "location": "",
+     "quote": "Construction loan 26,000",
+     "raw": "DOC-09 p.5: 'Construction loan 26,000'"
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 33,
+     "location": "Exhibit C",
+     "quote": "Loan $26,000,000",
+     "raw": "DOC-13 p.33, Exhibit C: 'Loan $26,000,000'"
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 38,
+     "location": "",
+     "quote": "deletes '$26,000,000' and inserts '$24,500,000",
+     "raw": "DOC-13 p.38, 1: deletes '$26,000,000' and inserts '$24,500,000'"
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 38,
+     "location": "",
+     "quote": "the Loan Agreement, including each Exhibit thereto, remains unmodified",
+     "raw": "DOC-13 p.38, 2: 'the Loan Agreement, including each Exhibit thereto, remains unmodified'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "line 1",
+     "quote": "$24,500,000",
+     "raw": "DOC-10 p.1, line 1: '$24,500,000'"
+    }
+   ],
+   "explanation": "The amendment changed Section 2.1 only and expressly keeps every exhibit unmodified, so the loan agreement now carries both numbers. The deck and model overstate sources by $1.5M.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-09",
+    "DOC-10",
+    "DOC-13"
+   ],
+   "register_ids": [
+    "R2-030",
+    "R2-031",
+    "R2-032",
+    "R2-033",
+    "R2-034"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "amendment without exhibit replacement"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-009",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "The revised deck says 128 units on one slide and 134 on another",
+   "claims_compared": "DOC-05 slide 4 says 128; slide 18 says 134; DOC-22 and the investor comment say 128; DOC-23 says 134.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 4,
+     "location": "",
+     "quote": "128 apartments",
+     "raw": "DOC-05 slide 4: '128 apartments'"
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 18,
+     "location": "",
+     "quote": "Unit mix: 134 units",
+     "raw": "DOC-05 slide 18: 'Unit mix: 134 units'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "134 lofts",
+     "raw": "DOC-23 p.1, 1: '134 lofts'"
+    },
+    {
+     "doc_id": "DOC-22",
+     "page": 3,
+     "location": "Section 1.2",
+     "quote": "one hundred twenty-eight (128) dwelling units",
+     "raw": "DOC-22 p.3, Section 1.2: 'one hundred twenty-eight (128) dwelling units'"
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 4,
+     "location": "Comment 5",
+     "quote": "one hundred twenty-eight (128) dwelling units",
+     "raw": "DOC-06 p.4, Comment 5: 'one hundred twenty-eight (128) dwelling units'"
+    }
+   ],
+   "explanation": "The unit count fell to 128 when NPS required the light court to stay open. The correction reached slide 4 but not the unit mix slide or the later snapshot.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-06",
+    "DOC-22",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-018",
+    "R2-019",
+    "R2-035",
+    "R2-036",
+    "R2-037",
+    "R2-038"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "internal contradiction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-010",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Sponsor told the investor every comment was carried through all documents, but several were not",
+   "claims_compared": "DOC-07 says all comments were addressed in Deck v4, Model v7 and Budget Rev 4; Deck v4 and Model v7 still carry the old QRE, price, fee, loan and units.",
+   "citations": [
+    {
+     "doc_id": "DOC-07",
+     "page": 1,
+     "location": "",
+     "quote": "each of the comments has been reflected in, and conformed throughout, the revised transaction materials ... and that no further changes are required",
+     "raw": "DOC-07 p.1, 2: 'each of the comments has been reflected in, and conformed throughout, the revised transaction materials ... and that no further changes are required'"
+    },
+    {
+     "doc_id": "DOC-07",
+     "page": 3,
+     "location": "",
+     "quote": "7 - Conformed across all materials | Confirmed",
+     "raw": "DOC-07 p.3: '7 - Conformed across all materials | Confirmed'"
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 5,
+     "location": "Comment 7",
+     "quote": "confirm in writing that each of the foregoing changes has been carried through every investor-facing document",
+     "raw": "DOC-06 p.5, Comment 7: 'confirm in writing that each of the foregoing changes has been carried through every investor-facing document'"
+    }
+   ],
+   "explanation": "The representation is untrue as to Deck v4 and Model v7 (see HTC02-001, 006, 007, 008, 009). It was made in direct response to the investor's request for written confirmation.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-06",
+    "DOC-07",
+    "DOC-09"
+   ],
+   "register_ids": [
+    "R2-039",
+    "R2-040",
+    "R2-041"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "false confirmation"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-011",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Closing checklist marks the Exhibit B update as done in handwriting, but the signed exhibit is unchanged",
+   "claims_compared": "DOC-20 row 14 is annotated 'DONE 8/14 - JH'; DOC-11 Exhibit B still shows $7,960,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-20",
+     "page": 2,
+     "location": "row 14",
+     "quote": "OA Exhibit B (Projected Credits) - update to revised QRE | Open' with handwritten 'DONE 8/14 - JH",
+     "raw": "DOC-20 p.2, row 14: 'OA Exhibit B (Projected Credits) - update to revised QRE | Open' with handwritten 'DONE 8/14 - JH'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 66,
+     "location": "Exhibit B",
+     "quote": "Projected QRE (sum of (a) through (d)) $39,800,000",
+     "raw": "DOC-11 p.66, Exhibit B: 'Projected QRE (sum of (a) through (d)) $39,800,000'"
+    }
+   ],
+   "explanation": "The checklist was relied on at closing. The handwritten note records a correction that was never made in the executed agreement.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-11",
+    "DOC-20"
+   ],
+   "register_ids": [
+    "R2-011",
+    "R2-013"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Handwriting on scan",
+    "partial correction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-012",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Cost certification uses the 60-month phased period, but the phased plan post-dates the start of work",
+   "claims_compared": "DOC-16 applies a 60-month period from 9/5/2023 based on the architect's plan; DOC-15 is dated November 15, 2023; DOC-14 shows work began September 5, 2023; DOC-08 says plans must exist before physical work.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "measured over the sixty-month period available for phased rehabilitations, commencing with the start of physical work on 9/5/2023, in reliance on the Architect's phased rehabilitation plan",
+     "raw": "DOC-16 p.2, 3: 'measured over the sixty-month period available for phased rehabilitations, commencing with the start of physical work on 9/5/2023, in reliance on the Architect's phased rehabilitation plan'"
+    },
+    {
+     "doc_id": "DOC-15",
+     "page": 1,
+     "location": "",
+     "quote": "bearing an issue date of 15 November 2023",
+     "raw": "DOC-15 p.1: 'bearing an issue date of 15 November 2023'"
+    },
+    {
+     "doc_id": "DOC-14",
+     "page": 1,
+     "location": "",
+     "quote": "notice was issued on September 5, 2023, and the Contractor shall mobilize and commence physical work",
+     "raw": "DOC-14 p.1, 1: 'notice was issued on September 5, 2023, and the Contractor shall mobilize and commence physical work'"
+    },
+    {
+     "doc_id": "DOC-08",
+     "page": 11,
+     "location": "II.D, 1",
+     "quote": "plans and specifications that are completed before the physical work on the rehabilitation begins",
+     "raw": "DOC-08 p.11, II.D, 1: 'plans and specifications that are completed before the physical work on the rehabilitation begins'"
+    }
+   ],
+   "explanation": "The plans were issued ten weeks after physical work began, so the 60-month period is not available and the 24-month test applies, as tax counsel warned. The CPA expressly did not test this. If the 24-month test fails, a building's eligibility is at risk.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-08",
+    "DOC-14",
+    "DOC-15",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R2-042",
+    "R2-043",
+    "R2-044",
+    "R2-045"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "Earlier plans may exist that are not in the data room.",
+   "open_questions": "Are there plans and specifications for both phases dated before September 5, 2023?",
+   "scenario_tags": [
+    "Eligibility",
+    "cross-document dependency",
+    "dates"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-013",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Critical",
+   "weight": 8,
+   "report": true,
+   "set": "Withheld",
+   "summary": "A subcontract change directive, written in dense trade language, removed and threw away the terra cotta cornice NPS required to be kept",
+   "claims_compared": "DOC-18 directs full-depth removal and disposal of Building A's 'street-elevation entablature assemblage ... inclusive of all fired-clay ornamental units' and a GFRC replacement; DOC-02 Condition 1 and DOC-14 require retention and repair in terra cotta; DOC-19 confirms the removal.",
+   "citations": [
+    {
+     "doc_id": "DOC-18",
+     "page": 1,
+     "location": "",
+     "quote": "full-depth removal and off-site disposal of the existing street-elevation entablature assemblage of Building A, inclusive of all fired-clay ornamental units ... glass-fiber-reinforced concrete entablature system",
+     "raw": "DOC-18 p.1, 1: 'full-depth removal and off-site disposal of the existing street-elevation entablature assemblage of Building A, inclusive of all fired-clay ornamental units ... glass-fiber-reinforced concrete entablature system'"
+    },
+    {
+     "doc_id": "DOC-02",
+     "page": 4,
+     "location": "Condition 1",
+     "quote": "must be retained and repaired in situ ... substitute materials, including glass-fiber-reinforced concrete ... not approved",
+     "raw": "DOC-02 p.4, Condition 1: 'must be retained and repaired in situ ... substitute materials, including glass-fiber-reinforced concrete ... not approved'"
+    },
+    {
+     "doc_id": "DOC-14",
+     "page": 12,
+     "location": "",
+     "quote": "Retain and repair in place the existing terra cotta cornice",
+     "raw": "DOC-14 p.12: 'Retain and repair in place the existing terra cotta cornice'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 14,
+     "location": "",
+     "quote": "the Commerce Street entablature on A was taken down to the backup",
+     "raw": "DOC-19 p.14: 'the Commerce Street entablature on A was taken down to the backup'"
+    }
+   ],
+   "explanation": "Entablature assemblage of fired-clay ornamental units' is the terra cotta cornice and frieze. Breaching Condition 1 can lead NPS to deny Part 3 for Building A. The directive was issued by the contractor alone, with the owner and architect lines blank, contrary to the change order clause.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-02",
+    "DOC-14",
+    "DOC-18",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-046",
+    "R2-047",
+    "R2-048",
+    "R2-049"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Obscure terminology",
+    "scanned",
+    "eligibility"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-014",
+   "data_room": "HTC02",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "NPS approval of the substitute cornice rests on one email",
+   "claims_compared": "DOC-19 email says NPS is fine with the GFRC cornice and no paperwork is needed; no NPS or SHPO letter is in the data room.",
+   "citations": [
+    {
+     "doc_id": "DOC-19",
+     "page": 16,
+     "location": "Email Nov 4, 2024",
+     "quote": "my read is NPS will be comfortable with the GFRC entablature ... I don't think we need to paper it",
+     "raw": "DOC-19 p.16, Email Nov 4, 2024: 'my read is NPS will be comfortable with the GFRC entablature ... I don't think we need to paper it'"
+    },
+    {
+     "doc_id": "DOC-02",
+     "page": 4,
+     "location": "Condition 1",
+     "quote": "Any proposal affecting the work described in Conditions 1 and 2 must be submitted ... as an amendment for review by the National Park Service before the work is undertaken",
+     "raw": "DOC-02 p.4, Condition 1: 'Any proposal affecting the work described in Conditions 1 and 2 must be submitted ... as an amendment for review by the National Park Service before the work is undertaken'"
+    }
+   ],
+   "explanation": "Changes to an approved Part 2 need a written NPS decision on an amendment. A verbal account in an email does not satisfy Condition 1.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-02",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-047",
+    "R2-050"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "Was an amendment to the Part 2 application filed?",
+   "scenario_tags": [
+    "Weak source",
+    "missing approval"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-015",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Snapshot and deck say all buildings were placed in service in Q4 2025, but Building B is not finished",
+   "claims_compared": "DOC-23 and DOC-05 slide 20 say all buildings placed in service Q4 2025; DOC-16 and DOC-19 show Building B expected March 31, 2026.",
+   "citations": [
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "All buildings placed in service Q4 2025",
+     "raw": "DOC-23 p.1, 4: 'All buildings placed in service Q4 2025'"
+    },
+    {
+     "doc_id": "DOC-05",
+     "page": 20,
+     "location": "",
+     "quote": "same",
+     "raw": "DOC-05 slide 20: same"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 4,
+     "location": "",
+     "quote": "Building B had not been placed in service ... on or about March 31, 2026",
+     "raw": "DOC-16 p.4, 1: 'Building B had not been placed in service ... on or about March 31, 2026'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 24,
+     "location": "",
+     "quote": "now forecasting CO on or about March 31, 2026",
+     "raw": "DOC-19 p.24: 'now forecasting CO on or about March 31, 2026'"
+    }
+   ],
+   "explanation": "Each building is placed in service separately. Building B's credits start a year later than the snapshot implies, which shifts the state buyer's credit delivery and closing timing.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-16",
+    "DOC-19",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-051",
+    "R2-052",
+    "R2-053",
+    "R2-054"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Phased buildings",
+    "credit timing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-016",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Model delivers the whole federal credit in 2025",
+   "claims_compared": "DOC-09 shows 7,290 in 2025 and nothing in 2026 to 2029; DOC-08 says each building's credit is claimed over five years from its own placed-in-service year.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 7,
+     "location": "",
+     "quote": "Federal credits delivered: 2025 7,290; 2026 to 2029 0",
+     "raw": "DOC-09 p.7: 'Federal credits delivered: 2025 7,290; 2026 to 2029 0'"
+    },
+    {
+     "doc_id": "DOC-08",
+     "page": 9,
+     "location": "II.C, 1",
+     "quote": "the credit for each Building is allowed ratably over the five taxable years beginning with the year in which that Building is placed in service",
+     "raw": "DOC-08 p.9, II.C, 1: 'the credit for each Building is allowed ratably over the five taxable years beginning with the year in which that Building is placed in service'"
+    }
+   ],
+   "explanation": "Building A's credit runs 2025 to 2029 and Building B's from 2026. Front-loading the credit overstates the investor's early benefit and return.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-08",
+    "DOC-09"
+   ],
+   "register_ids": [
+    "R2-055",
+    "R2-056"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Credit timing",
+    "phased buildings"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-017",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Virginia purchase agreement, signed after the review, still estimates $9.95M of credits",
+   "claims_compared": "DOC-17 defines Estimated Credits as 25% of the expenses in Appendix 2, which still lists Building C and the parking deck and totals $39,800,000; 25% of the corrected $36,450,000 is $9,112,500 (DOC-09).",
+   "citations": [
+    {
+     "doc_id": "DOC-17",
+     "page": 3,
+     "location": "Section 1.4",
+     "quote": "twenty-five percent (25%) of the Eligible Rehabilitation Expenses set forth in Appendix 2, which the parties acknowledge to be ... ($9,950,000)",
+     "raw": "DOC-17 p.3, Section 1.4: 'twenty-five percent (25%) of the Eligible Rehabilitation Expenses set forth in Appendix 2, which the parties acknowledge to be ... ($9,950,000)'"
+    },
+    {
+     "doc_id": "DOC-17",
+     "page": 26,
+     "location": "Appendix 2",
+     "quote": "Building C $2,750,000', 'Site and parking $600,000', 'Total $39,800,000",
+     "raw": "DOC-17 p.26, Appendix 2: 'Building C $2,750,000', 'Site and parking $600,000', 'Total $39,800,000'"
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 3,
+     "location": "",
+     "quote": "Virginia credit 9,112.5",
+     "raw": "DOC-09 p.3: 'Virginia credit 9,112.5'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "Virginia HTC: $9.95M",
+     "raw": "DOC-23 p.1, 3: 'Virginia HTC: $9.95M'"
+    }
+   ],
+   "explanation": "The agreement was signed in September 2024, after the QRE was corrected, yet it uses the pre-review figure. The buyer is expecting $837,500 more credits than the project will generate.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-09",
+    "DOC-17",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-057",
+    "R2-058",
+    "R2-060",
+    "R2-097"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "third-party contract"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-018",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Deck and snapshot quote $0.84 for Virginia credits; the signed price is $0.80",
+   "claims_compared": "DOC-05 slide 13 and DOC-23 say $0.84; DOC-17 Section 2.1 says $0.80.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 13,
+     "location": "",
+     "quote": "Virginia HTC sold at $0.84 per credit",
+     "raw": "DOC-05 slide 13: 'Virginia HTC sold at $0.84 per credit'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "$9.95M at $0.84",
+     "raw": "DOC-23 p.1, 3: '$9.95M at $0.84'"
+    },
+    {
+     "doc_id": "DOC-17",
+     "page": 5,
+     "location": "Section 2.1",
+     "quote": "Buyer shall pay eighty cents ($0.80), without adjustment for any change in market conditions",
+     "raw": "DOC-17 p.5, Section 2.1: 'Buyer shall pay eighty cents ($0.80), without adjustment for any change in market conditions'"
+    }
+   ],
+   "explanation": "The snapshot was sent to the same buyer who signed at $0.80. The signed agreement governs.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-17",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-059",
+    "R2-060",
+    "R2-061"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Summary sent to counterparty"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-019",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Deck and snapshot say Part 2 was approved without conditions; it was conditional",
+   "claims_compared": "DOC-05 slide 14 and DOC-23 say no conditions; DOC-02 is a conditional approval with two conditions.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 14,
+     "location": "",
+     "quote": "NPS Part 2 approved August 2023 - no conditions",
+     "raw": "DOC-05 slide 14: 'NPS Part 2 approved August 2023 - no conditions'"
+    },
+    {
+     "doc_id": "DOC-23",
+     "page": 1,
+     "location": "",
+     "quote": "NPS Part 2 approved without conditions",
+     "raw": "DOC-23 p.1, 5: 'NPS Part 2 approved without conditions'"
+    },
+    {
+     "doc_id": "DOC-02",
+     "page": 1,
+     "location": "",
+     "quote": "NPS - APPROVED WITH CONDITIONS ... Conditions: page 4",
+     "raw": "DOC-02 p.1: 'NPS - APPROVED WITH CONDITIONS ... Conditions: page 4'"
+    }
+   ],
+   "explanation": "The conditions drive the unit count and the cornice risk. Hiding them misleads the reader about certification risk.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-02",
+    "DOC-05",
+    "DOC-23"
+   ],
+   "register_ids": [
+    "R2-062",
+    "R2-063",
+    "R2-064"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Summary versus source",
+    "scanned"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-020",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Management agreement is signed by the owner, although the master lease makes the master tenant the operator",
+   "claims_compared": "DOC-22 has the Owner engage the Manager; DOC-12 Section 2.2 makes the Lessee responsible for leasing and management.",
+   "citations": [
+    {
+     "doc_id": "DOC-22",
+     "page": 1,
+     "location": "",
+     "quote": "Owner hereby engages Manager as the exclusive agent of Owner to operate, lease and manage the Property",
+     "raw": "DOC-22 p.1: 'Owner hereby engages Manager as the exclusive agent of Owner to operate, lease and manage the Property'"
+    },
+    {
+     "doc_id": "DOC-12",
+     "page": 4,
+     "location": "Section 2.2",
+     "quote": "Lessee ... shall be solely responsible for leasing, management and day-to-day operation, including the engagement of any property manager",
+     "raw": "DOC-12 p.4, Section 2.2: 'Lessee ... shall be solely responsible for leasing, management and day-to-day operation, including the engagement of any property manager'"
+    }
+   ],
+   "explanation": "In a lease pass-through the master tenant must actually operate the property for the lease to be respected. A management contract with the owner undercuts that.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-12",
+    "DOC-22"
+   ],
+   "register_ids": [
+    "R2-065",
+    "R2-066"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "The owner may have signed as agent for the master tenant under a provision not in the excerpt.",
+   "open_questions": "Is there an assignment of the PMA to the master tenant?",
+   "scenario_tags": [
+    "Structure",
+    "true lease"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-021",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Development",
+   "summary": "Revised deck says the investor joins the owner entity; the signed agreement puts it in the master tenant",
+   "claims_compared": "DOC-05 slide 8 says the investor is admitted to Calder Works Owner LLC; DOC-11 admits it to Calder Works Master Tenant LLC.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 8,
+     "location": "",
+     "quote": "Federal HTC investor admitted to Calder Works Owner LLC",
+     "raw": "DOC-05 slide 8: 'Federal HTC investor admitted to Calder Works Owner LLC'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 1,
+     "location": "",
+     "quote": "Operating Agreement of Calder Works Master Tenant LLC ... as Investor Member",
+     "raw": "DOC-11 p.1: 'Operating Agreement of Calder Works Master Tenant LLC ... as Investor Member'"
+    }
+   ],
+   "explanation": "The structure changed to a master lease after the investor review. The deck describes the old structure.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R2-067",
+    "R2-068"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction",
+    "structure"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-022",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Low",
+   "weight": 1,
+   "report": true,
+   "set": "Development",
+   "summary": "Loan amendment signature block misnames the borrower",
+   "claims_compared": "DOC-13 p.39 signs as 'Calder Work Owners LLC'; the borrower is Calder Works Owner LLC.",
+   "citations": [
+    {
+     "doc_id": "DOC-13",
+     "page": 39,
+     "location": "",
+     "quote": "BORROWER: Calder Work Owners LLC, by its manager",
+     "raw": "DOC-13 p.39: 'BORROWER: Calder Work Owners LLC, by its manager'"
+    },
+    {
+     "doc_id": "DOC-13",
+     "page": 1,
+     "location": "",
+     "quote": "Calder Works Owner LLC, Borrower",
+     "raw": "DOC-13 p.1: 'Calder Works Owner LLC, Borrower'"
+    }
+   ],
+   "explanation": "A misnamed signatory is a clean-up item for counsel, not a money issue.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-13"
+   ],
+   "register_ids": [
+    "R2-069",
+    "R2-070"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Name misspelling"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-023",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Revised deck shows total development cost of $49.8M; the revised budget says $48.6M",
+   "claims_compared": "DOC-05 slide 15 says $49,800,000; DOC-10 says $48,600,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 15,
+     "location": "",
+     "quote": "Total development cost $49,800,000",
+     "raw": "DOC-05 slide 15: 'Total development cost $49,800,000'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "line 14",
+     "quote": "Total development cost $48,600,000",
+     "raw": "DOC-10 p.1, line 14: 'Total development cost $48,600,000'"
+    }
+   ],
+   "explanation": "The $1.2M gap is exactly the developer fee cut. The deck's sources and uses was not rebuilt.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-05",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R2-071",
+    "R2-072"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Partial correction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-024",
+   "data_room": "HTC02",
+   "classification": "Insufficient evidence",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Part 3 for Building A was only filed, yet the installment it triggers has been requested",
+   "claims_compared": "DOC-19 says Part 3 was filed October 20, 2025 and installment 2 was requested pending Part 3; DOC-11 Section 3.2(b) pays on receipt of Part 3 approval.",
+   "citations": [
+    {
+     "doc_id": "DOC-19",
+     "page": 22,
+     "location": "",
+     "quote": "Part 3 request for A submitted to SHPO on October 20",
+     "raw": "DOC-19 p.22: 'Part 3 request for A submitted to SHPO on October 20'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 24,
+     "location": "",
+     "quote": "Investor installment 2 drawdown notice issued, subject to Part 3",
+     "raw": "DOC-19 p.24: 'Investor installment 2 drawdown notice issued, subject to Part 3'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 15,
+     "location": "Section 3.2(b)",
+     "quote": "upon receipt by the Investor Member of a copy of the National Park Service's approval of the Part 3 request for Building A",
+     "raw": "DOC-11 p.15, Section 3.2(b): 'upon receipt by the Investor Member of a copy of the National Park Service's approval of the Part 3 request for Building A'"
+    }
+   ],
+   "explanation": "No Part 3 approval is in the data room, and given the cornice removal it may not be granted. The $2,507,760 installment is not yet due.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-11",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-073",
+    "R2-074"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Missing approval",
+    "funding trigger"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-025",
+   "data_room": "HTC02",
+   "classification": "Insufficient evidence",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "No Section 50(d) election statement for Building A is in the data room",
+   "claims_compared": "DOC-12 requires the lessor to deliver the election statement within 30 days after each building's placed-in-service date; Building A was placed in service September 30, 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 29,
+     "location": "Section 18.3",
+     "quote": "shall deliver a copy of the election statement, as filed, to Lessee and the Investor Member within thirty (30) days after the placed-in-service date of each Building",
+     "raw": "DOC-12 p.29, Section 18.3: 'shall deliver a copy of the election statement, as filed, to Lessee and the Investor Member within thirty (30) days after the placed-in-service date of each Building'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 22,
+     "location": "",
+     "quote": "Building A: certificate of occupancy issued September 30; placed in service",
+     "raw": "DOC-19 p.22: 'Building A: certificate of occupancy issued September 30; placed in service'"
+    }
+   ],
+   "explanation": "The statement was due by October 30, 2025. Without it, the credit cannot be confirmed as passing to the master tenant and its investor.",
+   "check_type": "Missing evidence",
+   "documents": [
+    "DOC-12",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-075",
+    "R2-076"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Missing document",
+    "structure"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-026",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Market study counts about 134 units, before NPS reduced the count",
+   "claims_compared": "DOC-03 (March 2023) plans about 134 units, subject to historic review; the final count is 128 (DOC-22).",
+   "citations": [
+    {
+     "doc_id": "DOC-03",
+     "page": 1,
+     "location": "",
+     "quote": "approximately 134 dwelling units distributed across all three structures ... preliminary and may change upon completion of historic review and final design",
+     "raw": "DOC-03 p.1, 2: 'approximately 134 dwelling units distributed across all three structures ... preliminary and may change upon completion of historic review and final design'"
+    },
+    {
+     "doc_id": "DOC-22",
+     "page": 3,
+     "location": "Section 1.2",
+     "quote": "one hundred twenty-eight (128) dwelling units",
+     "raw": "DOC-22 p.3, Section 1.2: 'one hundred twenty-eight (128) dwelling units'"
+    }
+   ],
+   "explanation": "The study predates the Part 2 condition and says its count may change. No later document relies on it.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-03",
+    "DOC-22"
+   ],
+   "register_ids": [
+    "R2-077",
+    "R2-037"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Estimate versus final"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-027",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Appraisal counts 134 units from preliminary plans",
+   "claims_compared": "DOC-21 (June 2023) uses 134 units per the sponsor's preliminary plans; final count is 128.",
+   "citations": [
+    {
+     "doc_id": "DOC-21",
+     "page": 2,
+     "location": "",
+     "quote": "preliminary plans dated February 2023, which contemplate 134 units of rental housing ... historic review was then pending",
+     "raw": "DOC-21 p.2, 1: 'preliminary plans dated February 2023, which contemplate 134 units of rental housing ... historic review was then pending'"
+    },
+    {
+     "doc_id": "DOC-22",
+     "page": 3,
+     "location": "Section 1.2",
+     "quote": "one hundred twenty-eight (128) dwelling units",
+     "raw": "DOC-22 p.3, Section 1.2: 'one hundred twenty-eight (128) dwelling units'"
+    }
+   ],
+   "explanation": "The appraisal predates the August 2023 Part 2 decision and states its basis.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-21",
+    "DOC-22"
+   ],
+   "register_ids": [
+    "R2-078",
+    "R2-037"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Estimate versus final",
+    "scanned"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-028",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Superseded deck v3 shows the pre-review QRE and a Section 6418 sale",
+   "claims_compared": "DOC-04 (February 2024) shows $39.8M QRE and a Section 6418 transfer at $0.91; it predates the investor review.",
+   "citations": [
+    {
+     "doc_id": "DOC-04",
+     "page": 6,
+     "location": "",
+     "quote": "Qualified rehabilitation expenditures: $39.8M",
+     "raw": "DOC-04 slide 6: 'Qualified rehabilitation expenditures: $39.8M'"
+    },
+    {
+     "doc_id": "DOC-04",
+     "page": 9,
+     "location": "",
+     "quote": "monetized via IRC Section 6418 transfer at $0.91",
+     "raw": "DOC-04 slide 9: 'monetized via IRC Section 6418 transfer at $0.91'"
+    }
+   ],
+   "explanation": "Deck v3 is the version the investor reviewed and was replaced by v4. Its errors are the subject of the review. Flag the errors in v4 and the snapshot, not in v3.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-04"
+   ],
+   "register_ids": [
+    "R2-079",
+    "R2-080"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "A reviewer may still note that v3 remains in the data room without a superseded marking.",
+   "open_questions": "",
+   "scenario_tags": [
+    "Superseded version",
+    "trap"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-029",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "Low",
+   "weight": 1,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Appraisal area and management agreement area differ because they measure different things",
+   "claims_compared": "DOC-21 gives 214,600 SF gross for all buildings; DOC-22 gives 168,300 net rentable SF for Buildings A and B.",
+   "citations": [
+    {
+     "doc_id": "DOC-21",
+     "page": 2,
+     "location": "",
+     "quote": "Gross building area, all three structures ...: 214,600 square feet",
+     "raw": "DOC-21 p.2, 2: 'Gross building area, all three structures ...: 214,600 square feet'"
+    },
+    {
+     "doc_id": "DOC-22",
+     "page": 3,
+     "location": "Section 1.3",
+     "quote": "approximately 168,300 net rentable square feet",
+     "raw": "DOC-22 p.3, Section 1.3: 'approximately 168,300 net rentable square feet'"
+    }
+   ],
+   "explanation": "Gross area of three buildings and net rentable area of two are different measures. Both can be right.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-21",
+    "DOC-22"
+   ],
+   "register_ids": [
+    "R2-081",
+    "R2-082"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different definitions"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-030",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "High",
+   "weight": 4,
+   "report": false,
+   "set": "Development",
+   "summary": "Budget total includes Building C and the parking deck while QRE excludes them",
+   "claims_compared": "DOC-10 total development cost of $48.6M includes $3.35M of Building C and parking costs; the QRE schedule excludes them.",
+   "citations": [
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "lines 9-10",
+     "quote": "Building C shell (non-QRE) $2,750,000; Parking deck (non-QRE) $600,000",
+     "raw": "DOC-10 p.1, lines 9-10: 'Building C shell (non-QRE) $2,750,000; Parking deck (non-QRE) $600,000'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "line 5",
+     "quote": "$36,450,000",
+     "raw": "DOC-10 p.2, line 5: '$36,450,000'"
+    }
+   ],
+   "explanation": "Total cost and qualified cost are different measures. The budget labels the excluded lines clearly.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R2-083",
+    "R2-004",
+    "R2-072"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different definitions"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-031",
+   "data_room": "HTC02",
+   "classification": "Contextual difference",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Withheld",
+   "summary": "GC price of $36.5M sits close to QRE of $36.45M, but they cover different scopes",
+   "claims_compared": "DOC-14 GMP is $36,500,000 including Building C and the parking deck; QRE is $36,450,000 including qualified soft costs.",
+   "citations": [
+    {
+     "doc_id": "DOC-14",
+     "page": 1,
+     "location": "",
+     "quote": "guaranteed not to exceed Thirty-Six Million Five Hundred Thousand Dollars ($36,500,000), which sum is allocated ... among the rehabilitation of Buildings A and B, shell work on Building C and construction of the parking deck",
+     "raw": "DOC-14 p.1, 2: 'guaranteed not to exceed Thirty-Six Million Five Hundred Thousand Dollars ($36,500,000), which sum is allocated ... among the rehabilitation of Buildings A and B, shell work on Building C and construction of the parking deck'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "line 5",
+     "quote": "$36,450,000",
+     "raw": "DOC-10 p.2, line 5: '$36,450,000'"
+    }
+   ],
+   "explanation": "The near match is a coincidence of two different measures, not a rounding of one figure.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-10",
+    "DOC-14"
+   ],
+   "register_ids": [
+    "R2-084",
+    "R2-004"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different definitions",
+    "near-match trap"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-032",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Tax memo's QRE estimate matches the budget after rounding",
+   "claims_compared": "DOC-08 estimates about $36.5 million; DOC-10 says $36,450,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-08",
+     "page": 13,
+     "location": "II.E, 1",
+     "quote": "qualified rehabilitation expenditures for Buildings A and B will total approximately $36.5 million",
+     "raw": "DOC-08 p.13, II.E, 1: 'qualified rehabilitation expenditures for Buildings A and B will total approximately $36.5 million'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "line 5",
+     "quote": "$36,450,000",
+     "raw": "DOC-10 p.2, line 5: '$36,450,000'"
+    }
+   ],
+   "explanation": "Rounding only.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-08",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R2-085",
+    "R2-004"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Rounding"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-033",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Development",
+   "summary": "Model credits tab QRE matches the budget",
+   "claims_compared": "DOC-09 gives 36,450 in $000s; DOC-10 gives $36,450,000.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 3,
+     "location": "",
+     "quote": "Qualified rehabilitation expenditures 36,450",
+     "raw": "DOC-09 p.3: 'Qualified rehabilitation expenditures 36,450'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 2,
+     "location": "line 5",
+     "quote": "$36,450,000",
+     "raw": "DOC-10 p.2, line 5: '$36,450,000'"
+    }
+   ],
+   "explanation": "Same figure in thousands.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-09",
+    "DOC-10"
+   ],
+   "register_ids": [
+    "R2-086",
+    "R2-004"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Different units"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-034",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "Low",
+   "weight": 1,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Master tenant name written two ways",
+   "claims_compared": "DOC-12 signs as 'Calder Works Master Tenant, L.L.C.'; DOC-11 uses 'Calder Works Master Tenant LLC'.",
+   "citations": [
+    {
+     "doc_id": "DOC-12",
+     "page": 38,
+     "location": "",
+     "quote": "LESSEE: Calder Works Master Tenant, L.L.C.",
+     "raw": "DOC-12 p.38: 'LESSEE: Calder Works Master Tenant, L.L.C.'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 1,
+     "location": "",
+     "quote": "Calder Works Master Tenant LLC",
+     "raw": "DOC-11 p.1: 'Calder Works Master Tenant LLC'"
+    }
+   ],
+   "explanation": "Same entity.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-11",
+    "DOC-12"
+   ],
+   "register_ids": [
+    "R2-087",
+    "R2-068"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Name variant"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-035",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "Medium",
+   "weight": 2,
+   "report": false,
+   "set": "Development",
+   "summary": "Notice to proceed date written in two formats",
+   "claims_compared": "DOC-14 says September 5, 2023; DOC-16 says 9/5/2023.",
+   "citations": [
+    {
+     "doc_id": "DOC-14",
+     "page": 1,
+     "location": "",
+     "quote": "notice was issued on September 5, 2023",
+     "raw": "DOC-14 p.1, 1: 'notice was issued on September 5, 2023'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "commencing with the start of physical work on 9/5/2023",
+     "raw": "DOC-16 p.2, 3: 'commencing with the start of physical work on 9/5/2023'"
+    }
+   ],
+   "explanation": "Same date.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-14",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R2-044",
+    "R2-088"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Date format"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-036",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "High",
+   "weight": 4,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Building A placed-in-service date agrees between the cost certification and the update",
+   "claims_compared": "DOC-16 and DOC-19 both give September 30, 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-16",
+     "page": 2,
+     "location": "",
+     "quote": "Building A was placed in service on September 30, 2025, the date on which its certificate of occupancy was issued",
+     "raw": "DOC-16 p.2, 2: 'Building A was placed in service on September 30, 2025, the date on which its certificate of occupancy was issued'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 22,
+     "location": "",
+     "quote": "Building A: certificate of occupancy issued September 30; placed in service",
+     "raw": "DOC-19 p.22: 'Building A: certificate of occupancy issued September 30; placed in service'"
+    }
+   ],
+   "explanation": "Consistent.",
+   "check_type": "Summary versus source",
+   "documents": [
+    "DOC-16",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-089",
+    "R2-076"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Dates"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-037",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "Critical",
+   "weight": 8,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Credit rates agree between the model and the cost certification",
+   "claims_compared": "DOC-09 and DOC-16 both apply 20% federal and 25% Virginia.",
+   "citations": [
+    {
+     "doc_id": "DOC-09",
+     "page": 3,
+     "location": "",
+     "quote": "Federal credit rate 20%' and 'Virginia credit rate 25%",
+     "raw": "DOC-09 p.3: 'Federal credit rate 20%' and 'Virginia credit rate 25%'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 3,
+     "location": "",
+     "quote": "Credit rates applied: twenty percent (20%) federal; twenty-five percent (25%) Virginia",
+     "raw": "DOC-16 p.3, 2: 'Credit rates applied: twenty percent (20%) federal; twenty-five percent (25%) Virginia'"
+    }
+   ],
+   "explanation": "Consistent.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-09",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R2-090",
+    "R2-091"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Rates"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-038",
+   "data_room": "HTC02",
+   "classification": "Consistent",
+   "severity": "High",
+   "weight": 4,
+   "report": false,
+   "set": "Withheld",
+   "summary": "Investor installments add up to the stated contribution",
+   "claims_compared": "DOC-11 Section 3.2 installments of $1,253,880, $2,507,760, $1,880,820 and $626,940 total $6,269,400, matching Section 3.1(a).",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 15,
+     "location": "Section 3.2(a)-(d)",
+     "quote": "$1,253,880 (20%), $2,507,760 (40%), $1,880,820 (30%), $626,940 (10%)",
+     "raw": "DOC-11 p.15, Section 3.2(a)-(d): $1,253,880 (20%), $2,507,760 (40%), $1,880,820 (30%), $626,940 (10%)"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 14,
+     "location": "Section 3.1(a)",
+     "quote": "($6,269,400)",
+     "raw": "DOC-11 p.14, Section 3.1(a): '($6,269,400)'"
+    }
+   ],
+   "explanation": "The installments are correct. Unlike HTC01, this schedule has no error, so a model that flags it is pattern-matching.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-11"
+   ],
+   "register_ids": [
+    "R2-092",
+    "R2-010"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Arithmetic check",
+    "trap"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-039",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "The stale Exhibit B would trigger a $576,200 downward adjuster even though the price already reflects the corrected credits",
+   "claims_compared": "Section 3.4(a) measures any shortfall against Projected Federal Credits, which Exhibit B sets at $7,960,000; the credits on the corrected base are $7,290,000 (DOC-16, DOC-09).",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 18,
+     "location": "Section 3.4(a)",
+     "quote": "If the Federal Credits finally determined ... are less than the Projected Federal Credits, the Managing Member shall pay ... the product of the amount of such shortfall and the Federal Credit Price",
+     "raw": "DOC-11 p.18, Section 3.4(a): 'If the Federal Credits finally determined ... are less than the Projected Federal Credits, the Managing Member shall pay ... the product of the amount of such shortfall and the Federal Credit Price'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 66,
+     "location": "Exhibit B",
+     "quote": "Projected Federal Credits: twenty percent (20%) of Projected QRE, or $7,960,000",
+     "raw": "DOC-11 p.66, Exhibit B: 'Projected Federal Credits: twenty percent (20%) of Projected QRE, or $7,960,000'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 3,
+     "location": "",
+     "quote": "$36,450,000, of which $18,900,000 is attributable to Building A and $17,550,000 to Building B",
+     "raw": "DOC-16 p.3, 1: '$36,450,000, of which $18,900,000 is attributable to Building A and $17,550,000 to Building B'"
+    },
+    {
+     "doc_id": "DOC-09",
+     "page": 3,
+     "location": "",
+     "quote": "Federal credit 7,290",
+     "raw": "DOC-09 p.3: 'Federal credit 7,290'"
+    }
+   ],
+   "explanation": "The shortfall of $670,000 times $0.86 gives a $576,200 adjuster owed by the Managing Member, although the $6,269,400 contribution was already priced on $7,290,000. The same agreement prices the deal on one credit figure and measures the adjuster against another.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-09",
+    "DOC-11",
+    "DOC-16"
+   ],
+   "register_ids": [
+    "R2-093",
+    "R2-011",
+    "R2-100",
+    "R2-009"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "The acknowledged $6,269,400 in Section 3.1(a) may be read as evidence that the parties intended $7,290,000.",
+   "open_questions": "Will the parties amend Exhibit B before the cost certification is final?",
+   "scenario_tags": [
+    "Buried term",
+    "computation",
+    "partial correction"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-040",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Building B's delay triggers a two-cent price step-down that no document reflects",
+   "claims_compared": "Section 3.4(c) cuts the federal price by $0.02 if either building is not placed in service by December 31, 2025; Building B is expected March 31, 2026; the budget still carries $6,269,400 at $0.86.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 18,
+     "location": "Section 3.4(c)",
+     "quote": "If either Building has not been placed in service on or before December 31, 2025, the Federal Credit Price shall be reduced ... by two cents ($0.02)",
+     "raw": "DOC-11 p.18, Section 3.4(c): 'If either Building has not been placed in service on or before December 31, 2025, the Federal Credit Price shall be reduced ... by two cents ($0.02)'"
+    },
+    {
+     "doc_id": "DOC-06",
+     "page": 3,
+     "location": "Comment 4",
+     "quote": "conditioned on both Buildings being placed in service by December 31, 2025, failing which the price will step down",
+     "raw": "DOC-06 p.3, Comment 4: 'conditioned on both Buildings being placed in service by December 31, 2025, failing which the price will step down'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 4,
+     "location": "",
+     "quote": "on or about March 31, 2026",
+     "raw": "DOC-16 p.4, 1: 'on or about March 31, 2026'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 24,
+     "location": "",
+     "quote": "now forecasting CO on or about March 31, 2026",
+     "raw": "DOC-19 p.24: 'now forecasting CO on or about March 31, 2026'"
+    },
+    {
+     "doc_id": "DOC-10",
+     "page": 1,
+     "location": "line 2",
+     "quote": "Federal HTC equity (master tenant) $6,269,400",
+     "raw": "DOC-10 p.1, line 2: 'Federal HTC equity (master tenant) $6,269,400'"
+    }
+   ],
+   "explanation": "At $0.84 the contribution becomes $7,290,000 x 0.84 = $6,123,600, a reduction of $145,800 taken from installments not yet paid. Neither the budget nor the December update recognizes it.",
+   "check_type": "Wrong number",
+   "documents": [
+    "DOC-06",
+    "DOC-10",
+    "DOC-11",
+    "DOC-16",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-094",
+    "R2-095",
+    "R2-053",
+    "R2-054",
+    "R2-101"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Buried term",
+    "cross-document dependency",
+    "computation"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-041",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "High",
+   "weight": 4,
+   "report": true,
+   "set": "Withheld",
+   "summary": "The Virginia buyer can walk away unless both buildings are finally certified by June 30, 2026, which the schedule makes unlikely",
+   "claims_compared": "DOC-17 Section 5.2 requires Final Certification for each Building by June 30, 2026; Building B is not expected to be placed in service until March 31, 2026, and Building A's Part 3 was only submitted in October 2025.",
+   "citations": [
+    {
+     "doc_id": "DOC-17",
+     "page": 12,
+     "location": "Section 5.2",
+     "quote": "If Final Certification has not been obtained for each of the Buildings on or before June 30, 2026 (the Outside Date), Buyer may terminate this Agreement",
+     "raw": "DOC-17 p.12, Section 5.2: 'If Final Certification has not been obtained for each of the Buildings on or before June 30, 2026 (the Outside Date), Buyer may terminate this Agreement'"
+    },
+    {
+     "doc_id": "DOC-16",
+     "page": 4,
+     "location": "",
+     "quote": "on or about March 31, 2026",
+     "raw": "DOC-16 p.4, 1: 'on or about March 31, 2026'"
+    },
+    {
+     "doc_id": "DOC-19",
+     "page": 22,
+     "location": "",
+     "quote": "Part 3 request for A submitted to SHPO on October 20",
+     "raw": "DOC-19 p.22: 'Part 3 request for A submitted to SHPO on October 20'"
+    }
+   ],
+   "explanation": "State final certification follows completion and federal Part 3 review. Three months from Building B's certificate of occupancy is tight, and Building A's Part 3 is exposed to the cornice removal. Nothing in the data room extends the Outside Date.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-16",
+    "DOC-17",
+    "DOC-19"
+   ],
+   "register_ids": [
+    "R2-096",
+    "R2-053",
+    "R2-054",
+    "R2-073"
+   ],
+   "fact_or_judgment": "Judgment",
+   "ambiguous": true,
+   "alternative_readings": "Certification could arrive in time if reviews are fast.",
+   "open_questions": "Has the buyer agreed to extend the Outside Date?",
+   "scenario_tags": [
+    "Buried term",
+    "cross-document dependency",
+    "timing"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC02-042",
+   "data_room": "HTC02",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Development",
+   "summary": "The management fee is above the cap in the operating agreement",
+   "claims_compared": "DOC-11 Section 7.2 caps any management fee at 3.5% of Gross Operating Revenues; DOC-22 Section 4.1 pays 4% of Gross Collections.",
+   "citations": [
+    {
+     "doc_id": "DOC-11",
+     "page": 34,
+     "location": "Section 7.2",
+     "quote": "No management agreement shall provide for a management fee exceeding three and one-half percent (3.5%) of Gross Operating Revenues",
+     "raw": "DOC-11 p.34, Section 7.2: 'No management agreement shall provide for a management fee exceeding three and one-half percent (3.5%) of Gross Operating Revenues'"
+    },
+    {
+     "doc_id": "DOC-22",
+     "page": 9,
+     "location": "Section 4.1",
+     "quote": "a monthly management fee equal to four percent (4%) of Gross Collections",
+     "raw": "DOC-22 p.9, Section 4.1: 'a monthly management fee equal to four percent (4%) of Gross Collections'"
+    }
+   ],
+   "explanation": "The fee breaches the cap by half a percentage point of revenue, and the agreement was not approved under Section 7.2. It is also signed by the owner rather than the master tenant (see HTC02-020).",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-11",
+    "DOC-22"
+   ],
+   "register_ids": [
+    "R2-098",
+    "R2-099",
+    "R2-065"
+   ],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "Buried term",
+    "different defined bases"
+   ],
+   "snapshot": "Library v1",
+   "review_status": "Draft"
+  },
+  {
+   "case_id": "HTC01-040",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Model federal investor equity differs from the operating agreement",
+   "claims_compared": "The model shows federal investor equity of 4,505.6 ($ in thousands). The operating agreement sets the contribution at $4,329,600. The gap is $176,000 and follows from the overstated credit.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": "2.5",
+     "quote": "Federal investor equity: 4,505.6 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.5: 'Federal investor equity: 4,505.6 ($ in thousands)'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 13,
+     "location": "Section 4.1",
+     "quote": "The Investor Member shall contribute a total of $4,329,600",
+     "raw": "DOC-11 p.13, Section 4.1: 'The Investor Member shall contribute a total of $4,329,600'"
+    }
+   ],
+   "explanation": "The financial model and the signed operating agreement present conflicting figures for the federal investor equity contribution with no document provided to explain the difference.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-11"
+   ],
+   "register_ids": [],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "C3"
+   ],
+   "snapshot": "Working draft",
+   "review_status": "Draft",
+   "origin": "Found by run inv_a41c07d9e2b6458f, check 11c75c7a304a, accepted by the evaluator",
+   "origin_check": "11c75c7a304a"
+  }
+ ]
+}

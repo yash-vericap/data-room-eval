@@ -1,13 +1,14 @@
-"""Reading and writing the project files: answer key, submissions, manual reviews, document text."""
+"""Where everything lives, and the answer key.
+
+Everything the tool reads and writes lives under DATA. On a server, point EVAL_DATA_DIR at a persistent disk.
+Runs and manual decisions are in run_files.py, page text in pages.py; both are reachable from here."""
 from __future__ import annotations
 
 import json
 import os
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 
-from . import contract
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -27,6 +28,8 @@ def _load_env_file(path: Path) -> None:
 
 
 _load_env_file(ROOT / ".env")
+
+
 # Everything the tool reads and writes lives under DATA. On a server, point EVAL_DATA_DIR at a
 # persistent disk so runs, manual decisions and judge verdicts survive a restart.
 DATA = Path(os.environ.get("EVAL_DATA_DIR") or ROOT).resolve()
@@ -47,8 +50,6 @@ def _write(path: Path, obj) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=1, ensure_ascii=False), encoding="utf-8")
 
-
-# ---- answer key -------------------------------------------------------------------------------
 
 DRAFT = "draft"
 
@@ -100,114 +101,25 @@ def snapshot_label(snapshot: str | None = None) -> str:
     return "Working draft" if name == DRAFT else "Library " + name.split("_")[1]
 
 
+def data_rooms(cases: list[dict] | None = None) -> list[str]:
+    """Every data room the tool knows: rooms with answer-key cases, rooms in the document list, and rooms
+    whose page text is stored (locally or in the document store). A room added from the app shows up
+    here before it has any case."""
+    from . import doc_store
+    rooms = {c["data_room"] for c in cases or []} | {r for r, _ in load_documents()}
+    if DATA_ROOM.exists():
+        rooms |= {p.name for p in DATA_ROOM.iterdir() if p.is_dir() and (p / "chunks.json").exists()}
+    if doc_store.enabled():
+        try:
+            rooms |= {r["room"] for r in doc_store.list_rooms()}
+        except doc_store.StoreUnavailable:
+            pass
+    return sorted(r for r in rooms if r)
+
+
 def load_documents() -> dict[tuple[str, str], dict]:
     docs = _read(ANSWER_KEY / "documents.json", [])
     return {(d["data_room"], d["doc_id"]): d for d in docs}
 
-
-# ---- submissions ------------------------------------------------------------------------------
-
-def load_runs() -> list[dict]:
-    """Every run under submissions/, each with its contract problems and file path."""
-    runs = []
-    for path in sorted(SUBMISSIONS.rglob("*.json")):
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            runs.append({"run": {"run_id": path.stem, "data_room": "", "source": "", "system": path.stem},
-                         "findings": [], "problems": [f"Not valid JSON: {e}"], "path": str(path)})
-            continue
-        run, problems = contract.normalise(payload)
-        run["problems"], run["path"] = problems, str(path.relative_to(DATA))
-        runs.append(run)
-    return runs
-
-
-def save_submission(payload: dict, folder: str | None = None, allow_problems: bool = False) -> tuple[Path | None, list[str]]:
-    """Checks a run against the contract and stores it. Returns (path or None if rejected, problems)."""
-    run, problems = contract.normalise(payload)
-    if problems and not allow_problems:
-        return None, problems
-    rid = run["run"]["run_id"]
-    if not rid:
-        return None, problems
-    sub = folder or ("baseline" if run["run"]["source"] == "Baseline model" else "system")
-    safe = re.sub(r"[^A-Za-z0-9._-]+", "_", rid)
-    path = SUBMISSIONS / sub / f"{safe}.json"
-    _write(path, payload)
-    return path, problems
-
-
-# ---- manual reviews ---------------------------------------------------------------------------
-
-def review_key(run_id: str, finding_id: str) -> str:
-    return f"{run_id}::{finding_id}"
-
-
-def load_reviews() -> dict[str, dict]:
-    return _read(REVIEWS, {})
-
-
-def save_review(run_id: str, finding_id: str, *, status: str, case_ids: list[str], evidence: str | None = None,
-                reasoning: int | None = None, note: str = "", decided_by: str = "evaluator") -> None:
-    """Stores one manual decision. It overrides the automatic match for that finding from then on."""
-    reviews = load_reviews()
-    reviews[review_key(run_id, finding_id)] = {
-        "status": status, "case_ids": case_ids, "evidence": evidence, "reasoning": reasoning, "note": note,
-        "decided_by": decided_by, "decided_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-    }
-    _write(REVIEWS, reviews)
-
-
-def delete_review(run_id: str, finding_id: str) -> None:
-    reviews = load_reviews()
-    if reviews.pop(review_key(run_id, finding_id), None) is not None:
-        _write(REVIEWS, reviews)
-
-
-# ---- document text, for the "quote is real" check ----------------------------------------------
-
-_CHUNKS_PROBLEM: str | None = None
-
-
-def chunks_problem() -> str | None:
-    """Why page text could not be read from the document store on the last try, or None."""
-    return _CHUNKS_PROBLEM
-
-
-def load_chunks(data_room: str) -> dict[str, dict[int | None, str]]:
-    """{doc_id: {page: text}} for one data room.
-
-    With MONGO_URI set, the text comes from the document store (eval/doc_store.py). A room that is not
-    in the store yet is read from the local folder. Without MONGO_URI everything is read locally. When
-    the store cannot be reached the answer is empty, so quote checks show "Not checked" and the rest of
-    the scoring still works; chunks_problem() says why."""
-    global _CHUNKS_PROBLEM
-    from . import doc_store
-    if doc_store.enabled():
-        try:
-            out = doc_store.load_chunks(data_room)
-            _CHUNKS_PROBLEM = None
-            if out:
-                return out
-        except doc_store.StoreUnavailable as e:
-            _CHUNKS_PROBLEM = str(e)
-            return {}
-    return load_local_chunks(data_room)
-
-
-def load_local_chunks(data_room: str) -> dict[str, dict[int | None, str]]:
-    """Reads data_room/<room>/chunks.json ([{doc_id, page, text}]) and any DOC-xx.txt files (pages
-    separated by a form feed). Empty when no text is stored locally."""
-    out: dict[str, dict] = {}
-    folder = DATA_ROOM / data_room
-    for row in _read(folder / "chunks.json", []) or []:
-        doc = str(row.get("doc_id", "")).upper()
-        page = row.get("page")
-        out.setdefault(doc, {})
-        out[doc][page] = out[doc].get(page, "") + "\n" + str(row.get("text", ""))
-    for path in sorted(folder.glob("DOC-*.txt")) if folder.exists() else []:
-        doc = re.match(r"(DOC-\d+)", path.stem.upper()).group(1)
-        for i, text in enumerate(path.read_text(encoding="utf-8", errors="ignore").split("\f"), start=1):
-            out.setdefault(doc, {})[i] = text
-    return out
+from .run_files import delete_review, load_reviews, load_runs, review_key, save_submission  # noqa: E402,F401
+from .pages import chunks_problem, load_chunks, load_local_chunks  # noqa: E402,F401

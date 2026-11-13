@@ -22,6 +22,26 @@ python -m eval score
 The second command opens the app. The third scores every stored run in the terminal and writes
 `reports/report.md` and `reports/scores.csv`.
 
+## The screens
+
+The sidebar only moves between screens; every filter sits on the screen, next to what it filters.
+
+- **Vericap run check** checks one run of our system (below).
+- **Data rooms** lists every data room with its documents, pages, cases and checks, and adds a new one:
+  give it a name (for example `HTC03`) and upload its PDFs or one zip. Each page is read once; a PDF whose
+  name does not start with `DOC-<number>` is numbered for you. The new data room appears in every list at
+  once. Its cases come later, through the evaluation sheet.
+- **Upload evaluation sheet** loads the Google Sheet export (see "Keeping the answer key up to date").
+- **Stats** shows how every checked run did. Pick a data room to compare its runs: which cases every run
+  finds, which it finds only sometimes, which none finds, and what changed between any two runs. Also
+  found rates by severity and class, where the findings went, what the rules filtered out, the models and
+  tokens used, and what is stored (data rooms, answer key, baseline runs).
+
+**Several runs of one data room.** Every JSON file is its own check, so different runs of the same data
+room sit side by side; the same file read again reopens its check. Two runs never share a name (a second
+"Vericap run" becomes "Vericap run (2)"). "Open an earlier check" lists the runs of the chosen data room,
+and each can be deleted. Stats compares them.
+
 ## Checking a Vericap run (the first screen)
 
 `streamlit run app.py` opens on **Vericap run check**. It takes one run of our own system and answers five
@@ -62,16 +82,35 @@ The numbers:
 - **Against the baselines** ranks the run with the same fixed rules used for every run, with no manual
   decisions for our run. It can differ from the accuracy at the top, which comes from the model's verdicts.
 
-Other things to know:
+The Summary tab spells out each of these with the run's own numbers, including a points table by severity.
 
-- **Manual verdicts.** Select a case in the coverage map and change its verdict with a reason. A manual
-  verdict always wins. "Go back to the model's verdict" removes it.
+Reading the result:
+
+- **Summary.** The result in a sentence, four tiles, and what the run missed as cards (missed, then
+  partially found, most severe first). "Explain the accuracy" shows the working with a points table.
+  Against the baselines: how the ranking works, the rank, the cases the run missed that baselines found,
+  and the cases only this run found.
+- **Comparison.** Every ground-truth case next to what the run said. Pick any of Missed, Partially found,
+  Found and Miscellaneous at once. Each case is a toggle showing the ground truth and the run's findings in
+  one table, field by field, and why it got its verdict; a missed case also shows the closest findings.
+  Miscellaneous holds the non-issues, in two groups: the ones the run mentions and the ones it says
+  nothing about. Non-issues are not in the accuracy.
+- **Run details.** Every finding in the run and where it went: a ground-truth case, a non-issue, or
+  nothing in the ground truth (candidate, needs review, rejected by rule or by you). Select a row to open it.
+- **Pop-ups.** Any case or finding opens in a pop-up with its fix inside: change the verdict, report a
+  ground-truth error, accept or reject a candidate, restore a finding a rule rejected. A manual verdict
+  always wins; "Back to the model's verdict" removes it.
+- **Report and audit.** The downloads with a preview of the report, the models that gave the verdicts, and
+  every document page that was sent to a model, grouped by document.
+- **One run JSON is one run.** Its first run fixes the cases it is judged on: the data room's cases in
+  the answer key at that moment, plus any case accepted from it. Once those have verdicts the run is
+  complete and stays complete. Cases added to the answer key later, or edited after their verdict, do not
+  reopen it; step 3 lists them under "The answer key changed after this run", where checking them is
+  optional. "Back to the model's verdict" only shows when the model gave one.
 - **Resuming.** Every verdict is saved the moment it exists. If the provider's limit stops the check,
-  press the button again later and it carries on. The same run with the same model reopens the same check.
+  press the button again later and it carries on. The same run JSON reopens the same check.
 - **Downloads.** The report as Markdown and the full results as JSON.
-- **Keep this run with the other runs** stores it in `submissions/system/` so the other screens show it.
-- **Show baseline runs on the other screens** in the sidebar is off by default, so the other screens show
-  only our runs until you tick it.
+- **Keep this run with the other runs** stores a copy in `submissions/system/`.
 - **What was sent to the model** lists every document page that left the machine, and to which model.
 
 ## Sending a run to the tool
@@ -221,8 +260,7 @@ gives 4 June 2025 with no reason for the delay.
   dates are not compared (C11).
 
 **Rules as test cases.** A case is a test case for a rule when its Scenario tags name the rule ID (for
-example `C1`). The **Rules and facts** screen shows, per rule and data room, how many test cases exist
-and where one is missing. Flagging a known change then counts against the run as Wrongly flagged.
+example `C1`). The sheet upload warns, per data room, about every critical rule with no test case yet. Flagging a known change then counts against the run as Wrongly flagged.
 
 **Changing rules and facts.** Edit the Context Rules and Fact Sheet tabs in the sheet and upload it.
 Until a Context Rules tab is uploaded, the default rules above are used. The Fact Sheet columns are Fact
@@ -331,7 +369,6 @@ and quote checks show "Not checked" until it is back. The sidebar shows where th
 - `data_room/` is no longer kept in the repository once MongoDB is set up: the page text and PDFs live
   there (see "Data security and storage"). Without `MONGO_URI`, `data_room/<room>/` holds the PDFs and
   their text per page (`chunks.json`).
-- `judge/verdicts.json` every judge verdict.
 - `reports/` the written report and the score table.
 - `eval/` the scripts. `app.py` the Streamlit app. `tests/` the checks on the scoring.
 
@@ -352,8 +389,6 @@ positives. A finding can be linked to two cases when it merges them. When a nega
 reportable case sit side by side (signed against draft is fine; the model relying on the draft is
 not), the finding goes to the reportable one only if it cites a document that only that case involves.
 
-The "Method check" screen runs the matcher with all manual decisions switched off and compares it
-with them.
 
 ## Metrics
 
@@ -379,9 +414,36 @@ with them.
 A system is "better" than another only when weighted recall rises on the same answer key and no
 Critical case found before is now missed.
 
-## The LLM judge (approach B)
+## The model
 
-The judge and the run check use the same model. Two set-ups are built in:
+The run check uses one model, or a chain of models.
+
+**A chain of models.** Free tiers run out or get overloaded, sometimes within minutes. List several models
+in `EVAL_JUDGE_CHAIN` and the check carries on with the next one when a model is busy (it rests two
+minutes), rate-limited (it rests for the time the provider asks), or out of allowance (it rests an hour).
+A model that cannot be used at all, for example a retired one, is dropped. The first model comes back as
+soon as its rest is over. Every verdict records the model that gave it; the check screen shows the models
+used and every switch, and "Try every model again from the top" forgets the rests.
+
+```bash
+GEMINI_API_KEY=your-key
+EVAL_JUDGE_PROVIDER=gemini
+EVAL_JUDGE_CHAIN=gemini-flash-latest, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-3.1-flash-lite
+EVAL_TRUSTED_PROVIDERS=gemini
+```
+
+An entry is a model on `EVAL_JUDGE_PROVIDER`, or `provider:model` for another provider (`github:openai/gpt-4.1-mini`).
+Models of one family can judge differently: the stronger "flash" models first and the "lite" models as
+the reserve keeps most verdicts consistent.
+
+**Focused checking.** A case is shown only the findings related to it (a shared document, figure or
+wording above `EVAL_RC_MIN_RELEVANCE`, default 0.20). Every finding-to-case link decided by hand in the
+baseline runs scores 0.31 or more, so none is lost. A case with no related finding at all is marked
+missed (or not flagged) by rule, with no model call, and shows "(by rule)" on the screen. Case calls carry
+the rule names only, since the case already states the correct reading. Together this sends about half
+the tokens. `EVAL_RC_FOCUS=0` goes back to showing every finding for every case.
+
+Built-in set-ups:
 
 - **A local model** (`EVAL_JUDGE_PROVIDER=local`), allowed under the strict data policy. See "Data
   security and storage".
@@ -390,38 +452,7 @@ The judge and the run check use the same model. Two set-ups are built in:
   `EVAL_TRUSTED_PROVIDERS=github`. The default model is `openai/gpt-4.1-mini`; set `EVAL_JUDGE_MODEL`
   to one GitHub Models lists today if the default is gone.
 
-```bash
-python -m eval judge
-```
-
-Judges every stored finding that has no verdict yet. Name runs to judge only those:
-`python -m eval judge HTC02-R1`. A run sent through `submit`, the app or the endpoint is judged
-straight away when a key is present.
-
-The free tier limits requests per minute and per day. The tool paces itself (`EVAL_JUDGE_RPM`), waits
-out short limits, and when the daily allowance is used up it stops, keeps every verdict made so far
-and tells you to run the same command again later. Each finding costs two requests (it is judged
-twice); `EVAL_JUDGE_PASSES=1` halves that and gives up the stability check.
-
-For each finding the judge sees the finding, the three closest answer-key cases and the text of the
-cited pages (excerpts around the quoted words when a model's input limit is small). It returns the
-columns that were filled in by hand for the baselines: the matched case, whether the class is right,
-the evidence check, the reasoning score 0 to 2, the passage it relies on and one line of
-explanation. Verdicts are stored in `judge/verdicts.json`.
-
-Safeguards:
-
-- The answer must follow the fixed format, and the quoted passage is checked by rule against what
-  the judge was shown. A verdict that fails either check is asked once more, then sent to manual review.
-- Every finding is judged twice, at temperature 0 where the provider accepts it. Two different
-  verdicts mark it unstable.
-- "Cannot decide", a disagreement with the answer key, and any run from the judge's own model
-  family (the GPT judge on a ChatGPT baseline) go to manual review.
-- The judge never changes the headline score. The "Judge versus rules" screen shows the scores
-  three ways (rules plus manual, rules alone, judge alone) and lists every disagreement with the
-  form to record your decision. "Method check" reports how often the judge agrees with you.
-
-GitHub Models may keep what is sent to it. The judge sends answer-key cases and document pages.
+A model on a free tier may keep what is sent to it: the run check sends answer-key cases and document pages.
 
 ## Working in VS Code
 
@@ -441,12 +472,12 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-6. Copy `.env.example` to `.env` and paste your judge key into it.
+6. Copy `.env.example` to `.env` and paste your model key into it.
 7. Run things from Terminal > Run Task: "Eval: open the app", "Eval: score all runs",
-   "Eval: run the judge", "Eval: submit a run file", "Eval: start the endpoint", "Eval: run the tests".
+   "Eval: submit a run file", "Eval: start the endpoint", "Eval: run the tests".
    Ctrl+Shift+B opens the app directly.
 
-Both data rooms are already read in, so nothing else is needed to score and judge. Reading a new
+Both data rooms are already read in, so nothing else is needed to check a run. Reading a new
 data room with scanned pages needs two extra programs on the machine: Tesseract (OCR) and Poppler
 (`pdftotext`, `pdftoppm`). Without them, pages with a text layer are still read and scanned pages
 are reported as unreadable.
@@ -466,8 +497,8 @@ python -m eval add-data-room path/to/HTC03_Project_Name.zip
 3. In the sheet, add the documents to "Documents" and the cases to "Ground Truth", with the data
    room ID in the "Data room" column and case IDs that start with it (`HTC03-001`).
 4. Download the sheet as .xlsx and upload it on the Upload evaluation sheet screen, or run `python -m eval import-sheet path/to/sheet.xlsx --yes`.
-5. Run `python -m eval add-data-room` once more, or open "Method check": it lists every answer-key
-   quote that is not found in the documents, which catches slips in the key before any run is scored.
+5. Upload the sheet again: the preview warns about every answer-key quote that is not found in the
+   documents, which catches slips in the key before any run is checked.
 6. Send runs with `"data_room": "HTC03"`.
 
 Adding cases to an existing data room is steps 3 and 4 only. The cases go to the working draft; freeze it
@@ -480,7 +511,7 @@ The tool keeps its data in files, so it needs a machine with a disk that survive
 Linux server with Docker is enough.
 
 1. Copy this folder to the server.
-2. `cp .env.example .env` and fill in the app password, the endpoint key and the judge key.
+2. `cp .env.example .env` and fill in the app password, the endpoint key and the model key.
 3. Start it:
 
 ```bash
@@ -495,11 +526,34 @@ Put a reverse proxy with HTTPS (Caddy or nginx) in front before sharing the addr
 two ports only to it.
 
 To update the code later: copy the new folder over, run the same command again. The data volume is
-kept. To back up: copy the volume, or the folders `answer_key`, `submissions`, `reviews`, `judge`
+kept. To back up: copy the volume, or the folders `answer_key`, `submissions`, `reviews`, `reality_checks`
 and `data_room`.
+
+## Code layout
+
+Every Python file is kept under 150 lines, each with one job.
+
+- `app.py` starts the app; the screens are in `ui/` (`run_check`, `run_steps`, `run_results`, `run_audit`,
+  `case_detail`, `candidate`, `decision`, `rooms`, `upload`, `stats`, `stats_runs`, `stats_more`), sharing
+  `ui/state.py` (the answer key in use, cached results) and `ui/common.py` (headers, filters, cards).
+- `eval/reality_check/` the run check: reading a run (`reader`, `fields`), the messages (`messages`, `pages`,
+  `prompts`), the model calls (`verdicts`, `runner`), what is open (`state`), the scores (`results`,
+  `baselines`), candidates and the report.
+- `eval/context/` rules, facts, the context block, the rule pre-check and the gate.
+- `eval/library/` the sheet upload (staging, diffing, validation, writing), the draft, pending rows and log.
+- `eval/providers/` the model settings, the data policy, the client and the chain of models.
+- `eval/matching/` and `eval/scoring/` the fixed rules that score the baseline runs.
+- `eval/data_room/` and `eval/doc_store/` reading PDFs and storing page text.
+- `eval/stats.py` the numbers across runs.
+
+Screens read page text and results through caches: a run's results are worked out once per change to the
+run or the data, and a data room's page text once per change to its file.
 
 ## Tests
 
 ```bash
 python -m pytest -q
 ```
+
+The tests are in `tests/`, one file per topic, with shared data in `tests/helpers.py` and stand-ins for
+outside services (the model endpoint, MongoDB, PDFs) in `tests/fakes.py`. None calls a real model.

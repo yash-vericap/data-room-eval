@@ -21,7 +21,7 @@ import json
 import re
 from pathlib import Path
 
-from . import contract, store
+from . import contract
 
 
 def read_workbook(path) -> dict[str, list[dict]]:

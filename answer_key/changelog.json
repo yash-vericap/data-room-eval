@@ -1,0 +1,13 @@
+[
+ {
+  "at": "2026-11-13T04:48:07+00:00",
+  "by": "evaluator",
+  "action": "accept",
+  "object": "candidate",
+  "id": "HTC01-040",
+  "before": null,
+  "after": "Model federal investor equity differs from the operating agreement",
+  "reason": "The details is correct and missed while creating ground truth. Accepted against a failed check (Not already in the ground truth): The details is correct and missed while creating ground truth.",
+  "origin": "11c75c7a304a"
+ }
+]

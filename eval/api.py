@@ -14,10 +14,9 @@ from __future__ import annotations
 
 import json
 import os
-import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-from . import contract, judge, report, scoring, store
+from . import contract, report, scoring, store
 
 PUBLIC_METRICS = ["findings", "reportable", "found", "recall", "weighted_recall", "critical_missed", "precision",
                   "false_positives", "class_accuracy", "severity_accuracy", "evidence_sufficient", "needs_review",
@@ -38,22 +37,8 @@ def public_view(res: dict) -> dict:
     }
 
 
-def _judge(run: dict) -> str:
-    try:
-        out = judge.judge_run(run)
-        report.write()
-        text = f"{out['judged']} findings judged, {out['needs_manual']} for manual review, {out['cost']}"
-        return f"stopped early ({out['left']} findings left): {out['stopped']}. {text}" if out["stopped"] else f"done: {text}"
-    except judge.JudgeUnavailable as e:
-        return f"not run: {e}"
-
-
-def submit(payload: dict, allow_problems: bool = False, run_judge: bool | None = None,
-           background: bool = False) -> tuple[int, dict]:
-    """Shared by the endpoint, the command line and the app. Returns (HTTP status, response).
-
-    run_judge: True or False, or None to run the judge whenever the GitHub Models token is present
-    (switch that off with EVAL_JUDGE_ON_SUBMIT=0). background=True starts the judge and returns at once."""
+def submit(payload: dict, allow_problems: bool = False) -> tuple[int, dict]:
+    """Shared by the endpoint and the command line. Returns (HTTP status, response)."""
     run, problems = contract.normalise(payload)
     if not run["run"]["run_id"] or not run["run"]["data_room"]:
         return 400, {"accepted": False, "contract_problems": problems}
@@ -69,16 +54,7 @@ def submit(payload: dict, allow_problems: bool = False, run_judge: bool | None =
     run["run"]["problems"] = problems
     res = scoring.score_run(run, store.load_cases())
     report.write()
-    if run_judge is None:
-        run_judge = judge.credentials_present() and os.environ.get("EVAL_JUDGE_ON_SUBMIT", "1") != "0"
-    if not run_judge:
-        judged = "not run" if judge.credentials_present() else f"not run: {judge.judge_label()}"
-    elif background:
-        threading.Thread(target=_judge, args=(run,), daemon=True).start()
-        judged = "started"
-    else:
-        judged = _judge(run)
-    return 201, {"accepted": True, "stored_as": str(path.relative_to(store.DATA)), "judge": judged, **public_view(res)}
+    return 201, {"accepted": True, "stored_as": str(path.relative_to(store.DATA)), **public_view(res)}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -112,7 +88,7 @@ class Handler(BaseHTTPRequestHandler):
             payload = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
         except (json.JSONDecodeError, ValueError) as e:
             return self._send(400, {"accepted": False, "contract_problems": [f"Body is not valid JSON: {e}"]})
-        self._send(*submit(payload, allow_problems="allow_problems=1" in self.path, background=True))
+        self._send(*submit(payload, allow_problems="allow_problems=1" in self.path))
 
     def log_message(self, fmt, *args):
         print("[eval api]", fmt % args)

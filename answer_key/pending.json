@@ -1,0 +1,56 @@
+[
+ {
+  "kind": "case",
+  "case_id": "HTC01-040",
+  "data_room": "HTC01",
+  "case": {
+   "case_id": "HTC01-040",
+   "data_room": "HTC01",
+   "classification": "Contradiction",
+   "severity": "Medium",
+   "weight": 2,
+   "report": true,
+   "set": "Withheld",
+   "summary": "Model federal investor equity differs from the operating agreement",
+   "claims_compared": "The model shows federal investor equity of 4,505.6 ($ in thousands). The operating agreement sets the contribution at $4,329,600. The gap is $176,000 and follows from the overstated credit.",
+   "citations": [
+    {
+     "doc_id": "DOC-05",
+     "page": 2,
+     "location": "2.5",
+     "quote": "Federal investor equity: 4,505.6 ($ in thousands)",
+     "raw": "DOC-05 p.2, 2.5: 'Federal investor equity: 4,505.6 ($ in thousands)'"
+    },
+    {
+     "doc_id": "DOC-11",
+     "page": 13,
+     "location": "Section 4.1",
+     "quote": "The Investor Member shall contribute a total of $4,329,600",
+     "raw": "DOC-11 p.13, Section 4.1: 'The Investor Member shall contribute a total of $4,329,600'"
+    }
+   ],
+   "explanation": "The financial model and the signed operating agreement present conflicting figures for the federal investor equity contribution with no document provided to explain the difference.",
+   "check_type": "Document versus document",
+   "documents": [
+    "DOC-05",
+    "DOC-11"
+   ],
+   "register_ids": [],
+   "fact_or_judgment": "Fact",
+   "ambiguous": false,
+   "alternative_readings": "",
+   "open_questions": "",
+   "scenario_tags": [
+    "C3"
+   ],
+   "snapshot": "Working draft",
+   "review_status": "Draft",
+   "origin": "Found by run inv_a41c07d9e2b6458f, check 11c75c7a304a, accepted by the evaluator",
+   "origin_check": "11c75c7a304a"
+  },
+  "status": "Accepted, not yet in the sheet",
+  "check_id": "11c75c7a304a",
+  "reason": "The details is correct and missed while creating ground truth. Accepted against a failed check (Not already in the ground truth): The details is correct and missed while creating ground truth.",
+  "at": "2026-11-13T04:48:07+00:00"
+ }
+]
